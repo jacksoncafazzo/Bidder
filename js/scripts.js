@@ -1,9 +1,9 @@
 function initMap () {
-    var myLatLong = new google.maps.LatLng(-34.397, 150.644);
+    var myLatLong = new google.maps.LatLng(45.520705, -122.677397);
     var mapOptions = {
-      zoom: 8,
+      zoom: 18,
       center: myLatLong,
-      mapTypeId: google.maps.MapTypeId.SATELLITE
+      mapTypeId: google.maps.MapTypeId.TERRAIN
     };
 
     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
@@ -17,7 +17,7 @@ function initMap () {
        var button, markerId, inputValue;
 
        //  this switches scenario depending on infowindow contents
-      if (document.getElementById('deleteButton')) {
+       if (document.getElementById('deleteButton')) {
         // Bind action for delete button
         button = document.getElementById('deleteButton');
         button.focus();
