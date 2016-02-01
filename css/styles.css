@@ -1,0 +1,52 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+
+body {
+font-family: 'Open Sans', sans-serif;
+}
+
+/*.jumbotron {
+  text-align: center;
+  margin-top: 4em;
+}*/
+
+.hero {
+  background: url(../img/picmonkey.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: table;
+  width: 100%;
+  padding-top: 25%;
+  margin-top: 5%;
+}
+
+.hero .intro {
+  padding: 3rem;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  }
+
+h1 {
+  color: #fff;
+  font-size: 3em;
+  line-height: 1.5em;
+  letter-spacing: -0.025em;
+  font-weight: 300;
+  text-align: center;
+}
+
+.form-wrapper {
+  max-width: 450px;
+  max-height: 490px;
+}
+
+#jobber-signUp {
+  padding-top: 4em;
+}
+
+::-webkit-input-placeholder {
+  font-style: italic;
+}
