@@ -15,14 +15,38 @@ iframe {
   margin: 0 auto;
 }
 
+.img-responsive {
+  background-size: cover;
+  width:100%;
+}
+
+/* Main Navigation
+======================*/
 .navbar-default .navbar-brand {
   font-size: 24px;
 }
+
+/* Global Footer
+======================*/
+.footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Carousel carousel
+======================*/
 
 .carousel-caption {
   text-shadow: 2px 2px black;
   background-color: black;
   opacity: 0.8;
+}
+
+/* How It Works
+======================*/
+.blueBackground {
+  background-color: #BBDEFB;
+  padding-bottom: 25px;
 }
 
 .icon {
@@ -34,13 +58,11 @@ iframe {
   padding-bottom: 20px;
 }
 
-.item {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
+/* Buttons
+======================*/
 
-.img-responsive {
-  background-size: cover;
-  width:100%;
+
+.centerButton {
+  margin: auto;
+  text-align: center;
 }
