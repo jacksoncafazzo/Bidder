@@ -27,9 +27,6 @@ iframe {
   color: #C62828;
 }
 
-/*.navbar-default .navbar-nav > li > a {
-    color: green;
-}*/
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
     color: white;
@@ -43,7 +40,7 @@ iframe {
   padding-bottom: 20px;
 }
 
-/* Carousel carousel
+/* Carousel
 ======================*/
 
 .carousel-caption {
@@ -64,6 +61,16 @@ iframe {
   max-width: 100px;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+/* Forms
+======================*/
+form {
+  padding-top: 50px;
+}
+
+.form-control {
+  width: 80%;
 }
 
 /* Buttons

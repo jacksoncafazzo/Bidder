@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css" type="text/css" media="all">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANaQLm-KAxMvGigw83OKSMgfUVIleRJzE&callback=initMap">
+    </script>
+    <script src="js/scripts.js"></script>
+    <title>Post a Bid</title>
+  </head>
+  <body>
+
+<!-- Navigation bar -->
+    <div class="container">
+      <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand text-muted" href="index.html">BIDDER</a>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">Open Bids</a></li>
+              <li><a class="active" href="bidder_page.html">Post a Bid</a></li>
+              <li><a href="jobber-signup.html">Become a Jobber</a></li>
+              <li><a href="about_page.html">About Bidder</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!--// Carousel for header and sliding images -->
+
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-caption">
+          <h1>Post a Bid</h1>
+          <p class="lead">Looking for someone in your community to help you out with an odd job?</p>
+        </div>
+        <div class="item active">
+          <img class="img-responsive" src="img/handshake.png" alt="Handshake">
+          <div class="carousel-caption">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Content -->
+    <div class="container">
+      <div class="row">
+          <form id="postBid">
+            <div class="col-md-offset-2">
+              <div class="form-group">
+                <label for="jobTitle">Odd job to be performed</label>
+                <input type="text" id="jobTitle" class="form-control" placeholder="plant a salsa garden, change bike tires, etc.">
+              </div>
+              <div class="form-group">
+                <label for="payment">Payment you are offering</label>
+                <input type="number" id="payment" class="form-control" placeholder="in U.S. dollars">
+              </div>
+              <div class="form-group">
+                <label for="jobDuration">Total time expected to complete the job</label>
+                <input type="text" id="jobDuration" class="form-control" placeholder="3 hours">
+              </div>
+              <div class="form-group">
+                <label for="dateCompleted">Date to be completed by</label>
+                <input type="text" id="dateCompleted" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="cityState">City / State</label>
+                <input type="text" id="cityState" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="neighborhood">Neighborhood</label>
+                <input type="text" id="neighborhood" class="form-control" placeholder="Southeast Portland">
+              </div>
+              <div class="form-group">
+                <label for="bidderName">Your name</label>
+                <input type="text" id="bidderName" class="form-control">
+              </div>
+            </div>
+            <div class="centerButton">
+              <button type="submit" class="btn btn-default" href="#">POST YOUR BID</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="container footer">
+      <p>Bidders | All Rights Reserved | Copyright 2016</p>
+    </div>
+  </body>
+</html>
