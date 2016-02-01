@@ -1,9 +1,17 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
 h2 {
   text-align: center;
 }
 
 p {
   text-align: center;
+}
+
+.navbar-default .navbar-brand {
+  font-size: 24px;
 }
 
 .carousel-caption {
