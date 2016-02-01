@@ -10,12 +10,19 @@ p {
   text-align: center;
 }
 
+iframe {
+  display: block;
+  margin: 0 auto;
+}
+
 .navbar-default .navbar-brand {
   font-size: 24px;
 }
 
 .carousel-caption {
   text-shadow: 2px 2px black;
+  background-color: black;
+  opacity: 0.8;
 }
 
 .icon {
@@ -36,5 +43,4 @@ p {
 .img-responsive {
   background-size: cover;
   width:100%;
-  /*max-height: 600px;*/
 }
