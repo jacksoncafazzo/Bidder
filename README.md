@@ -20,7 +20,7 @@ Javascript, jQuery, HTML5, CSS3, Bootstrap, Mocha, Chai
 
 ### Legal
 
-Copyright (c) 2016, Jessica Fix
+Copyright (c) 2016, Jessica Fix, Jackson Cafazzo, Brooke Hurford, Taylor Pokoj
 
 This software is licensed under the MIT license.
 
