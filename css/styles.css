@@ -66,6 +66,13 @@ h1 {
   font-style: italic;
 }
 
+/* Modal
+======================*/
+#submissionModal {
+  text-align: center;
+}
+
+
 /* Global Footer
 ======================*/
 .footer {
