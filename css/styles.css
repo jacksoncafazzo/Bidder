@@ -11,7 +11,7 @@ font-family: 'Open Sans', sans-serif;
 }*/
 
 .hero {
-  background: url(../img/picmonkey.jpg) no-repeat center center;
+  background: url(../img/art.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -26,7 +26,7 @@ font-family: 'Open Sans', sans-serif;
   padding: 3rem;
   position: relative;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-55%);
   }
 
 h1 {
