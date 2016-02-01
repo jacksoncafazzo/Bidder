@@ -9,3 +9,15 @@ function Jobber(firstName, lastName, age, city, state, jobInterests, expertise) 
   this.jobInterests = jobInterests;
   this.expertise = expertise;
 }
+
+
+//User Logic
+
+$(document).ready(function(){
+  $("form#jobber-signUp").submit(function(event) {
+    var firstName = $("input#first-name").val();
+
+
+  event.preventDefaul();
+  });
+});
