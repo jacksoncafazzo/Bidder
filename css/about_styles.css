@@ -1,0 +1,44 @@
+.header {
+  background-image: url("../img/hands.jpg");
+  background-size: cover;
+  height: 450px;
+  position: relative;
+}
+
+#headertext {
+position: absolute;
+bottom: 0;
+padding-left: 50px;
+}
+
+.col {
+  text-align: center;
+  padding: 20px;
+}
+
+.glyphicon {
+  font-size: 2.5em;
+  display: block;
+  text-align: center;
+  padding: 20px;
+  color: grey;
+}
+
+.footer {
+  color: gray;
+  position: bottom;
+}
+
+.navbar-default .navbar-brand {
+  font-size: 24px;
+  color: #C62828;
+}
+
+/*.navbar-default .navbar-nav > li > a {
+    color: green;
+}*/
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: white;
+    background-color: #C62828;
+}
