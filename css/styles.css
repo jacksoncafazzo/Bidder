@@ -1,5 +1,18 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
+/* Main Navigation
+======================*/
+.navbar-default .navbar-brand {
+  font-size: 24px;
+  color: #C62828;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: white;
+    background-color: #C62828;
+}
+
 
 body {
 font-family: 'Open Sans', sans-serif;
@@ -45,8 +58,16 @@ h1 {
 
 #jobber-signUp {
   padding-top: 4em;
+  margin-bottom: 4em;
 }
 
 ::-webkit-input-placeholder {
   font-style: italic;
+}
+
+/* Global Footer
+======================*/
+.footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
