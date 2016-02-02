@@ -14,7 +14,12 @@ BidPost.prototype.bidSummary = function() {
   return this.jobTitle + " for " + this.payment;
 }
 
-$(document)ready(function() {
+$(document).on('click', '#showModal', function() {
+    $("#modal").modal('show');
+  });
+
+
+$(document).ready(function() {
   $("form#postBid").submit(function(event) {
     var inputtedjobTitle = $("input#jobTitle").val();
     var inputtedPayment = $("input#payment").val();
@@ -26,7 +31,7 @@ $(document)ready(function() {
 
     var newBid = new BidPost(inputtedjobTitle, inputtedPayment, inputtedjobDuration, inputtedDateCompleted, inputtedCityState, inputtedNeighborhood, inputtedBidderName);
 
-    $("#bidList").show();
+    $("#userAccordion").show();
     $("ul#bids").append("<li>" + BidPost.bidSummary + "</li>");
 
     $("input#jobTitle").val("");

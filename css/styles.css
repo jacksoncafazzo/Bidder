@@ -6,6 +6,7 @@ h2 {
   text-align: center;
 }
 
+
 p {
   text-align: center;
 }
@@ -78,4 +79,13 @@ form {
 .centerButton {
   margin: auto;
   text-align: center;
+}
+
+/* Post a Bid page
+======*/
+
+#map {
+  height: 100%;
+  min-height: 500px;
+  min-width: 500px;
 }
