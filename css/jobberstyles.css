@@ -67,6 +67,9 @@ h1 {
   font-style: italic;
 }
 
+.centerButton {
+  text-align: center;
+}
 
 /* Modal
 ======================*/
