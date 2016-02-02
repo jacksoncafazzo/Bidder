@@ -1,5 +1,5 @@
 /* Business Logic for map */
-
+var count = 0;
 var map;
 var marker;
 var markers = [];
@@ -64,6 +64,7 @@ $(document).ready(function() {
   initialize();
   $("form#postBid").submit(function(event) {
 debugger;
+    count += 1;
     var inputtedjobTitle = $("input#jobTitle").val();
     var inputtedPayment = $("input#payment").val();
     var inputtedjobDescription = $("input#jobDescription").val();
@@ -81,33 +82,26 @@ debugger;
     $("#bidList").prepend('<div class="panel-group userPanel" id="accordion" role="tablist" aria-multiselectable="true">' +
      '<div class="panel panel-default">' +
        '<div class="panel-heading" role="tab" id="userBid">' +
-         '<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#userCollapse" aria-expanded="true" aria-controls="userCollapse">' +
+         '<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#userCollapse'+ count +'"' + ' aria-expanded="true" aria-controls="userCollapse'+ count +'">' +
            '<h4>' + newBidPost.bidSummary() + '</h4>' +
          '</a>' +
        '</div>' +
-       '<div id="userCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="userBid">' +
+       '<div id="userCollapse'+ count +'" class="panel-collapse collapse" role="tabpanel" aria-labelledby="userBid">' +
          '<div class="panel-body">' +
            '<ul>' +
-             '<li><span class="userDescription"></span></li>' +
-             '<li>Job Duration: <span class="duration"></span></li>' +
-             '<li>Date to be completed by: <span class="userDate"></span></li>' +
-             '<li>Location: <span class="userLocation"></span></li>' +
-             '<li>Neighborhood: <span class="userNeighborhood"></span></li>' +
-             '<li>Bidder Name: <span class="userName"></span></li>' +
+             '<li>' + inputtedjobDescription + '</li>' +
+             '<li>Job Duration:' + " " + inputtedjobDuration + '</li>' +
+             '<li>Date to be completed by:' + " " + inputtedDateCompleted + '</li>' +
+             '<li>Location:' + " " + inputtedCityState + '</li>' +
+             '<li>Neighborhood:' + " " + inputtedNeighborhood + '</li>' +
+             '<li>Bidder Name:' + " " + inputtedBidderName + '</li>' +
            '</ul>' +
-           '<button id="interested" class="btn btn-default">I am interested!</button>' +
+           '<button id="interested" class="btn btn-default">Interested!</button>' +
          '</div>' +
        '</div>' +
      '</div>' +
      '</div>');
 
-    // $(".user-panel-title").append(newBidPost.bidSummary());
-
-    $(".userDescription").text(inputtedjobDescription);
-    $(".userDate").text(inputtedDateCompleted);
-    $(".userLocation").text(inputtedCityState);
-    $(".userNeighborhood").text(inputtedNeighborhood);
-    $(".userName").text(inputtedBidderName);
 
     $("#modal").modal('hide');
 
