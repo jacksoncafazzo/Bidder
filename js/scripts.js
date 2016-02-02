@@ -46,6 +46,7 @@ BidSuggester.prototype.range = function() {
 
 $(document).ready(function(){
   $("form#bidSuggester").submit(function(){
+    debugger;
 
     var inputtedjobType = $("#jobType option:selected").text();
     var inputtedDifficulty = $("select#jobType").val();
@@ -53,12 +54,13 @@ $(document).ready(function(){
     var bidRange = bidSuggester.range();
 
     $("#modal").modal('show');
-    $(".jobTitle").text(inputtedjobType);
+    $("#jobTitle").text(inputtedjobType);
     $(".priceRange").text(bidRange);
 
-    event.preventDefault();
-
     $("select#jobType").val("");
+    $("#jobType option:selected").val("");
+
+    event.preventDefault();
   });
 });
 

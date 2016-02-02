@@ -6,6 +6,10 @@ h2 {
   text-align: center;
 }
 
+h3 {
+  line-height: 150%;
+}
+
 p {
   text-align: center;
 }
@@ -97,4 +101,18 @@ form {
   margin-top: 100px;
   margin-bottom: 100px;
   padding:20px 25px 25px 25px;
+}
+
+.modal-header {
+  background-color: #C62828;
+  color: white;
+}
+
+.modal-title {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.modal-body {
+  text-align: center;
 }
