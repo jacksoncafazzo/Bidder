@@ -1,17 +1,15 @@
-//Business Logic
+// Business Logic
 
-function Jobber(firstName, lastName, age, city, state, typesOfJobs, expertise) {
+function Jobber(firstName, lastName, zipcode, jobInterests, expertise) {
   this.firstName = firstName;
   this.lastName = lastName;
-  this.age = age;
-  this.city = city;
-  this.state = state;
-  this.typesOfJobs = typesOfJobs;
+  this.zipcode = zipcode;
+  this.jobInterests = jobInterests;
   this.expertise = expertise;
 }
 
 
-//User Logic
+// User Logic
 
 $(document).ready(function(){
   $("form#jobber-signUp").submit(function(event) {
