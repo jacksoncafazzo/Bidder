@@ -89,3 +89,7 @@ form {
   min-height: 500px;
   min-width: 500px;
 }
+
+#userAccordion {
+  display: none;
+}

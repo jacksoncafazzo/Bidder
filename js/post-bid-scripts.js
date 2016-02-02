@@ -48,7 +48,7 @@ function BidPost(jobTitle, payment, jobDuration, dateCompleted, cityState, neigh
 }
 
 BidPost.prototype.bidSummary = function() {
-  return this.jobTitle + " for " + this.payment;
+  return this.jobTitle + " for $" + this.payment;
 }
 
 $(document).on('click', '#showModal', function() {
@@ -58,8 +58,8 @@ $(document).on('click', '#showModal', function() {
 
 $(document).ready(function() {
   initialize();
-
   $("form#postBid").submit(function(event) {
+debugger;
     var inputtedjobTitle = $("input#jobTitle").val();
     var inputtedPayment = $("input#payment").val();
     var inputtedjobDuration = $("input#jobDuration").val();
@@ -68,10 +68,11 @@ $(document).ready(function() {
     var inputtedNeighborhood = $("input#neighborhood").val();
     var inputtedBidderName = $("input#bidderName").val();
 
-    var newBid = new BidPost(inputtedjobTitle, inputtedPayment, inputtedjobDuration, inputtedDateCompleted, inputtedCityState, inputtedNeighborhood, inputtedBidderName);
+    var newBidPost = new BidPost(inputtedjobTitle, inputtedPayment, inputtedjobDuration, inputtedDateCompleted, inputtedCityState, inputtedNeighborhood, inputtedBidderName);
 
     $("#userAccordion").show();
-    $("ul#bids").append("<li>" + BidPost.bidSummary + "</li>");
+    $("h4.user-panel-title").append("<span class='userBidSummary'>" + newBidPost.bidSummary() + "</span>");
+    $("#modal").modal('hide');
 
     $("input#jobTitle").val("");
     $("input#payment").val("");
@@ -81,7 +82,7 @@ $(document).ready(function() {
     $("input#neighborhood").val("");
     $("input#bidderName").val("");
 
-
+    event.preventDefault();
   });
 
 });
