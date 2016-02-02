@@ -63,8 +63,9 @@ $(document).on('click', '#interested', function() {
 $(document).ready(function() {
   initialize();
   $("form#postBid").submit(function(event) {
-debugger;
+
     count += 1;
+    
     var inputtedjobTitle = $("input#jobTitle").val();
     var inputtedPayment = $("input#payment").val();
     var inputtedjobDescription = $("input#jobDescription").val();
@@ -76,8 +77,6 @@ debugger;
 
     var newBidPost = new BidPost(inputtedjobTitle, inputtedPayment, inputtedjobDescription, inputtedjobDuration, inputtedDateCompleted, inputtedCityState, inputtedNeighborhood, inputtedBidderName);
 
-
-    // $(".user-panel-title").append(newBidPost.bidSummary());
 
     $("#bidList").prepend('<div class="panel-group userPanel" id="accordion" role="tablist" aria-multiselectable="true">' +
      '<div class="panel panel-default">' +

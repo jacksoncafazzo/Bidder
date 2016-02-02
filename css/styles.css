@@ -73,9 +73,6 @@ form {
   margin-right: 20px;
 }
 
-/*.form-control {
-  width: auto;
-}*/
 
 .modal-body {
   width: auto;
@@ -97,10 +94,6 @@ form {
   min-width: 500px;
 }
 
-/*.userPanel {
-  display: none;
-}*/
-
-.user-panel-title {
+h4 {
   color: black;
 }
