@@ -46,13 +46,14 @@ BidSuggester.prototype.range = function() {
 
 $(document).ready(function(){
   $("form#bidSuggester").submit(function(){
-    debugger;
 
+    var inputtedjobType = $("#jobType option:selected").text();
     var inputtedDifficulty = $("select#jobType").val();
-    var bidSuggester = new BidSuggester(jobType, inputtedDifficulty);
+    var bidSuggester = new BidSuggester(inputtedjobType, inputtedDifficulty);
     var bidRange = bidSuggester.range();
 
     $("#modal").modal('show');
+    $(".jobTitle").text(inputtedjobType);
     $(".priceRange").text(bidRange);
 
     event.preventDefault();
