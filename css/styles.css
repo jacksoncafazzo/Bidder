@@ -58,6 +58,10 @@ iframe {
   text-shadow: 2px 2px black;
 }
 
+#carousel-example-generic {
+  margin-top: 50px;
+}
+
 /* How It Works
 ======================*/
 .blueBackground {
@@ -82,4 +86,15 @@ form {
 
 .form-control {
   width: 80%;
+}
+
+/* Bid Suggester
+======================*/
+
+#results {
+  display: none;
+  border: 1px solid #C62828;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding:20px 25px 25px 25px;
 }

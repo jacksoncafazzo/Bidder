@@ -56,6 +56,8 @@ $(document).ready(function(){
     $(".priceRange").text(bidRange);
 
     event.preventDefault();
+
+    $("select#jobType").val("");
   });
 });
 
