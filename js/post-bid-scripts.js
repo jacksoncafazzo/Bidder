@@ -37,9 +37,10 @@ function initialize () {
 
 /* business logic for form and bidSummary */
 
-function BidPost(jobTitle, payment, jobDuration, dateCompleted, cityState, neighborhood, bidderName) {
+function BidPost(jobTitle, payment, jobDescription, jobDuration, dateCompleted, cityState, neighborhood, bidderName) {
   this.jobTitle = jobTitle;
   this.payment = payment;
+  this.jobDescription = jobDescription,
   this.jobDuration = jobDuration;
   this.dateCompleted = dateCompleted;
   this.cityState = cityState;
@@ -62,20 +63,31 @@ $(document).ready(function() {
 debugger;
     var inputtedjobTitle = $("input#jobTitle").val();
     var inputtedPayment = $("input#payment").val();
+    var inputtedjobDescription = $("input#jobDescription").val();
     var inputtedjobDuration = $("input#jobDuration").val();
     var inputtedDateCompleted = $("input#dateCompleted").val();
     var inputtedCityState = $("input#cityState").val();
     var inputtedNeighborhood = $("input#neighborhood").val();
     var inputtedBidderName = $("input#bidderName").val();
 
-    var newBidPost = new BidPost(inputtedjobTitle, inputtedPayment, inputtedjobDuration, inputtedDateCompleted, inputtedCityState, inputtedNeighborhood, inputtedBidderName);
+    var newBidPost = new BidPost(inputtedjobTitle, inputtedPayment, inputtedjobDescription, inputtedjobDuration, inputtedDateCompleted, inputtedCityState, inputtedNeighborhood, inputtedBidderName);
 
-    $("#userAccordion").show();
-    $("h4.user-panel-title").append("<span class='userBidSummary'>" + newBidPost.bidSummary() + "</span>");
+    $(".userPanel").show();
+    $(".user-panel-title").append(newBidPost.bidSummary());
+
+
+
+    $(".userDescription").text(inputtedjobDescription);
+    $(".userDate").text(inputtedDateCompleted);
+    $(".userLocation").text(inputtedCityState);
+    $(".userNeighborhood").text(inputtedNeighborhood);
+    $(".userName").text(inputtedBidderName);
+
     $("#modal").modal('hide');
 
     $("input#jobTitle").val("");
     $("input#payment").val("");
+    $("input#jobDescription").val("");
     $("input#jobDuration").val("");
     $("input#dateCompleted").val("");
     $("input#cityState").val("");

@@ -99,6 +99,10 @@
                       <input type="number" id="payment" class="form-control" placeholder="in U.S. dollars">
                     </div>
                     <div class="form-group">
+                      <label for="jobDescription">A description of the job you need done</label>
+                      <input type="text" id="jobDescription" class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group">
                       <label for="jobDuration">Total time expected to complete the job</label>
                       <input type="text" id="jobDuration" class="form-control" placeholder="3 hours">
                     </div>
@@ -140,24 +144,22 @@
         <h3>Current Open Bids</h3>
         <!-- user form input item should be appended here -->
 
-        <div class="panel-group" id="userAccordion" role="tablist" aria-multiselectable="true">
+        <div class="panel-group userPanel" id="accordion" role="tablist" aria-multiselectable="true">
          <div class="panel panel-default">
            <div class="panel-heading" role="tab" id="userBid">
-             <h4 class="user-panel-title">
-               <a class="collapsed" role="button" data-toggle="collapse" data-parent="#userAccordion" href="#userCollapse" aria-expanded="true" aria-controls="userCollapse"> <!--input BidSummary title should append here -->
-                 <span class="userBidSummary"></span>
-               </a>
-             </h4>
+             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#userCollapse" aria-expanded="true" aria-controls="userCollapse">
+               <h4 class="user-panel-title"></h4>
+             </a>
            </div>
            <div id="userCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="userBid">
              <div class="panel-body">
                <ul>
-                 <li>I would love to have a small salsa garden! I have the perfect place in my yard, but have never done any gardening myself.</li>
-                 <li>Job Duration: 3 hours</li>
-                 <li>Date to be completed by: March, 1 2016</li>
-                 <li>Location: Portland, Oregon</li>
-                 <li>Neighborhood: Southeast</li>
-                 <li>Bidder Name: Taylor</li>
+                 <li><span class="userDescription"></span></li>
+                 <li>Job Duration: <span class="duration"></span></li>
+                 <li>Date to be completed by: <span class="userDate"></span></li>
+                 <li>Location: <span class="userLocation"></span></li>
+                 <li>Neighborhood: <span class="userNeighborhood"></span></li>
+                 <li>Bidder Name: <span class="userName"></span></li>
                </ul>
                <button class="btn btn-default">I'm interested!</button>
              </div>
@@ -166,6 +168,7 @@
         </div>
 
         <!-- hardcoded fake bidSummaries-->
+
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
          <div class="panel panel-default">
            <div class="panel-heading" role="tab" id="headingTwo">
@@ -192,19 +195,19 @@
         </div>
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
          <div class="panel panel-default">
-           <div class="panel-heading" role="tab" id="headingTwo">
+           <div class="panel-heading" role="tab" id="headingThree">
              <h4 class="panel-title">
-               <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+               <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                  Help Setup my Mac for $50
                </a>
              </h4>
            </div>
-           <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+           <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
              <div class="panel-body">
                <ul>
                  <li>I am super old and don't know how to setup my new computer. I would love help with the setup and also a quick lesson on how to use a Macbook and the internets all the kids are talking about.</li>
                  <li>Job Duration: 1-2 hours</li>
-                 <li>Date to be completed by: February, 13 2016</li>
+                 <li>Date to be completed by: February 13, 2016</li>
                  <li>Location: Portland, Oregon</li>
                  <li>Neighborhood: Northwest</li>
                  <li>Bidder Name: Gloria</li>
@@ -216,22 +219,22 @@
         </div>
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
          <div class="panel panel-default">
-           <div class="panel-heading" role="tab" id="headingThree">
+           <div class="panel-heading" role="tab" id="headingFour">
              <h4 class="panel-title">
-               <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+               <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                  Change my bike tires for $60
                </a>
              </h4>
            </div>
-           <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+           <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
              <div class="panel-body">
                <ul>
-                 <li>I would love to have a small salsa garden! I have the perfect place in my yard, but have never done any gardening myself.</li>
-                 <li>Job Duration: 3 hours</li>
-                 <li>Date to be completed by: March, 1 2016</li>
+                 <li>Really need my bike tires changed, no clue how to do it. Please help! </li>
+                 <li>Job Duration: 1 hour</li>
+                 <li>Date to be completed by: February 5, 2016</li>
                  <li>Location: Portland, Oregon</li>
-                 <li>Neighborhood: Southeast</li>
-                 <li>Bidder Name: Taylor</li>
+                 <li>Neighborhood: Northeast</li>
+                 <li>Bidder Name: Blake</li>
                </ul>
                <button class="btn btn-default">I'm interested!</button>
              </div>

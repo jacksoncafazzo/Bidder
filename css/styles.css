@@ -90,6 +90,10 @@ form {
   min-width: 500px;
 }
 
-#userAccordion {
+.userPanel {
   display: none;
+}
+
+.user-panel-title {
+  color: black;
 }
