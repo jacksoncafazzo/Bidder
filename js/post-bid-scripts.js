@@ -3,36 +3,67 @@
 var map;
 var marker;
 var markers = [];
+var infowindows = [];
 var coordinates = [];
 var myLatLng;
 var imageData;
 
 function initialize () {
-  coordinates = [];
-  var myLatLong = new google.maps.LatLng(45.520705, -122.677397);
-
-  map = new google.maps.Map(document.getElementById('map'), {
+  markerCounter = markers.length + 1;
+  var epicodus = {lat: 45.520705, lng: -122.677397}
+  var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 18,
-    center: myLatLong,
+    center: epicodus,
     mapTypeId: google.maps.MapTypeId.TERRAIN
   });
 
   map.addListener("click", function (event) {
-    var latitude = event.latLng.lat();
-    var longitude = event.latLng.lng();
-    myLatLng = {lat: latitude, lng: longitude};
+    markerLatLng = { lat: event.latLng.lat(), lng: event.latLng.lng() };
+    var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading"><a href="MODAL-LINK">Post A Bid</a></h1>'+
+      '<div id="bodyContent">'+
+      '<img src="hypothetical post-bid.png icon prompt">'+
+      '<p>Latitude: ' + event.latLng.lat() + '</p>'+
+      '<p>Longitude: ' + event.latLng.lng() + '</p>'+
+      '</div>'+
+      '</div>';
+
+// this is the info window section --- div ids are google ids, do not change
+//first we save the click coordinates
+    // coordinates.push(event.position.lat(), event.position.lng());
+//then we define what the infowindow looks like
+
+      //then we make the window and save it to the infowindows array
+    var infowindow = new google.maps.InfoWindow( {
+    content: contentString,
+    });
+    infowindows.push(infowindow);
+
+
     var marker = new google.maps.Marker({
-      position: myLatLng,
+      position: markerLatLng,
       // icon: bidder,
       map: map,
     });
+
+    marker.addListener('click', function() {
+      // for (var i = 0; i < markers.length; i++) {
+      //     if (markers[i] === marker) {
+      infowindow.open(map, marker);
+        // }
+      // }
+    });
     markers.push(marker);
-    coordinates.push(marker.position.lat(), marker.position.lng());
+    console.log({ lat: event.latLng.lat(), lng: event.latLng.lng() });
+
+
     console.log("coordinates are: " + coordinates[0] + ", " + coordinates[1]);
     console.log("marker latlong is: " + marker.position.lat(), marker.position.lng());
     console.log("number of marker is: " + markers.length);
+    console.log(infowindow);
   });
-
 }
 
 /* business logic for form and bidSummary */
@@ -58,7 +89,6 @@ $(document).on('click', '#showModal', function() {
 
 $(document).ready(function() {
   initialize();
-
   $("form#postBid").submit(function(event) {
     var inputtedjobTitle = $("input#jobTitle").val();
     var inputtedPayment = $("input#payment").val();
