@@ -22,7 +22,7 @@ font-family: 'Open Sans', sans-serif;
 ======================*/
 
 .hero {
-  background: url(../img/brushes.jpg) no-repeat center center;
+  background: url(../img/work-table.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -48,6 +48,16 @@ h1 {
   font-weight: 300;
   text-align: center;
 }
+
+h2 {
+  color: #fff;
+  font-size: 1.8em;
+  line-height: 1.5em;
+  letter-spacing: -0.025em;
+  font-weight: 300;
+  text-align: center;
+}
+
 
 
 /* Global Footer
