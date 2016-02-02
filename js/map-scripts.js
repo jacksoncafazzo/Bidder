@@ -1,5 +1,5 @@
 var map;
-
+var marker;
 var markers = [];
 var coordinates = [];
 var myLatLng;
@@ -24,10 +24,16 @@ function initialize () {
       // icon: bidder,
       map: map,
     });
-    markersArray.push(marker);
+    markers.push(marker);
+    coordinates.push(marker.position.lat(), marker.position.lng());
+    console.log("coordinates are: " + coordinates[0] + ", " + coordinates[1]);
+    console.log("marker latlong is: " + marker.position.lat(), marker.position.lng());
+    console.log("number of marker is: " + markers.length);
   });
-  return coordinates;
+
 }
+
+
 
 
 
