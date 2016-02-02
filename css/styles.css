@@ -27,9 +27,6 @@ iframe {
   color: #C62828;
 }
 
-/*.navbar-default .navbar-nav > li > a {
-    color: green;
-}*/
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
     color: white;
@@ -43,15 +40,13 @@ iframe {
   padding-bottom: 20px;
 }
 
-/* Carousel carousel
+/* Homepage
 ======================*/
 
 .carousel-caption {
   text-shadow: 2px 2px black;
 }
 
-/* How It Works
-======================*/
 .blueBackground {
   background-color: #ECEFF1;
   padding-bottom: 25px;
@@ -64,6 +59,22 @@ iframe {
   max-width: 100px;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+.homepageButtons {
+  margin-top: 70px;
+  max-width: 850px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imageButton1:hover {
+  border: 3px solid #C62828;
+}
+
+.imageButton2:hover {
+  border: 3px solid #C62828;
 }
 
 /* Buttons
