@@ -146,6 +146,5 @@ $(document).ready(function() {
     $("input#bidderName").val("");
 
     event.preventDefault();
-
   });
 });
