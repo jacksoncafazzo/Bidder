@@ -41,9 +41,12 @@ iframe {
   padding-bottom: 20px;
 }
 
+<<<<<<< HEAD
 
 /* Carousel
 =======
+=======
+>>>>>>> homepage_layout
 /* Buttons
 ======================*/
 .centerButton {
@@ -67,7 +70,10 @@ iframe {
 }
 
 /* Homepage
+<<<<<<< HEAD
 >>>>>>> origin/homepage_layout
+=======
+>>>>>>> homepage_layout
 ======================*/
 
 .carousel-caption h1 {
@@ -98,6 +104,7 @@ iframe {
   padding-top: 50px;
   padding-bottom: 20px;
 }
+<<<<<<< HEAD
 
 
 /* Forms
@@ -125,3 +132,5 @@ form {
   min-height: 500px;
   min-width: 500px;
 }
+=======
+>>>>>>> homepage_layout
