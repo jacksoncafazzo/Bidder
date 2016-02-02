@@ -97,9 +97,9 @@ form {
   min-width: 500px;
 }
 
-.userPanel {
+/*.userPanel {
   display: none;
-}
+}*/
 
 .user-panel-title {
   color: black;
