@@ -8,8 +8,7 @@
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANaQLm-KAxMvGigw83OKSMgfUVIleRJzE&callback=initMap">
-    </script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script src="js/post-bid-scripts.js"></script>
     <title>Post a Bid</title>
   </head>
@@ -56,49 +55,94 @@
     </div>
 
     <!--Content -->
+    <br></br>
+    <p class="lead mapHeader">Click your location on the map to post a bid.</p>
+
+    <!-- Map -->
     <div class="container">
       <div class="row">
-        <form id="postBid">
-          <div class="col-md-offset-2">
-            <div class="form-group">
-              <label for="jobTitle">Odd job to be performed</label>
-              <input type="text" id="jobTitle" class="form-control" placeholder="plant a salsa garden, change bike tires, etc.">
-            </div>
-            <div class="form-group">
-              <label for="payment">Payment you are offering</label>
-              <input type="number" id="payment" class="form-control" placeholder="in U.S. dollars">
-            </div>
-            <div class="form-group">
-              <label for="jobDuration">Total time expected to complete the job</label>
-              <input type="text" id="jobDuration" class="form-control" placeholder="3 hours">
-            </div>
-            <div class="form-group">
-              <label for="dateCompleted">Date to be completed by</label>
-              <input type="text" id="dateCompleted" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="cityState">City / State</label>
-              <input type="text" id="cityState" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="neighborhood">Neighborhood</label>
-              <input type="text" id="neighborhood" class="form-control" placeholder="Southeast Portland">
-            </div>
-            <div class="form-group">
-              <label for="bidderName">Your name</label>
-              <input type="text" id="bidderName" class="form-control">
-            </div>
+        <div class="col-md-12 bid-image">
+          <div id="map"></div>
+
+          <script type="text/javascript">
+
+
+          </script>
+
+          <!-- <button class="centerButton btn btn-default" id="showModal" type="" name="name" value="">POST A BID</button> -->
+        </div>
+      </div>
+      <button class="centerButton btn btn-default" id="showModal" type="" name="name" value="">POST A BID</button>
+    </div>
+    <br></br>
+
+
+
+<!--Modal window form -->
+    <div id="modal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h2 class="modal-title">Add Your Bid</h2>
           </div>
-          <div class="centerButton">
-            <button type="submit" class="btn btn-default">POST YOUR BID</button>
+          <div class="modal-body">
+            <div class="row">
+              <form role="form" id="postBid">
+                  <div class="form-group">
+                    <label for="jobTitle">Odd job to be performed</label>
+                    <input type="text" id="jobTitle" class="form-control" placeholder="plant a salsa garden, change bike tires, etc.">
+                  </div>
+                  <div class="form-group">
+                    <label for="payment">Payment you are offering</label>
+                    <input type="number" id="payment" class="form-control" placeholder="in U.S. dollars">
+                  </div>
+                  <div class="form-group">
+                    <label for="jobDescription">A description of the job you need done</label>
+                    <input type="text" id="jobDescription" class="form-control" placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label for="jobDuration">Total time expected to complete the job</label>
+                    <input type="text" id="jobDuration" class="form-control" placeholder="3 hours">
+                  </div>
+                  <div class="form-group">
+                    <label for="dateCompleted">Date to be completed by</label>
+                    <input type="text" id="dateCompleted" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="cityState">City / State</label>
+                    <input type="text" id="cityState" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="neighborhood">Neighborhood</label>
+                    <input type="text" id="neighborhood" class="form-control" placeholder="Southeast Portland">
+                  </div>
+                  <div class="form-group">
+                    <label for="bidderName">Your name</label>
+                    <input type="text" id="bidderName" class="form-control">
+                  </div>
+                <div class="centerButton">
+                  <button type="submit" class="btn btn-default">POST YOUR BID</button>
+                </div>
+              </form>
+            </div>
+            <br></br>
           </div>
-        </form>
+          <div class="modal-footer">
+          </div>
+        </div>
       </div>
     </div>
-    <div class="container">
-      <div id="bidList">
-        <!-- hardcode some fake bidSummaries here -->
 
+
+
+    <!-- Bid List, including fake bids and appended user input bidSummary" -->
+    <div class="container">
+      <h3>Current Open Bids</h3>
+      <div id="bidList">
+        <!-- user bid will append here -->
+
+        <!-- hardcoded fake bidSummaries-->
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
          <div class="panel panel-default">
            <div class="panel-heading" role="tab" id="headingTwo">
@@ -118,7 +162,7 @@
                  <li>Neighborhood: Southeast</li>
                  <li>Bidder Name: Taylor</li>
                </ul>
-               <button class="btn btn-default">I'm interested!</button>
+               <button id="interested" class="btn btn-default">I'm interested!</button>
              </div>
            </div>
          </div>
@@ -127,28 +171,87 @@
          <div class="panel panel-default">
            <div class="panel-heading" role="tab" id="headingThree">
              <h4 class="panel-title">
-               <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+               <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                 Help Setup my Mac for $50
+               </a>
+             </h4>
+           </div>
+           <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+             <div class="panel-body">
+               <ul>
+                 <li>I am super old and don't know how to setup my new computer. I would love help with the setup and also a quick lesson on how to use a Macbook and the internets all the kids are talking about.</li>
+                 <li>Job Duration: 1-2 hours</li>
+                 <li>Date to be completed by: February 13, 2016</li>
+                 <li>Location: Portland, Oregon</li>
+                 <li>Neighborhood: Northwest</li>
+                 <li>Bidder Name: Gloria</li>
+               </ul>
+               <button id="interested" class="btn btn-default">I'm interested!</button>
+             </div>
+           </div>
+         </div>
+        </div>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+         <div class="panel panel-default">
+           <div class="panel-heading" role="tab" id="headingFour">
+             <h4 class="panel-title">
+               <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                  Change my bike tires for $60
                </a>
              </h4>
            </div>
-           <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+           <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
              <div class="panel-body">
                <ul>
-                 <li>I would love to have a small salsa garden! I have the perfect place in my yard, but have never done any gardening myself.</li>
-                 <li>Job Duration: 3 hours</li>
-                 <li>Date to be completed by: March, 1 2016</li>
+                 <li>Really need my bike tires changed, no clue how to do it. Please help! </li>
+                 <li>Job Duration: 1 hour</li>
+                 <li>Date to be completed by: February 5, 2016</li>
                  <li>Location: Portland, Oregon</li>
-                 <li>Neighborhood: Southeast</li>
-                 <li>Bidder Name: Taylor</li>
+                 <li>Neighborhood: Northeast</li>
+                 <li>Bidder Name: Blake</li>
                </ul>
-               <button class="btn btn-default">I'm interested!</button>
+               <button id="interested" class="btn btn-default">I'm interested!</button>
              </div>
            </div>
          </div>
         </div>
       </div>
     </div>
+
+<!-- I'm interested modal -->
+
+    <div id="interestedModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h2 class="modal-title">Sweet !</h2>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <label class="control-label" for="">Jobber Name</label>
+                <input type="text" class="form-control" id="" placeholder="Your Name"/>
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="inputEmail3">Email</label>
+                <input type="email" class="form-control" id="inputEmail3" placeholder="Email"/>
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="">Why you would be good for the job:</label>
+                <input type="text" class="form-control" id="" placeholder=""/>
+              </div>
+              <div class="form-group">
+                <button id="submitInterest" type="submit" class="btn btn-default">Message Bidder</button>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
     <hr>
     <div class="container footer">
       <p>Bidders | All Rights Reserved | Copyright 2016</p>

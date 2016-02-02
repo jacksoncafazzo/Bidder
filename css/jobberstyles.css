@@ -1,0 +1,102 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+/* Main Navigation
+======================*/
+.navbar-default .navbar-brand {
+  font-size: 24px;
+  color: #C62828;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: white;
+    background-color: #C62828;
+}
+
+
+body {
+font-family: 'Open Sans', sans-serif;
+}
+
+/* Hero Layout
+======================*/
+
+.hero {
+  background: url(../img/brushes.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: table;
+  width: 100%;
+  padding-top: 25%;
+  margin-top: 4.5%;
+}
+
+.hero .intro {
+  padding: 3rem;
+  position: relative;
+  top: 50%;
+  transform: translateY(-55%);
+  }
+
+h1 {
+  color: #fff;
+  font-size: 3em;
+  line-height: 1.5em;
+  letter-spacing: -0.025em;
+  font-weight: 300;
+  text-align: center;
+}
+
+/* Form
+======================*/
+
+.form-wrapper {
+  max-width: 490px;
+  max-height: 500px;
+  margin: 0 auto;
+}
+
+#jobber-signUp {
+  padding-top: 4em;
+  margin-bottom: 4em;
+}
+
+::-webkit-input-placeholder {
+  font-style: italic;
+}
+
+.centerButton {
+  text-align: center;
+}
+
+/* Modal
+======================*/
+#submissionModal {
+  text-align: center;
+}
+
+.glyphicon-leaf {
+  font-size: 40px;
+}
+
+h4 {
+  margin-top: 1em;
+}
+
+h5 {
+  padding-bottom: 1em;
+}
+
+
+/* Global Footer
+======================*/
+.footer {
+  position:fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+   text-align: center;
+}

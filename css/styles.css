@@ -56,30 +56,56 @@ iframe {
   padding-bottom: 20px;
 }
 
-/* Carousel
-======================*/
+.centerButton {
+  margin: auto;
+  text-align: center;
+}
+.homepageButtons {
+  margin-top: 70px;
+  max-width: 850px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imageButton1:hover {
+  border: 3px solid #C62828;
+}
+
+.imageButton2:hover {
+  border: 3px solid #C62828;
+}
+
+.carousel-caption h1 {
+  font-size: 40px;
+}
+
+.carousel-caption .lead {
+  font-size: 24px;
+}
 
 .carousel-caption {
   text-shadow: 2px 2px black;
+  padding-bottom: 150px;
 }
 
 #carousel-example-generic {
   margin-top: 50px;
 }
 
-/* How It Works
-======================*/
 .blueBackground {
   background-color: #ECEFF1;
-  padding-bottom: 25px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
-.icon {
+.glyphicon {
+  font-size: 5em;
   display: block;
   margin-left: auto;
   margin-right: auto;
   max-width: 100px;
-  padding-top: 20px;
+  padding-top: 50px;
   padding-bottom: 20px;
 }
 
@@ -87,10 +113,14 @@ iframe {
 ======================*/
 form {
   padding-top: 50px;
+  width: auto;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-.form-control {
-  width: 80%;
+
+.modal-body {
+  width: auto;
 }
 
 /* Bid Suggester
@@ -116,4 +146,17 @@ form {
 
 .modal-body {
   text-align: center;
+}
+
+/* Post a Bid page
+======*/
+
+#map {
+  height: 100%;
+  min-height: 500px;
+  min-width: 500px;
+}
+
+h4 {
+  color: black;
 }
