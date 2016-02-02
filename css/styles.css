@@ -68,10 +68,17 @@ iframe {
 ======================*/
 form {
   padding-top: 50px;
+  width: auto;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-.form-control {
-  width: 80%;
+/*.form-control {
+  width: auto;
+}*/
+
+.modal-body {
+  width: auto;
 }
 
 /* Buttons

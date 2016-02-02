@@ -56,6 +56,9 @@ $(document).on('click', '#showModal', function() {
     $("#modal").modal('show');
   });
 
+$(document).on('click', '#interested', function() {
+    $("#interestedModal").modal('show');
+  });
 
 $(document).ready(function() {
   initialize();
@@ -95,6 +98,6 @@ debugger;
     $("input#bidderName").val("");
 
     event.preventDefault();
-  });
 
+  });
 });

@@ -87,46 +87,44 @@
             <h2 class="modal-title">Add Your Bid</h2>
           </div>
           <div class="modal-body">
-            <div class="container">
-              <div class="row">
-                <form class="form" id="postBid">
-                    <div class="form-group">
-                      <label for="jobTitle">Odd job to be performed</label>
-                      <input type="text" id="jobTitle" class="form-control" placeholder="plant a salsa garden, change bike tires, etc.">
-                    </div>
-                    <div class="form-group">
-                      <label for="payment">Payment you are offering</label>
-                      <input type="number" id="payment" class="form-control" placeholder="in U.S. dollars">
-                    </div>
-                    <div class="form-group">
-                      <label for="jobDescription">A description of the job you need done</label>
-                      <input type="text" id="jobDescription" class="form-control" placeholder="">
-                    </div>
-                    <div class="form-group">
-                      <label for="jobDuration">Total time expected to complete the job</label>
-                      <input type="text" id="jobDuration" class="form-control" placeholder="3 hours">
-                    </div>
-                    <div class="form-group">
-                      <label for="dateCompleted">Date to be completed by</label>
-                      <input type="text" id="dateCompleted" class="form-control">
-                    </div>
-                    <div class="form-group">
-                      <label for="cityState">City / State</label>
-                      <input type="text" id="cityState" class="form-control">
-                    </div>
-                    <div class="form-group">
-                      <label for="neighborhood">Neighborhood</label>
-                      <input type="text" id="neighborhood" class="form-control" placeholder="Southeast Portland">
-                    </div>
-                    <div class="form-group">
-                      <label for="bidderName">Your name</label>
-                      <input type="text" id="bidderName" class="form-control">
-                    </div>
-                  <div class="centerButton">
-                    <button type="submit" class="btn btn-default">POST YOUR BID</button>
+            <div class="row">
+              <form role="form" id="postBid">
+                  <div class="form-group">
+                    <label for="jobTitle">Odd job to be performed</label>
+                    <input type="text" id="jobTitle" class="form-control" placeholder="plant a salsa garden, change bike tires, etc.">
                   </div>
-                </form>
-              </div>
+                  <div class="form-group">
+                    <label for="payment">Payment you are offering</label>
+                    <input type="number" id="payment" class="form-control" placeholder="in U.S. dollars">
+                  </div>
+                  <div class="form-group">
+                    <label for="jobDescription">A description of the job you need done</label>
+                    <input type="text" id="jobDescription" class="form-control" placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label for="jobDuration">Total time expected to complete the job</label>
+                    <input type="text" id="jobDuration" class="form-control" placeholder="3 hours">
+                  </div>
+                  <div class="form-group">
+                    <label for="dateCompleted">Date to be completed by</label>
+                    <input type="text" id="dateCompleted" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="cityState">City / State</label>
+                    <input type="text" id="cityState" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="neighborhood">Neighborhood</label>
+                    <input type="text" id="neighborhood" class="form-control" placeholder="Southeast Portland">
+                  </div>
+                  <div class="form-group">
+                    <label for="bidderName">Your name</label>
+                    <input type="text" id="bidderName" class="form-control">
+                  </div>
+                <div class="centerButton">
+                  <button type="submit" class="btn btn-default">POST YOUR BID</button>
+                </div>
+              </form>
             </div>
             <br></br>
           </div>
@@ -142,13 +140,11 @@
     <div class="container">
       <div id="bidList">
         <h3>Current Open Bids</h3>
-        <!-- user form input item should be appended here -->
-
         <div class="panel-group userPanel" id="accordion" role="tablist" aria-multiselectable="true">
          <div class="panel panel-default">
            <div class="panel-heading" role="tab" id="userBid">
              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#userCollapse" aria-expanded="true" aria-controls="userCollapse">
-               <h4 class="user-panel-title"></h4>
+               <h4 class="user-panel-title"></h4> <!-- appended user BidSummary -->
              </a>
            </div>
            <div id="userCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="userBid">
@@ -161,14 +157,12 @@
                  <li>Neighborhood: <span class="userNeighborhood"></span></li>
                  <li>Bidder Name: <span class="userName"></span></li>
                </ul>
-               <button class="btn btn-default">I'm interested!</button>
+               <button id="interested" class="btn btn-default">I'm interested!</button>
              </div>
            </div>
          </div>
         </div>
-
         <!-- hardcoded fake bidSummaries-->
-
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
          <div class="panel panel-default">
            <div class="panel-heading" role="tab" id="headingTwo">
@@ -188,7 +182,7 @@
                  <li>Neighborhood: Southeast</li>
                  <li>Bidder Name: Taylor</li>
                </ul>
-               <button class="btn btn-default">I'm interested!</button>
+               <button id="interested" class="btn btn-default">I'm interested!</button>
              </div>
            </div>
          </div>
@@ -212,7 +206,7 @@
                  <li>Neighborhood: Northwest</li>
                  <li>Bidder Name: Gloria</li>
                </ul>
-               <button class="btn btn-default">I'm interested!</button>
+               <button id="interested" class="btn btn-default">I'm interested!</button>
              </div>
            </div>
          </div>
@@ -236,13 +230,48 @@
                  <li>Neighborhood: Northeast</li>
                  <li>Bidder Name: Blake</li>
                </ul>
-               <button class="btn btn-default">I'm interested!</button>
+               <button id="interested" class="btn btn-default">I'm interested!</button>
              </div>
            </div>
          </div>
         </div>
       </div>
     </div>
+
+<!-- I'm interested modal -->
+
+    <div id="interestedModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h2 class="modal-title">Sweet !</h2>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <label class="control-label" for="">Jobber Name</label>
+                <input type="text" class="form-control" id="" placeholder="Your Name"/>
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="inputEmail3">Email</label>
+                <input type="email" class="form-control" id="inputEmail3" placeholder="Email"/>
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="">Why you would be good for the job:</label>
+                <input type="text" class="form-control" id="" placeholder=""/>
+              </div>
+              <div class="form-group">
+                <button id="submitInterest" type="submit" class="btn btn-default">Message Bidder</button>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
     <hr>
     <div class="container footer">
       <p>Bidders | All Rights Reserved | Copyright 2016</p>
