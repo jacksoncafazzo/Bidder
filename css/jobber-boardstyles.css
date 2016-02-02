@@ -66,6 +66,13 @@ h2 {
   padding-top: 1em;
 }
 
+.btn:hover
+{
+background-image:none;
+background-color:#B4C60B;
+color: white;
+}
+
 
 /* Global Footer
 ======================*/
