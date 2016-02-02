@@ -17,11 +17,10 @@ describe('bidPost', function() {
   it('will add the bidSummary method to a bidPost', function() {
     var testBidPost = new BidPost("Plant a salsa garden", "$100", "3 hours", "March 1, 2016", "Portland, OR", "Southeast Portland", "Taylor");
     expect(testBidPost.bidSummary()).to.equal("Plant a salsa garden for $100")
-=======
-describe("elMapo", function () {
-  it("gets coordinations, queries google maps api and draws a map", function () {
-    var locationObject = { lat: 41.85, lng: -87.65 };
-    expect(elMapo(locationObject)).to.equal();
->>>>>>> master
-  });
-});
+
+// describe("elMapo", function () {
+//   it("gets coordinations, queries google maps api and draws a map", function () {
+//     var locationObject = { lat: 41.85, lng: -87.65 };
+//     expect(elMapo(locationObject)).to.equal();
+//   });
+// });
