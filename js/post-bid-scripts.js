@@ -93,10 +93,11 @@ $(document).on('click', '#interested', function() {
 
 $(document).ready(function() {
   initialize();
+
   $("form#postBid").submit(function(event) {
 
     count += 1;
-    
+
     var inputtedjobTitle = $("input#jobTitle").val();
     var inputtedPayment = $("input#payment").val();
     var inputtedjobDescription = $("input#jobDescription").val();

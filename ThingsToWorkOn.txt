@@ -1,0 +1,20 @@
+Navbar
+  - Each HTML page should have the same NavBar. Make sure these are your links with the correct href:
+
+    <li><a href="#">Open Bids</a></li>
+    <li><a href="post-a-bid.html">Post a Bid</a></li>
+    <li><a href="jobber-signup.html">Become a Jobber</a></li>
+    <li><a href="jobber-board.html">Jobber Board</a></li>
+    <li><a href="about_page.html">About Bidder</a></li>
+    <li><button class="btn btn-default nav-btn" href="bid-suggester.html">Bid Suggester</button></li>
+
+  - Since our navbar links are getting numerous, maybe we should instead make a couple of dropdown menu links, i.e. "For Bidders" and "For Jobbers", and then throw some of the other links into those dropdowns.
+
+  - Do we need the "open bids" page? It seems like the Jobber board is taking care of that and also there are open bids displayed on the post-a-bid page
+
+Styles
+  - organize global styles.css so it is clear what page the styles belong to
+  - try to have elements styled the same way on different pages (ex: same result for clicking "I'm interested" button on Jobber Board and on Post A Bid page)
+
+Map
+  - hardcode some location tags/info windows on the Post a Bid page and also the Home Page (Possible???)
