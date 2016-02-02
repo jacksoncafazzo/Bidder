@@ -49,13 +49,14 @@ h1 {
   text-align: center;
 }
 
-.form-wrapper {
-  max-width: 450px;
-  max-height: 490px;
-}
-
 /* Form
 ======================*/
+
+.form-wrapper {
+  max-width: 490px;
+  max-height: 500px;
+  margin: 0 auto;
+}
 
 #jobber-signUp {
   padding-top: 4em;
@@ -65,6 +66,7 @@ h1 {
 ::-webkit-input-placeholder {
   font-style: italic;
 }
+
 
 /* Modal
 ======================*/
