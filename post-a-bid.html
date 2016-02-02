@@ -10,7 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANaQLm-KAxMvGigw83OKSMgfUVIleRJzE&callback=initMap">
     </script>
-    <script src="js/scripts.js"></script>
+    <script src="js/post-bid-scripts.js"></script>
     <title>Post a Bid</title>
   </head>
   <body>
@@ -58,41 +58,94 @@
     <!--Content -->
     <div class="container">
       <div class="row">
-          <form id="postBid">
-            <div class="col-md-offset-2">
-              <div class="form-group">
-                <label for="jobTitle">Odd job to be performed</label>
-                <input type="text" id="jobTitle" class="form-control" placeholder="plant a salsa garden, change bike tires, etc.">
-              </div>
-              <div class="form-group">
-                <label for="payment">Payment you are offering</label>
-                <input type="number" id="payment" class="form-control" placeholder="in U.S. dollars">
-              </div>
-              <div class="form-group">
-                <label for="jobDuration">Total time expected to complete the job</label>
-                <input type="text" id="jobDuration" class="form-control" placeholder="3 hours">
-              </div>
-              <div class="form-group">
-                <label for="dateCompleted">Date to be completed by</label>
-                <input type="text" id="dateCompleted" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="cityState">City / State</label>
-                <input type="text" id="cityState" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="neighborhood">Neighborhood</label>
-                <input type="text" id="neighborhood" class="form-control" placeholder="Southeast Portland">
-              </div>
-              <div class="form-group">
-                <label for="bidderName">Your name</label>
-                <input type="text" id="bidderName" class="form-control">
-              </div>
+        <form id="postBid">
+          <div class="col-md-offset-2">
+            <div class="form-group">
+              <label for="jobTitle">Odd job to be performed</label>
+              <input type="text" id="jobTitle" class="form-control" placeholder="plant a salsa garden, change bike tires, etc.">
             </div>
-            <div class="centerButton">
-              <button type="submit" class="btn btn-default" href="#">POST YOUR BID</button>
+            <div class="form-group">
+              <label for="payment">Payment you are offering</label>
+              <input type="number" id="payment" class="form-control" placeholder="in U.S. dollars">
             </div>
-          </form>
+            <div class="form-group">
+              <label for="jobDuration">Total time expected to complete the job</label>
+              <input type="text" id="jobDuration" class="form-control" placeholder="3 hours">
+            </div>
+            <div class="form-group">
+              <label for="dateCompleted">Date to be completed by</label>
+              <input type="text" id="dateCompleted" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="cityState">City / State</label>
+              <input type="text" id="cityState" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="neighborhood">Neighborhood</label>
+              <input type="text" id="neighborhood" class="form-control" placeholder="Southeast Portland">
+            </div>
+            <div class="form-group">
+              <label for="bidderName">Your name</label>
+              <input type="text" id="bidderName" class="form-control">
+            </div>
+          </div>
+          <div class="centerButton">
+            <button type="submit" class="btn btn-default">POST YOUR BID</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="container">
+      <div id="bidList">
+        <!-- hardcode some fake bidSummaries here -->
+
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+         <div class="panel panel-default">
+           <div class="panel-heading" role="tab" id="headingTwo">
+             <h4 class="panel-title">
+               <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                 Plant a Salsa Garden for $100
+               </a>
+             </h4>
+           </div>
+           <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+             <div class="panel-body">
+               <ul>
+                 <li>I would love to have a small salsa garden! I have the perfect place in my yard, but have never done any gardening myself.</li>
+                 <li>Job Duration: 3 hours</li>
+                 <li>Date to be completed by: March, 1 2016</li>
+                 <li>Location: Portland, Oregon</li>
+                 <li>Neighborhood: Southeast</li>
+                 <li>Bidder Name: Taylor</li>
+               </ul>
+               <button class="btn btn-default">I'm interested!</button>
+             </div>
+           </div>
+         </div>
+        </div>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+         <div class="panel panel-default">
+           <div class="panel-heading" role="tab" id="headingThree">
+             <h4 class="panel-title">
+               <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                 Change my bike tires for $60
+               </a>
+             </h4>
+           </div>
+           <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+             <div class="panel-body">
+               <ul>
+                 <li>I would love to have a small salsa garden! I have the perfect place in my yard, but have never done any gardening myself.</li>
+                 <li>Job Duration: 3 hours</li>
+                 <li>Date to be completed by: March, 1 2016</li>
+                 <li>Location: Portland, Oregon</li>
+                 <li>Neighborhood: Southeast</li>
+                 <li>Bidder Name: Taylor</li>
+               </ul>
+               <button class="btn btn-default">I'm interested!</button>
+             </div>
+           </div>
+         </div>
         </div>
       </div>
     </div>
