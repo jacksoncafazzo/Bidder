@@ -72,8 +72,16 @@ h1 {
   text-align: center;
 }
 
+.glyphicon-leaf {
+  font-size: 40px;
+}
+
+h4 {
+  margin-top: 1em;
+}
+
 h5 {
-  padding-bottom: 0.3em;
+  padding-bottom: 1em;
 }
 
 
