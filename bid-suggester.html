@@ -57,15 +57,26 @@
     <!--Content -->
     <div class="container">
       <div class="row">
-        <form id="postBid">
+        <form id="bidSuggester">
           <div class="col-md-offset-2">
             <div class="form-group">
-              <label for="jobTitle">Odd job to be performed</label>
-              <input type="text" id="jobTitle" class="form-control" placeholder="plant a salsa garden, change bike tires, etc.">
+              <label for="jobType">What odd job to you need done?</label>
+              <select class="form-control">
+                <option value="disabled">- Select One -</option>
+                <option>Your bike tires changed</option>
+                <option>Plant a salsa garden</option>
+                <option>Do your laundry</option>
+                <option>Clean your kitchen</option>
+                <option>Teach you to make a new type of dinner</option>
+                <option>Help setup your iPhone</option>
+                <option>Help setup your new computer</option>
+                <option>Fix a bathroom appliance</option>
+                <option>Fix a kitchen appliance</option>
+              </select>
             </div>
           </div>
           <div class="centerButton">
-            <button type="submit" class="btn btn-default">POST YOUR BID</button>
+            <button type="submit" class="btn btn-default">GET A PAYMENT SUGGESTION</button>
           </div>
         </form>
       </div>

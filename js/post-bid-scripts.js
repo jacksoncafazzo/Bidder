@@ -36,8 +36,5 @@ $(document)ready(function() {
     $("input#cityState").val("");
     $("input#neighborhood").val("");
     $("input#bidderName").val("");
-
-
   });
-
 });
