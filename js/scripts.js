@@ -44,18 +44,20 @@ BidSuggester.prototype.range = function() {
 };
 
 
-// $(document)ready(function(){
-//   $("form#bidSuggester").submit(function(){
-//
-//     var inputtedJobType = $("input#jobType").val();
-//     var bidSuggester = new BidSuggester(jobType, difficultyLevel);
-//     var bidRange = bidSuggester.range();
-//
-//     $(".range").text(bidSuggester);
-//
-//     event.preventDefault();
-//   });
-// });
+$(document).ready(function(){
+  $("form#bidSuggester").submit(function(){
+    debugger;
+
+    var inputtedDifficulty = $("select#jobType").val();
+    var bidSuggester = new BidSuggester(jobType, inputtedDifficulty);
+    var bidRange = bidSuggester.range();
+
+    $("#results").show();
+    $(".priceRange").text(bidRange);
+
+    event.preventDefault();
+  });
+});
 
 
 

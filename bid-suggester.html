@@ -61,7 +61,7 @@
           <div class="col-md-offset-2">
             <div class="form-group">
               <label for="jobType">What odd job to you need done?</label>
-              <select class="form-control">
+              <select id="jobType" class="form-control">
                 <option value="disabled">- Select One -</option>
                 <option value="Level 2">Your bike tires changed</option>
                 <option value="Level 2">Plant a salsa garden</option>
@@ -80,7 +80,13 @@
           </div>
         </form>
       </div>
+      <div class="col-md-offset-2 col-md-8">
+        <div id="results">
+          <h2> Our suggested payment for this job would be in the range of <span class="priceRange"></span> dollars.</h2>
+        </div>
+      </div>
     </div>
+
 
     <hr>
 
