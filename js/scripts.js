@@ -57,7 +57,7 @@ $(document).ready(function(){
     $("#jobTitle").text(inputtedjobType);
     $(".priceRange").text(bidRange);
 
-    $("select#jobType").val("");
+    $("select#jobType").val("- Select One-");
     $("#jobType option:selected").val("");
 
     event.preventDefault();
