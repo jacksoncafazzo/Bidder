@@ -111,10 +111,14 @@ iframe {
 ======================*/
 form {
   padding-top: 50px;
+  width: auto;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-.form-control {
-  width: 80%;
+
+.modal-body {
+  width: auto;
 }
 
 /* Buttons
@@ -132,5 +136,12 @@ form {
   min-height: 500px;
   min-width: 500px;
 }
+<<<<<<< HEAD
 =======
 >>>>>>> homepage_layout
+=======
+
+h4 {
+  color: black;
+}
+>>>>>>> 3512c861cd172f55bc514f49f3d60f586759e46d

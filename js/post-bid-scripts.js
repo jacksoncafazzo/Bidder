@@ -1,5 +1,5 @@
 /* Business Logic for map */
-
+var count = 0;
 var map;
 var marker;
 var markers = [];
@@ -68,9 +68,10 @@ function initialize () {
 
 /* business logic for form and bidSummary */
 
-function BidPost(jobTitle, payment, jobDuration, dateCompleted, cityState, neighborhood, bidderName) {
+function BidPost(jobTitle, payment, jobDescription, jobDuration, dateCompleted, cityState, neighborhood, bidderName) {
   this.jobTitle = jobTitle;
   this.payment = payment;
+  this.jobDescription = jobDescription,
   this.jobDuration = jobDuration;
   this.dateCompleted = dateCompleted;
   this.cityState = cityState;
@@ -79,39 +80,71 @@ function BidPost(jobTitle, payment, jobDuration, dateCompleted, cityState, neigh
 }
 
 BidPost.prototype.bidSummary = function() {
-  return this.jobTitle + " for " + this.payment;
+  return this.jobTitle + " for $" + this.payment;
 }
 
 $(document).on('click', '#showModal', function() {
     $("#modal").modal('show');
   });
 
+$(document).on('click', '#interested', function() {
+    $("#interestedModal").modal('show');
+  });
 
 $(document).ready(function() {
   initialize();
   $("form#postBid").submit(function(event) {
+
+    count += 1;
+    
     var inputtedjobTitle = $("input#jobTitle").val();
     var inputtedPayment = $("input#payment").val();
+    var inputtedjobDescription = $("input#jobDescription").val();
     var inputtedjobDuration = $("input#jobDuration").val();
     var inputtedDateCompleted = $("input#dateCompleted").val();
     var inputtedCityState = $("input#cityState").val();
     var inputtedNeighborhood = $("input#neighborhood").val();
     var inputtedBidderName = $("input#bidderName").val();
 
-    var newBid = new BidPost(inputtedjobTitle, inputtedPayment, inputtedjobDuration, inputtedDateCompleted, inputtedCityState, inputtedNeighborhood, inputtedBidderName);
+    var newBidPost = new BidPost(inputtedjobTitle, inputtedPayment, inputtedjobDescription, inputtedjobDuration, inputtedDateCompleted, inputtedCityState, inputtedNeighborhood, inputtedBidderName);
 
-    $("#userAccordion").show();
-    $("ul#bids").append("<li>" + BidPost.bidSummary + "</li>");
+
+    $("#bidList").prepend('<div class="panel-group userPanel" id="accordion" role="tablist" aria-multiselectable="true">' +
+     '<div class="panel panel-default">' +
+       '<div class="panel-heading" role="tab" id="userBid">' +
+         '<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#userCollapse'+ count +'"' + ' aria-expanded="true" aria-controls="userCollapse'+ count +'">' +
+           '<h4>' + newBidPost.bidSummary() + '</h4>' +
+         '</a>' +
+       '</div>' +
+       '<div id="userCollapse'+ count +'" class="panel-collapse collapse" role="tabpanel" aria-labelledby="userBid">' +
+         '<div class="panel-body">' +
+           '<ul>' +
+             '<li>' + inputtedjobDescription + '</li>' +
+             '<li>Job Duration:' + " " + inputtedjobDuration + '</li>' +
+             '<li>Date to be completed by:' + " " + inputtedDateCompleted + '</li>' +
+             '<li>Location:' + " " + inputtedCityState + '</li>' +
+             '<li>Neighborhood:' + " " + inputtedNeighborhood + '</li>' +
+             '<li>Bidder Name:' + " " + inputtedBidderName + '</li>' +
+           '</ul>' +
+           '<button id="interested" class="btn btn-default">Interested!</button>' +
+         '</div>' +
+       '</div>' +
+     '</div>' +
+     '</div>');
+
+
+    $("#modal").modal('hide');
 
     $("input#jobTitle").val("");
     $("input#payment").val("");
+    $("input#jobDescription").val("");
     $("input#jobDuration").val("");
     $("input#dateCompleted").val("");
     $("input#cityState").val("");
     $("input#neighborhood").val("");
     $("input#bidderName").val("");
 
+    event.preventDefault();
 
   });
-
 });
