@@ -24,7 +24,7 @@ function initialize () {
       '</div>'+
       '<h1 id="firstHeading" class="firstHeading"><a href="MODAL-LINK">Post A Bid</a></h1>'+
       '<div id="bodyContent">'+
-      '<img src="hypothetical post-bid.png icon prompt">'+
+      '<div class="glyphicon">'+
       '<p>Latitude: ' + event.latLng.lat() + '</p>'+
       '<p>Longitude: ' + event.latLng.lng() + '</p>'+
       '</div>'+
