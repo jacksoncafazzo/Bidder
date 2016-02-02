@@ -1,9 +1,147 @@
-.item {
-  align-items: center;
-  max-width: none;
+body {
+  font-family: 'Open Sans', sans-serif;
+}
 
+h2 {
+  text-align: center;
+}
+
+
+p {
+  text-align: center;
+}
+
+iframe {
+  display: block;
+  margin: 0 auto;
+}
+
+.img-responsive {
+  background-size: cover;
+  width:100%;
+}
+
+/* Main Navigation
+======================*/
+.navbar-default .navbar-brand {
+  font-size: 24px;
+  color: #C62828;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: white;
+    background-color: #C62828;
+}
+
+/* Global Footer
+======================*/
+.footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+<<<<<<< HEAD
+
+/* Carousel
+=======
+=======
+>>>>>>> homepage_layout
+/* Buttons
+======================*/
+.centerButton {
+  margin: auto;
+  text-align: center;
+}
+.homepageButtons {
+  margin-top: 70px;
+  max-width: 850px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imageButton1:hover {
+  border: 3px solid #C62828;
+}
+
+.imageButton2:hover {
+  border: 3px solid #C62828;
+}
+
+/* Homepage
+<<<<<<< HEAD
+>>>>>>> origin/homepage_layout
+=======
+>>>>>>> homepage_layout
+======================*/
+
+.carousel-caption h1 {
+  font-size: 40px;
+}
+
+.carousel-caption .lead {
+  font-size: 24px;
 }
 
 .carousel-caption {
   text-shadow: 2px 2px black;
+  padding-bottom: 150px;
 }
+
+.blueBackground {
+  background-color: #ECEFF1;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.glyphicon {
+  font-size: 5em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+<<<<<<< HEAD
+
+
+/* Forms
+======================*/
+form {
+  padding-top: 50px;
+  width: auto;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+.modal-body {
+  width: auto;
+}
+
+/* Buttons
+======================*/
+.centerButton {
+  margin: auto;
+  text-align: center;
+}
+
+/* Post a Bid page
+======*/
+
+#map {
+  height: 100%;
+  min-height: 500px;
+  min-width: 500px;
+}
+<<<<<<< HEAD
+=======
+>>>>>>> homepage_layout
+=======
+
+h4 {
+  color: black;
+}
+>>>>>>> 3512c861cd172f55bc514f49f3d60f586759e46d
