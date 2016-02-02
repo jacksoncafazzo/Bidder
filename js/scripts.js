@@ -1,12 +1,12 @@
 //Business Logic
 
-function Jobber(firstName, lastName, age, city, state, jobInterests, expertise) {
+function Jobber(firstName, lastName, age, city, state, typesOfJobs, expertise) {
   this.firstName = firstName;
   this.lastName = lastName;
   this.age = age;
   this.city = city;
   this.state = state;
-  this.jobInterests = jobInterests;
+  this.typesOfJobs = typesOfJobs;
   this.expertise = expertise;
 }
 
@@ -18,6 +18,7 @@ $(document).ready(function(){
     var firstName = $("input#first-name").val();
 
 
-  event.preventDefaul();
+    $("span#jobber-name").text(firstName);
+  event.preventDefault();
   });
 });
