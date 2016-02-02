@@ -66,11 +66,30 @@ h2 {
   padding-top: 1em;
 }
 
-.btn:hover
-{
+.btn:hover {
 background-image:none;
 background-color:#B4C60B;
 color: white;
+}
+
+/* Modal
+======================*/
+#interestedJobberModal {
+  text-align: center;
+}
+
+img {
+  border-radius: 52px;
+}
+
+p {
+  padding-top: 1em;
+}
+
+form {
+  max-width: 400px;
+  margin-left: 15%;
+  margin-bottom: 20px;
 }
 
 

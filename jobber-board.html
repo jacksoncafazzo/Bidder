@@ -71,7 +71,7 @@
                   <li>Neighborhood: Southeast</li>
                   <li>Bidder Name: Taylor</li>
                 </ul>
-                <button class="btn btn-default">I'm interested!</button>
+                <button class="btn btn-default" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I'm interested!</button>
               </div>
             </div>
           </div>
@@ -136,7 +136,7 @@
             <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
               <div class="panel-body">
                 <ul>
-                  <li>My husband loves these damn birds but I am sick of them running wild around our yard. Happy to provide refreshments and moral support.</li>
+                  <li>My husband loves these kooky birds but I am sick of them running wild around our yard. Happy to provide refreshments and moral support.</li>
                   <li>Job Duration: 6 hours</li>
                   <li>Date to be completed by: May 12, 2016</li>
                   <li>Location: Portland, Oregon</li>
@@ -246,9 +246,28 @@
         </div>
       </div>
 
-
-
-
+      <!-- Modal -->
+      <div class="modal fade" id="interestedJobberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Let's get to work!</h4>
+            </div>
+            <div class="modal-body">
+              <h4>So you want to plant a salsa garden?</h4>
+              <h4>Message Taylor to arrange a meetup!</h4>
+              <br>
+              <img class="lady-image"src="img/woman-hiking.jpg" alt="photograph of woman hiking">
+              <p>Hi! I'm Taylor!</p>
+              <form id="message-bidder">
+                <textarea class="form-control" id="message-to-bidder" rows="3" placeholder="Say hello to Taylor"></textarea>
+                <button type="submit" class="btn btn-primary btn-small close" data-dismiss="modal">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
 
 <!-- Footer -->
       <div class="container footer">
