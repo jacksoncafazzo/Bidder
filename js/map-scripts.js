@@ -15,17 +15,21 @@ function initialize () {
     mapTypeId: google.maps.MapTypeId.TERRAIN
   });
 
-  map.addListener('click', function (event) {
-    var myLatLng = event.LatLng
+  map.addListener("click", function (event) {
+    var latitude = event.latLng.lat();
+    var longitude = event.latLng.lng();
+    myLatLng = {lat: latitude, lng: longitude};
     var marker = new google.maps.Marker({
-    position: myLatLng,
-    // icon: bidder,
-    map: map,
+      position: myLatLng,
+      // icon: bidder,
+      map: map,
     });
-    markers.push(marker)
+    markersArray.push(marker);
   });
-
+  return coordinates;
 }
+
+
 
 // // Function to set a marker title
 // function setMarkerTitle(markerId, title) {
@@ -89,8 +93,8 @@ function initialize () {
 $(document).ready(function (event) {
 
   initialize();
-  $("#showMap").click(function (event) {
-
-  });
+  // $("#showMap").click(function (event) {
+  //
+  // });
 
 });
