@@ -89,13 +89,23 @@
           </div>
         </form>
       </div>
-      <div class="col-md-offset-2 col-md-8">
-        <div id="results">
-          <h2> Our suggested payment for this job would be in the range of <span class="priceRange"></span> dollars.</h2>
+      <div id="modal" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                 <h4 class="modal-title">Bid Suggestion for <span class="jobTitle"></span></h4>
+            </div>
+            <div class="modal-body">
+                <h2> Our suggested payment for this job would be in the range of <span class="priceRange"></span> dollars.</h2>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
 
     <hr>
 

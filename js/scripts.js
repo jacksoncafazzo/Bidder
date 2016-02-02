@@ -52,7 +52,7 @@ $(document).ready(function(){
     var bidSuggester = new BidSuggester(jobType, inputtedDifficulty);
     var bidRange = bidSuggester.range();
 
-    $("#results").show();
+    $("#modal").modal('show');
     $(".priceRange").text(bidRange);
 
     event.preventDefault();
