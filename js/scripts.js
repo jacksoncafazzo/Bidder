@@ -14,6 +14,8 @@ BidPost.prototype.bidSummary = function() {
   return this.jobTitle + " for " + this.payment;
 }
 
+/* Business Logic for Bid Suggester */
+
 function BidSuggester(jobType, difficultyLevel, paymentRange) {
   this.jobType = jobType;
   this.difficultyLevel = difficultyLevel;
@@ -21,20 +23,47 @@ function BidSuggester(jobType, difficultyLevel, paymentRange) {
 }
 
 BidSuggester.prototype.range = function() {
-  if(this.difficultyLevel === "Level 1");
-    return this.
-}
-
-
-
-
+  if (this.difficultyLevel === "Level 1") {
+    return this.paymentRange = "$5-20";
+  }
+  else if (this.difficultyLevel === "Level 2") {
+    return this.paymentRange = "$20-40";
+  }
+  else if (this.difficultyLevel === "Level 3") {
+    return this.paymentRange = "$40-60";
+  }
+  else if (this.difficultyLevel === "Level 4") {
+    return this.paymentRange = "$60-80";
+  }
+  else if (this.difficultyLevel === "Level 5") {
+    return this.paymentRange = "$80-100";
+  }
+  else {
+    return this.paymentRange = "No suggestion at this time.";
+  }
+};
 
 
 // $(document)ready(function(){
 //   $("form#bidSuggester").submit(function(){
+//
 //     var inputtedJobType = $("input#jobType").val();
+//     var bidSuggester = new BidSuggester(jobType, difficultyLevel);
+//     var bidRange = bidSuggester.range();
+//
+//     $(".range").text(bidSuggester);
+//
+//     event.preventDefault();
 //   });
 // });
+
+
+
+
+
+
+
+
 
 // $(document)ready(function() {
 //   $("form#postBid").submit(function(event) {
