@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/jobberstyles.css" type="text/css" media="all">
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="js/jobberscripts.js"></script>
+    <title>Bidder</title>
+  </head>
+  <body>
+    <div class="container">
+
+<!-- Navigation Bar -->
+      <div class="container">
+        <div class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand text-muted" href="index.html">BIDDER</a>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Open Bids</a></li>
+                <li><a href="bidder_page.html">Post a Bid</a></li>
+                <li><a href="jobber-signup.html">Become a Jobber</a></li>
+                <li><a href="about_page.html">About Bidder</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- Hero section -->
+      <section class="hero">
+        <div class="row intro">
+          <div class="small-centered medium-uncentered medium-6 large-7 columns">
+          <h1>Offer Your Services</h1>
+          </div>
+          <div class="small-centered medium-uncentered medium-6 large-5 columns">
+            <div class="image"></div>
+          </div>
+        </div>
+      </section>
+
+<!-- Sign-up Form -->
+      <div class="form-wrapper">
+        <form id=jobber-signUp>
+          <fieldset class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" class="form-control" id="first-name" placeholder="First Name">
+          </fieldset>
+          <fieldset class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" class="form-control" id="last-name" placeholder="Last Name">
+          </fieldset>
+          <fieldset class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" placeholder="readytowork@gmail.com">
+          </fieldset>
+          <fieldset class="form-group">
+            <label for="zipcode">Zipcode</label>
+            <input type="text" class="form-control" id="zipcode" placeholder="97214">
+          </fieldset>
+          <fieldset class="form-group">
+            <label for="typesOfJobs">What types of jobs would you be interested in?</label>
+            <input type="text" class="form-control" id="typesOfJobs" placeholder="Changing a bike tire, building a chicken coop, etc.">
+          </fieldset>
+          <fieldset class="form-group">
+            <label for="expertise">What makes you great at these jobs?</label>
+            <textarea class="form-control" id="expertise" rows="3" placeholder="Share your qualifications and areas of expertise..."></textarea>
+          </fieldset>
+          <!-- Button to trigger modal -->
+          <div class="centerButton">
+            <button type="submit" class="btn btn-primary" id="modal-trigger" data-toggle="modal" data-target="#submissionModal">
+              Become a Jobber
+            </button>
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="submissionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Welcome to the Community!</h4>
+                </div>
+                <div class="modal-body">
+                  <h3>Thanks for signing up <span id="jobber-name"></span>!</h3>
+                  <br>
+                  <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
+                  <h4>You can now build your profile, view and respond to jobs, and begin to connect with members of your community.</h4>
+                  <br>
+                  <h5>Check out the job board to find work in your area.</h5>
+                  <button type="button" id="job-board" class="btn btn-primary">Go to Job Board<a href=""></a></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+
+
+<!-- Footer -->
+      <div class="container footer">
+        <p>Bidders | All Rights Reserved | Copyright 2016</p>
+      </div>
+    </div> <!--Close container-->
+  </body>
+</html>
