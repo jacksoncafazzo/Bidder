@@ -21,9 +21,9 @@ Bids
 Jobber Pages
   - margin under navbar/above photo that doesn't exist on other pages
   - buttons should lead to the correct pages (link to jobber board)
+  - on jobber board, add "Not a jobber yet? Sign up here" link
+  - fix footers
+  - fix photo shadow
 
 About Page
   - Filler text replace with actual about section, content clean up
-
-Footers
-  - add global footer to each page -- fix styling on about page footer

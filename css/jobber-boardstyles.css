@@ -2,7 +2,7 @@
 ======================*/
 
 .hero {
-  background: url(../img/work-table.jpg) no-repeat center center;
+  background: url(../img/work-table-bg.png) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -27,11 +27,9 @@ h1 {
   letter-spacing: -0.025em;
   font-weight: 300;
   text-align: center;
-<<<<<<< HEAD
   text-shadow: 2px 2px black;
-=======
 
->>>>>>> 5a0d42ea7581919b7a2c099063107894e840eeea
+
 }
 
 h2 {
