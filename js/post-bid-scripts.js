@@ -5,12 +5,13 @@ var marker;
 var markers = [];
 var infowindows = [];
 var bidFormInfos = [];
+$("#map").data(bidFormInfos);
 var coordinates = [];
 var myLatLng = { lat: 45.521079, lng: -122.677585 };
 // $("#map").data(myLatLng);
 var imageData;
 var bid_icon = 'img/bid_icon.png';
-var bidsAndMarkers = [];
+
 
 
 function initialize () {
@@ -25,15 +26,13 @@ function initialize () {
   map.addListener("click", function (event) {
     myLatLng = { lat: event.latLng.lat(), lng: event.latLng.lng() };
     $("#modal").modal('show');
-    // $("#map").data(myLatLng);
+    $("#modal").data(myLatLng);
   });
-  return map;
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
 function createBidMarker(newBid) {
-  debugger;
   // myLatLng = $("#map").data()
 
   var contentString = '<div id="content">'+
@@ -56,7 +55,6 @@ function createBidMarker(newBid) {
   content: contentString,
   });
   infowindows.push(infowindow);
-  map = initialize(myLatLng)
 
   var marker = new google.maps.Marker({
     position: myLatLng,
@@ -67,18 +65,17 @@ function createBidMarker(newBid) {
   marker.addListener('click', function() {
     infowindow.open(map, marker);
   });
-debugger;
 
   // map = new google.maps.Map(document.getElementById("map"), mapOptions);
-markers.push(marker);
-marker.setMap(map);
 
-return (newBid, marker)
+newBid.marker.push(marker);
+newBid.marker.setMap(map);
+return newBid;
 }
 
 /* business logic for form and bidSummary */
 
-function BidPost(jobTitle, payment, jobDuration, dateCompleted, cityState, neighborhood, bidderName, jobDescription) {
+function BidPost(jobTitle, payment, jobDuration, dateCompleted, cityState, neighborhood, bidderName, jobDescription, marker, bids) {
   this.jobTitle = jobTitle;
   this.payment = payment;
   this.jobDuration = jobDuration;
@@ -87,6 +84,8 @@ function BidPost(jobTitle, payment, jobDuration, dateCompleted, cityState, neigh
   this.neighborhood = neighborhood;
   this.bidderName = bidderName;
   this.jobDescription = jobDescription;
+  this.marker = marker;
+  this.bids = bids;
 }
 
 BidPost.prototype.bidSummary = function() {
@@ -95,13 +94,13 @@ BidPost.prototype.bidSummary = function() {
 
 
 $(document).ready(function() {
-  initialize();
-
   $("#firstHeading").click(function () {
     $("#modal").modal('show');
   });
 
   $("#modalSubmit").click(function(event) {
+    myLatLng = $("#modal").data();
+    bidFormInfos = $("#map").data();
     count += 1;
     var inputtedjobTitle = $("input#jobTitle").val();
     var inputtedPayment = $("input#payment").val();
@@ -111,10 +110,9 @@ $(document).ready(function() {
     var inputtedNeighborhood = $("input#neighborhood").val();
     var inputtedjobDescription = $("input#jobDescription").val();
     var inputtedBidderName = $("input#bidderName").val();
-
-    var newBid = new BidPost(inputtedjobTitle, inputtedPayment, inputtedjobDuration, inputtedDateCompleted, inputtedCityState, inputtedNeighborhood, inputtedBidderName);
-
-    bidFormInfos.push(newBid);
+    debugger;
+    var newBid = new BidPost(inputtedjobTitle, inputtedPayment, inputtedjobDuration, inputtedDateCompleted, inputtedCityState, inputtedNeighborhood, inputtedBidderName, inputtedjobDescription, myLatLng);
+    // debugger;
     $("#bidList").prepend('<div class="panel-group userPanel" id="accordion" role="tablist" aria-multiselectable="true">' +
      '<div class="panel panel-default">' +
        '<div class="panel-heading" role="tab" id="userBid">' +
@@ -125,22 +123,29 @@ $(document).ready(function() {
        '<div id="userCollapse'+ count +'" class="panel-collapse collapse" role="tabpanel" aria-labelledby="userBid">' +
          '<div class="panel-body">' +
            '<ul>' +
-             '<li>' + inputtedjobDescription + '</li>' +
-             '<li>Job Duration:' + " " + inputtedjobDuration + '</li>' +
-             '<li>Date to be completed by:' + " " + inputtedDateCompleted + '</li>' +
-             '<li>Location:' + " " + inputtedCityState + '</li>' +
-             '<li>Neighborhood:' + " " + inputtedNeighborhood + '</li>' +
-             '<li>Bidder Name:' + " " + inputtedBidderName + '</li>' +
+             '<li>' + newBid.jobDescription + '</li>' +
+             '<li>Job Duration:' + " " + newBid.jobDuration + '</li>' +
+             '<li>Date to be completed by:' + " " + newBid.DateCompleted + '</li>' +
+             '<li>Location:' + " " + newBid.CityState + '</li>' +
+             '<li>Neighborhood:' + " " + newBid.Neighborhood + '</li>' +
+             '<li>Bidder Name:' + " " + newBid.BidderName + '</li>' +
            '</ul>' +
            '<button id="interested" class="btn btn-default">Interested!</button>' +
          '</div>' +
        '</div>' +
      '</div>' +
      '</div>');
-
     $("#modal").modal('hide');
+    map = initialize(newBid);
 
-
+    if (newBid.bids === undefined) {
+      newBid.bids = [];
+    }
+    newBid.bids.push(newBid);
+    for (var i = 0; i < Object.keys(newBid.bids).length; i++) {
+      newBid = (newBid.bids[i]);
+      newBid = (createBidMarker(newBid));
+    }
 
 
 
@@ -152,9 +157,9 @@ $(document).ready(function() {
     $("input#cityState").val("");
     $("input#neighborhood").val("");
     $("input#bidderName").val("");
-    bidsAndMarkers = createBidMarker(newBid, count);
-    debugger;
 
+    $("#map").data(newBid)
   });
-  // event.preventDefault();
+
 });
+  // event.preventDefault();
