@@ -67,16 +67,13 @@
           <div id="map"></div>
 
           <script type="text/javascript">
-
-
           </script>
+          <br></br>
 
           <!-- <button class="centerButton btn btn-default" id="showModal" type="" name="name" value="">POST A BID</button> -->
         </div>
       </div>
-      <button class="centerButton btn btn-default" id="showModal" type="" name="name" value="">POST A BID</button>
     </div>
-    <br></br>
 
 
 
@@ -260,3 +257,22 @@
     </div>
   </body>
 </html>
+
+
+
+
+
+<div id="content">
+  <div id="siteNotice"></div>
+  <h2 id="firstHeading" class="firstHeading"></h2>
+    <div class="bid-info-window">
+      <p>Proposed Payment: newBid.payment</p><br>
+      <p>Job Description: newBid.jobDescription</p><br>
+      <p>Job Duration: newBid.jobDuration</p><br>
+      <p>Complete By: newBid.dateCompleted</p><br>
+      <p>City and State: ' + newBid.cityState</p><br>
+      <p>Neighborhood: ' + newBid.neighborhood</p><br>
+      <p id="bidderName">Bidder Name: newBid.bidderName</p><br>
+      <div id="accept">Accept Bid</div>
+    </div>
+</div>

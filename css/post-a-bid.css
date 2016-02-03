@@ -8,3 +8,15 @@
 h4 {
   color: black;
 }
+
+/* Info box styles
+===================*/
+
+#content {
+  width: 500px;
+  text-align: left;
+}
+
+.payment-info-window {
+  text-align: left;
+}

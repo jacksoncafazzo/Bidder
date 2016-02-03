@@ -39,16 +39,18 @@ function createBidMarker(newBid) {
   '<div id="siteNotice">'+
   '</div>'+
   '<h2 id="firstHeading" class="firstHeading">' + newBid.jobTitle + '</h2>'+
-  '<div id="payment-info-window"><p>Proposed Payment: $' + newBid.payment + '</p></div>'+
-  '<div class="bid-info-window">'+
-  '<p>Job Duration: ' + newBid.jobDuration + '<br>'+
-  '<p>Complete By: ' + newBid.dateCompleted + '<br>'+
-  '<p>City and State: ' + newBid.cityState + '<br>'+
-  '<p>Neighborhood: ' + newBid.neighborhood + '<br>'+
+  '<div id="bid-info-window">' +
+  '<p>Proposed Payment: $' + newBid.payment + '</p>'+
+  '<p>Job Description: '+ newBid.jobDescription +
+  '</p>' +
+  '<p>Job Duration: ' + newBid.jobDuration + '</p>'+
+  '<p>Complete By: ' + newBid.dateCompleted + '</p>'+
+  '<p>City and State: ' + newBid.cityState + '</p>'+
+  '<p>Neighborhood: ' + newBid.neighborhood + '</p>'+
   '<p id="bidderName">Bidder Name: ' + newBid.bidderName +
-  '</p><p>Job Description '+ newBid.jobDescription +
-  '<p><div id="accept">Accept Bid</div><div id="decline">Decline Bid</div>'+
-  '</p>'+
+  '</p>' +
+  '<div id="accept">Accept Bid</div>' +
+  '</div>' +
   '</div>';
 
   var infowindow = new google.maps.InfoWindow( {
