@@ -4,6 +4,7 @@ var map;
 var marker;
 var markers = [];
 var infowindows = [];
+var bidFormInfos = [];
 var coordinates = [];
 var myLatLng;
 var imageData;
@@ -19,10 +20,11 @@ function initialize () {
 
   map.addListener("click", function (event) {
     markerLatLng = { lat: event.latLng.lat(), lng: event.latLng.lng() };
+
     var contentString = '<div id="content">'+
       '<div id="siteNotice">'+
       '</div>'+
-      '<h1 id="firstHeading" class="firstHeading"><a href="MODAL-LINK">Post A Bid</a></h1>'+
+      '<h2 id="firstHeading" class="firstHeading">Post A Bid</h2>'+
       '<div id="bodyContent">'+
       '<div class="glyphicon">'+
       '<p>Latitude: ' + event.latLng.lat() + '</p>'+
@@ -68,10 +70,9 @@ function initialize () {
 
 /* business logic for form and bidSummary */
 
-function BidPost(jobTitle, payment, jobDescription, jobDuration, dateCompleted, cityState, neighborhood, bidderName) {
+function BidPost(jobTitle, payment, jobDuration, dateCompleted, cityState, neighborhood, bidderName) {
   this.jobTitle = jobTitle;
   this.payment = payment;
-  this.jobDescription = jobDescription,
   this.jobDuration = jobDuration;
   this.dateCompleted = dateCompleted;
   this.cityState = cityState;
@@ -80,33 +81,35 @@ function BidPost(jobTitle, payment, jobDescription, jobDuration, dateCompleted, 
 }
 
 BidPost.prototype.bidSummary = function() {
-  return this.jobTitle + " for $" + this.payment;
+  return this.jobTitle + " for " + this.payment;
 }
 
-$(document).on('click', '#showModal', function() {
+$(".siteNotice").on('click', '#showModal', function() {
     $("#modal").modal('show');
+    console.log("this works");
   });
 
-$(document).on('click', '#interested', function() {
-    $("#interestedModal").modal('show');
-  });
 
 $(document).ready(function() {
   initialize();
+  $("#firstHeading").click(function () {
+    $("#modal").modal('show');
+  });
+
   $("form#postBid").submit(function(event) {
-
     count += 1;
-
     var inputtedjobTitle = $("input#jobTitle").val();
     var inputtedPayment = $("input#payment").val();
-    var inputtedjobDescription = $("input#jobDescription").val();
     var inputtedjobDuration = $("input#jobDuration").val();
     var inputtedDateCompleted = $("input#dateCompleted").val();
     var inputtedCityState = $("input#cityState").val();
     var inputtedNeighborhood = $("input#neighborhood").val();
     var inputtedBidderName = $("input#bidderName").val();
 
-    var newBidPost = new BidPost(inputtedjobTitle, inputtedPayment, inputtedjobDescription, inputtedjobDuration, inputtedDateCompleted, inputtedCityState, inputtedNeighborhood, inputtedBidderName);
+    var newBid = new BidPost(inputtedjobTitle, inputtedPayment, inputtedjobDuration, inputtedDateCompleted, inputtedCityState, inputtedNeighborhood, inputtedBidderName);
+
+    bidFormInfos.push(newBid);
+    console.log(bidFormInfos[count - 1]);
 
 
     $("#bidList").prepend('<div class="panel-group userPanel" id="accordion" role="tablist" aria-multiselectable="true">' +
@@ -132,18 +135,16 @@ $(document).ready(function() {
      '</div>' +
      '</div>');
 
-
     $("#modal").modal('hide');
 
     $("input#jobTitle").val("");
     $("input#payment").val("");
-    $("input#jobDescription").val("");
     $("input#jobDuration").val("");
     $("input#dateCompleted").val("");
     $("input#cityState").val("");
     $("input#neighborhood").val("");
     $("input#bidderName").val("");
 
-    event.preventDefault();
   });
+
 });
