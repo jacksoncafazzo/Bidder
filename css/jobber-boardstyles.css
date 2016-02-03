@@ -63,7 +63,13 @@ h2 {
 ======================*/
 
 .postings {
-  padding-top: 1em;
+  padding-top: 0.7em;
+}
+
+.postings h2 {
+  text-align: left;
+  color: black;
+  padding-bottom: 0.4em;
 }
 
 .btn:hover {
