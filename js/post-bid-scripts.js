@@ -5,18 +5,14 @@ var marker;
 var markers = [];
 var infowindows = [];
 var bidFormInfos = [];
-$("#map").data(bidFormInfos);
 var coordinates = [];
 var myLatLng = { lat: 45.521079, lng: -122.677585 };
-// $("#map").data(myLatLng);
 var imageData;
 var bid_icon = 'img/bid_icon.png';
 
 
 
 function initialize () {
-  // myLatLng = $(s"#map").data();
-
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14,
     center: myLatLng,
@@ -26,7 +22,6 @@ function initialize () {
   map.addListener("click", function (event) {
     myLatLng = { lat: event.latLng.lat(), lng: event.latLng.lng() };
     $("#modal").modal('show');
-    $("#modal").data(myLatLng);
   });
   return map;
 }
@@ -34,9 +29,6 @@ function initialize () {
 google.maps.event.addDomListener(window, 'load', initialize);
 
 function createBidMarker(newBid) {
-  myLatLng = $("#map").data();
-
-  // myLatLng = $("#map").data()
 
   var contentString = '<div id="content">'+
   '<div id="siteNotice">'+
@@ -57,7 +49,6 @@ function createBidMarker(newBid) {
   '</div>' +
   '</div>';
 
-
   var infowindow = new google.maps.InfoWindow( {
   content: contentString,
   });
@@ -73,7 +64,6 @@ function createBidMarker(newBid) {
     infowindow.open(map, marker);
   });
 
-  // map = new google.maps.Map(document.getElementById("map"), mapOptions);
 if (newBid.marker === undefined) {
   newBid.marker = [];
 }
@@ -110,16 +100,9 @@ $(document).ready(function() {
     $("#modal").modal('show');
   });
   initialize();
-  //
-  // $("#firstHeading").click(function () {
-  //   $("#modal").modal('show');
-  // });
+
 
   $("#modalSubmit").click(function(event) {
-
-    myLatLng = $("#modal").data();
-    bidFormInfos = $("#map").data();
-
     event.preventDefault();
 
     count += 1;
@@ -144,10 +127,6 @@ $(document).ready(function() {
       newBid = (createBidMarker(newBid));
     }
     newBid.bids.push(newBid);
-
-
-    var newBid = new BidPost(inputtedjobTitle, inputtedPayment, inputtedjobDuration, inputtedDateCompleted, inputtedCityState, inputtedNeighborhood, inputtedBidderName, inputtedjobDescription);
-
 
     $("#bidList").prepend('<div class="panel-group userPanel" id="accordion" role="tablist" aria-multiselectable="true">' +
      '<div class="panel panel-default">' +
@@ -183,10 +162,7 @@ $(document).ready(function() {
     $("input#bidderName").val("");
 
 
-    bidsAndMarkers = createBidMarker(newBid, count);
-
-
-    $("#map").data(newBid)
+    // bidsAndMarkers = createBidMarker(newBid, count);
   });
 });
   // event.preventDefault();
