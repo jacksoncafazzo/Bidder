@@ -1,7 +1,3 @@
-body {
-  font-family: 'Open Sans', sans-serif;
-}
-
 .hero {
   background: url(../img/hands-bg.png) no-repeat center center;
 }
@@ -29,19 +25,4 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   color: grey;
-}
-
-
-.navbar-default .navbar-brand {
-  font-size: 24px;
-  color: #C62828;
-}
-
-/*.navbar-default .navbar-nav > li > a {
-    color: green;
-}*/
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-    color: white;
-    background-color: #C62828;
 }
