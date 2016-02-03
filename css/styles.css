@@ -19,6 +19,14 @@ iframe {
   margin: 0 auto;
 }
 
+a {
+  color: #C62828;
+}
+
+a:hover {
+  color: #C62828;
+}
+
 .img-responsive {
   background-size: cover;
   width:100%;
@@ -26,6 +34,28 @@ iframe {
 
 /* Buttons
 ======================*/
+.btn-primary {
+  background-color: #C62828;
+  border: solid #C62828;
+}
+
+.btn-primary:hover {
+  background-color: white;
+  border: solid #C62828;
+  color: #C62828;
+}
+
+.btn-primary:focus {
+  background-color: #C62828;
+  border: solid #C62828;
+}
+
+.btn-primary:focus:hover {
+  background-color: white;
+  border: solid #C62828;
+  color: #C62828;
+}
+
 .centerButton {
   margin: auto;
   text-align: center;
