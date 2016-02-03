@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/jobber-boardstyles.css" type="text/css" media="all">
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="js/jobber-boardscripts.js"></script>
-    <title>Bidder</title>
+    <title>Jobber Board</title>
   </head>
   <body>
-    <div class="container">
 
 <!-- Navigation Bar -->
       <div class="navbar navbar-default navbar-fixed-top">
@@ -35,7 +35,7 @@
           </div>
         </div>
       </div>
-    </div>
+
 
 <!-- Hero section -->
       <section class="hero">
@@ -51,204 +51,220 @@
       </section>
 
 <!-- Job Postings -->
+    <div class="container">
       <div class="postings">
         <h2>Open Bids</h2>
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingOne">
-              <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                     <span class="job-title">Plant a Salsa Garden for $100</span>
-                </a>
-              </h4>
+
+    <!-- Tab Indicators -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active" id="list-view"><a href="#list" araia-controls="list" role="tab" data-toggle="tab">List View</a>
+          </li>
+          <li role="presentation"><a href="#map" aria-controls="profile" role="tab" data-toggle="tab" id="map-view">Map View</a>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane" id="map"><img src="http://portlandoctopus.com/wp-content/uploads/2008/04/pearlmap3.jpg" alt="image of a map of Portland, Oregon">
+          </div>
+          <div role="tabpanel" class="tab-pane active" id="list">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                         <span class="job-title">Plant a Salsa Garden for $100</span>
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                    <ul>
+                      <li>I would love to have a small salsa garden! I have the perfect place in my yard, but have never done any gardening myself.</li>
+                      <li>Job Duration: 5 hours</li>
+                      <li>Date to be completed by: March, 1 2016</li>
+                      <li>Location: Portland, Oregon</li>
+                      <li>Neighborhood: Southeast</li>
+                      <li>Bidder Name: Taylor</li>
+                    </ul>
+                    <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal1">I'm interested!</button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-              <div class="panel-body">
-                <ul>
-                  <li>I would love to have a small salsa garden! I have the perfect place in my yard, but have never done any gardening myself.</li>
-                  <li>Job Duration: 5 hours</li>
-                  <li>Date to be completed by: March, 1 2016</li>
-                  <li>Location: Portland, Oregon</li>
-                  <li>Neighborhood: Southeast</li>
-                  <li>Bidder Name: Taylor</li>
-                </ul>
-                <button class="btn btn-default" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I'm interested!</button>
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                         Fix Bike Tires for $60
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+                    <ul>
+                      <li>I have an old Schwinn that needs new tires and I'd like to have someone in the community fix them up.</li>
+                      <li>Job Duration: 1.5 hours</li>
+                      <li>Date to be completed by: Before April 2016</li>
+                      <li>Location: Portland, Oregon</li>
+                      <li>Neighborhood: Northeast</li>
+                      <li>Bidder Name: Gabe</li>
+                    </ul>
+                    <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal2">I'm interested!</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                         Teach Drawing Class for $30
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                  <div class="panel-body">
+                    <ul>
+                      <li>My son is very interested in art and I'd like to find someone to teach him more advanced drawing techniques. Must be available after 3pm on weekdays.</li>
+                      <li>Job Duration: 1.5 hours/day, once a week</li>
+                      <li>Date to be completed by: June 2016</li>
+                      <li>Location: Portland, Oregon</li>
+                      <li>Neighborhood: Northeast</li>
+                      <li>Bidder Name: Steven</li>
+                    </ul>
+                    <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal3">I'm interested!</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingFour">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                         Build Chicken Coop for $150
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                  <div class="panel-body">
+                    <ul>
+                      <li>My husband loves these kooky birds but I am sick of them running wild around our yard. Happy to provide refreshments and moral support.</li>
+                      <li>Job Duration: 6 hours</li>
+                      <li>Date to be completed by: May 12, 2016</li>
+                      <li>Location: Portland, Oregon</li>
+                      <li>Neighborhood: Southeast</li>
+                      <li>Bidder Name: Cricket</li>
+                    </ul>
+                    <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal4">I'm interested!</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingFive">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                         Paint Sitting Room for $75
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                  <div class="panel-body">
+                    <ul>
+                      <li>My sitting room could benefit from a nice coat of paint. You provide the paint clothes, I'll provide the rollers, paint, and tape.</li>
+                      <li>Job Duration: 4 hours</li>
+                      <li>Date to be completed by: February 20, 2016</li>
+                      <li>Location: Portland, Oregon</li>
+                      <li>Neighborhood: Southwest</li>
+                      <li>Bidder Name: Mark</li>
+                    </ul>
+                    <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal5">I'm interested!</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingSix">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                         Rake Leaves for $20
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                  <div class="panel-body">
+                    <ul>
+                      <li>My yard is full of leaves that need to be raked up from last fall. I injured my hip this winter and I would appreciate the help very much!</li>
+                      <li>Job Duration: 2 hours</li>
+                      <li>Date to be completed by: Before March 2016</li>
+                      <li>Location: Portland, Oregon</li>
+                      <li>Neighborhood: Northwest</li>
+                      <li>Bidder Name: Elle</li>
+                    </ul>
+                    <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal6">I'm interested!</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingSeven">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+                         Harvest Irises $50
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+                  <div class="panel-body">
+                    <ul>
+                      <li>Looking for able-bodied people to help harvest irises this summer. We work in the mornings when it's cool from about 7 until noon. Work usually lasts about 5-10 days depending on how many orders we can fill in a day, and we ask that you be willing to commit to at least three days. Bring a water bottle!</li>
+                      <li>Job Duration: 5 hours</li>
+                      <li>Date to be completed by: End of July 2016</li>
+                      <li>Location: Portland, Oregon</li>
+                      <li>Neighborhood: Northeast</li>
+                      <li>Bidder Name: Joanne</li>
+                    </ul>
+                    <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal7">I'm interested!</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingEight">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+                         Help Meal Prep for $60
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+                  <div class="panel-body">
+                    <ul>
+                      <li>My husband and I have a family of six and I need a little extra help on Sundays prepping meals for the week. Looking for someone who is comfortable in the kitchen to help me prepare 5-6 dishes. Recipes and ingredients provided!</li>
+                      <li>Job Duration: 4 hours</li>
+                      <li>Date to be completed by: February 7, 2016</li>
+                      <li>Location: Portland, Oregon</li>
+                      <li>Neighborhood: Northeast</li>
+                      <li>Bidder Name: Gwen</li>
+                    </ul>
+                    <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal8">I'm interested!</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingTwo">
-              <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                     Fix Bike Tires for $60
-                </a>
-              </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-              <div class="panel-body">
-                <ul>
-                  <li>I have an old Schwinn that needs new tires and I'd like to have someone in the community fix them up.</li>
-                  <li>Job Duration: 1.5 hours</li>
-                  <li>Date to be completed by: Before April 2016</li>
-                  <li>Location: Portland, Oregon</li>
-                  <li>Neighborhood: Northeast</li>
-                  <li>Bidder Name: Gabe</li>
-                </ul>
-                <button class="btn btn-default" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I'm interested!</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingThree">
-              <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                     Teach Drawing Class for $30
-                </a>
-              </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-              <div class="panel-body">
-                <ul>
-                  <li>My son is very interested in art and I'd like to find someone to teach him more advanced drawing techniques. Must be available after 3pm on weekdays.</li>
-                  <li>Job Duration: 1.5 hours/day, once a week</li>
-                  <li>Date to be completed by: June 2016</li>
-                  <li>Location: Portland, Oregon</li>
-                  <li>Neighborhood: Northeast</li>
-                  <li>Bidder Name: Steven</li>
-                </ul>
-                <button class="btn btn-default" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I'm interested!</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingFour">
-              <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                     Build Chicken Coop for $150
-                </a>
-              </h4>
-            </div>
-            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-              <div class="panel-body">
-                <ul>
-                  <li>My husband loves these kooky birds but I am sick of them running wild around our yard. Happy to provide refreshments and moral support.</li>
-                  <li>Job Duration: 6 hours</li>
-                  <li>Date to be completed by: May 12, 2016</li>
-                  <li>Location: Portland, Oregon</li>
-                  <li>Neighborhood: Southeast</li>
-                  <li>Bidder Name: Cricket</li>
-                </ul>
-                <button class="btn btn-default" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I'm interested!</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingFive">
-              <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
-                     Paint Sitting Room for $75
-                </a>
-              </h4>
-            </div>
-            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-              <div class="panel-body">
-                <ul>
-                  <li>My sitting room could benefit from a nice coat of paint. You provide the paint clothes, I'll provide the rollers, paint, and tape.</li>
-                  <li>Job Duration: 4 hours</li>
-                  <li>Date to be completed by: February 20, 2016</li>
-                  <li>Location: Portland, Oregon</li>
-                  <li>Neighborhood: Southwest</li>
-                  <li>Bidder Name: Mark</li>
-                </ul>
-                <button class="btn btn-default" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I'm interested!</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingSix">
-              <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-                     Rake Leaves for $20
-                </a>
-              </h4>
-            </div>
-            <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
-              <div class="panel-body">
-                <ul>
-                  <li>My yard is full of leaves that need to be raked up from last fall. I injured my hip this winter and I would appreciate the help very much!</li>
-                  <li>Job Duration: 2 hours</li>
-                  <li>Date to be completed by: Before March 2016</li>
-                  <li>Location: Portland, Oregon</li>
-                  <li>Neighborhood: Northwest</li>
-                  <li>Bidder Name: Elle</li>
-                </ul>
-                <button class="btn btn-default" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I'm interested!</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingSeven">
-              <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
-                     Harvest Irises $50
-                </a>
-              </h4>
-            </div>
-            <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
-              <div class="panel-body">
-                <ul>
-                  <li>Looking for able-bodied people to help harvest irises this summer. We work in the mornings when it's cool from about 7 until noon. Work usually lasts about 5-10 days depending on how many orders we can fill in a day, and we ask that you be willing to commit to at least three days. Bring a water bottle!</li>
-                  <li>Job Duration: 5 hours</li>
-                  <li>Date to be completed by: End of July 2016</li>
-                  <li>Location: Portland, Oregon</li>
-                  <li>Neighborhood: Northeast</li>
-                  <li>Bidder Name: Joanne</li>
-                </ul>
-                <button class="btn btn-default" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I'm interested!</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingEight">
-              <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
-                     Help Meal Prep for $60
-                </a>
-              </h4>
-            </div>
-            <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
-              <div class="panel-body">
-                <ul>
-                  <li>My husband and I have a family of six and I need a little extra help on Sundays prepping meals for the week. Looking for someone who is comfortable in the kitchen to help me prepare 5-6 dishes. Recipes and ingredients provided!</li>
-                  <li>Job Duration: 4 hours</li>
-                  <li>Date to be completed by: February 7, 2016</li>
-                  <li>Location: Portland, Oregon</li>
-                  <li>Neighborhood: Northeast</li>
-                  <li>Bidder Name: Gwen</li>
-                </ul>
-                <button class="btn btn-default" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I'm interested!</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        </div> <!-- End of tab content -->
+      </div> <!-- End of job postings -->
 
       <!-- Modals -->
-      <div class="modal fade" id="interestedJobberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal fade" id="interestedJobberModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -259,7 +275,7 @@
               <h4>So you want to plant a salsa garden?</h4>
               <h4>Message Taylor to arrange a meetup!</h4>
               <br>
-              <img class="lady-image"src="img/woman-hiking.jpg" alt="photograph of woman hiking">
+              <img class="lady-image"src="img/woman-in-the-city.jpg" alt="photograph of woman hiking">
               <p>Hi, I'm Taylor!</p>
               <form id="message-bidder">
                 <textarea class="form-control" id="message-to-bidder" rows="3" placeholder="Let Taylor know you're interested..."></textarea>
@@ -270,11 +286,169 @@
           </div>
         </div>
       </div>
+      <div class="modal fade" id="interestedJobberModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 class="modal-title" id="myModalLabel">Let's get to work!</h3>
+            </div>
+            <div class="modal-body">
+              <h4>So you're handy with bikes?</h4>
+              <h4>Message Gabe to arrange a meetup!</h4>
+              <br>
+              <img class="lady-image"src="img/man-hiking.jpg" alt="photograph of woman hiking">
+              <p>Hi, I'm Gabe!</p>
+              <form id="message-bidder">
+                <textarea class="form-control" id="message-to-bidder" rows="3" placeholder="Let Gabe know you're interested..."></textarea>
+                <br>
+                <button type="submit" class="btn btn-primary btn-small" data-dismiss="modal">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="interestedJobberModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 class="modal-title" id="myModalLabel">Let's get to work!</h3>
+            </div>
+            <div class="modal-body">
+              <h4>Fancy yourself the next Picasso?</h4>
+              <h4>Message Steven to arrange a meetup!</h4>
+              <br>
+              <img class="lady-image"src="img/dad-with-kid.jpg" alt="photograph of woman hiking">
+              <p>Hi, I'm Steven!</p>
+              <form id="message-bidder">
+                <textarea class="form-control" id="message-to-bidder" rows="3" placeholder="Let Steven know you're interested..."></textarea>
+                <br>
+                <button type="submit" class="btn btn-primary btn-small" data-dismiss="modal">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="interestedJobberModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 class="modal-title" id="myModalLabel">Let's get to work!</h3>
+            </div>
+            <div class="modal-body">
+              <h4>Been itching to make something with your hands?</h4>
+              <h4>Message Cricket to arrange a meetup!</h4>
+              <br>
+              <img class="lady-image"src="img/yoga-woman.jpg" alt="photograph of woman hiking">
+              <p>Hi, I'm Cricket!</p>
+              <form id="message-bidder">
+                <textarea class="form-control" id="message-to-bidder" rows="3" placeholder="Let Cricket know you're interested..."></textarea>
+                <br>
+                <button type="submit" class="btn btn-primary btn-small" data-dismiss="modal">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="interestedJobberModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 class="modal-title" id="myModalLabel">Let's get to work!</h3>
+            </div>
+            <div class="modal-body">
+              <h4>Ready to roll?</h4>
+              <h4>Message Mark to arrange a meetup!</h4>
+              <br>
+              <img class="lady-image"src="img/man-in-winter.jpg" alt="photograph of woman hiking">
+              <p>Hi, I'm Mark!</p>
+              <form id="message-bidder">
+                <textarea class="form-control" id="message-to-bidder" rows="3" placeholder="Let Mark know you're interested..."></textarea>
+                <br>
+                <button type="submit" class="btn btn-primary btn-small" data-dismiss="modal">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="interestedJobberModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 class="modal-title" id="myModalLabel">Let's get to work!</h3>
+            </div>
+            <div class="modal-body">
+              <h4>Interested in getting outdoors for an afternoon?</h4>
+              <h4>Message Elle to arrange a meetup!</h4>
+              <br>
+              <img class="lady-image"src="img/woman-in-garden.jpg" alt="photograph of woman hiking">
+              <p>Hi, I'm Elle!</p>
+              <form id="message-bidder">
+                <textarea class="form-control" id="message-to-bidder" rows="3" placeholder="Let Elle know you're interested..."></textarea>
+                <br>
+                <button type="submit" class="btn btn-primary btn-small" data-dismiss="modal">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="interestedJobberModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 class="modal-title" id="myModalLabel">Let's get to work!</h3>
+            </div>
+            <div class="modal-body">
+              <h4>Want to harvest irises?</h4>
+              <h4>Message Joanne to arrange a meetup!</h4>
+              <br>
+              <img class="lady-image"src="img/woman-hiking.jpg" alt="photograph of woman hiking">
+              <p>Hi, I'm Joanne!</p>
+              <form id="message-bidder">
+                <textarea class="form-control" id="message-to-bidder" rows="3" placeholder="Let Joanne know you're interested..."></textarea>
+                <br>
+                <button type="submit" class="btn btn-primary btn-small" data-dismiss="modal">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="interestedJobberModal8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 class="modal-title" id="myModalLabel">Let's get to work!</h3>
+            </div>
+            <div class="modal-body">
+              <h4>You're a real wiz in the kitchen huh?</h4>
+              <h4>Message Gwen to arrange a meetup!</h4>
+              <br>
+              <img class="lady-image"src="img/woman-in-field.jpg" alt="photograph of woman hiking">
+              <p>Hi, I'm Gwen!</p>
+              <form id="message-bidder">
+                <textarea class="form-control" id="message-to-bidder" rows="3" placeholder="Let Gwen know you're interested..."></textarea>
+                <br>
+                <button type="submit" class="btn btn-primary btn-small" data-dismiss="modal">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
 
 <!-- Footer -->
+      <hr>
       <div class="container footer">
+        <p><strong>Bidder</strong> was created at <a target="_blank" href="http://www.epicodus.com">Epicodus</a> by Jackson Cafazzo, Brooke Hurford, Jessica Fix, and Taylor Pokoj.
+        <br>
         <p>Bidders | All Rights Reserved | Copyright 2016</p>
       </div>
-    </div> <!--Close container-->
+    </div>  <!--Close container--> -->
   </body>
 </html>

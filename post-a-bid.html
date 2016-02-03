@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/post-a-bid.css" type="text/css" media="all">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -66,16 +67,13 @@
           <div id="map"></div>
 
           <script type="text/javascript">
-
-
           </script>
+          <br></br>
 
           <!-- <button class="centerButton btn btn-default" id="showModal" type="" name="name" value="">POST A BID</button> -->
         </div>
       </div>
-      <button class="centerButton btn btn-default" id="showModal" type="" name="name" value="">POST A BID</button>
     </div>
-    <br></br>
 
 
 
@@ -123,7 +121,7 @@
                     <input type="text" id="bidderName" class="form-control">
                   </div>
                 <div class="centerButton">
-                  <div id="modalSubmit" class="modal-submit"><p>POST YOUR BID</p></div>
+                  <button id="modalSubmit" class="btn btn-default modal-submit">POST YOUR BID</button>
                 </div>
               </form>
             </div>
@@ -140,6 +138,7 @@
     <!-- Bid List, including fake bids and appended user input bidSummary" -->
     <div class="container">
       <h3>Current Open Bids</h3>
+      <p id="findMore"><em>Find more open bids on the </em><a href="jobber-board.html">Jobber Board</a>.</p>
       <div id="bidList">
         <!-- user bid will append here -->
 
@@ -163,7 +162,7 @@
                  <li>Neighborhood: Southeast</li>
                  <li>Bidder Name: Taylor</li>
                </ul>
-               <button id="interested" class="btn btn-default">I'm interested!</button>
+               <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I'm interested!</button>
              </div>
            </div>
          </div>
@@ -187,7 +186,7 @@
                  <li>Neighborhood: Northwest</li>
                  <li>Bidder Name: Gloria</li>
                </ul>
-               <button id="interested" class="btn btn-default">I'm interested!</button>
+               <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I'm interested!</button>
              </div>
            </div>
          </div>
@@ -211,7 +210,7 @@
                  <li>Neighborhood: Northeast</li>
                  <li>Bidder Name: Blake</li>
                </ul>
-               <button id="interested" class="btn btn-default">I'm interested!</button>
+               <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I'm interested!</button>
              </div>
            </div>
          </div>
@@ -221,40 +220,31 @@
 
 <!-- I'm interested modal -->
 
-    <div id="interestedModal" class="modal fade">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h2 class="modal-title">Sweet !</h2>
-          </div>
-          <div class="modal-body">
-            <form class="form-horizontal" role="form">
-              <div class="form-group">
-                <label class="control-label" for="">Jobber Name</label>
-                <input type="text" class="form-control" id="" placeholder="Your Name"/>
-              </div>
-              <div class="form-group">
-                <label class="control-label" for="inputEmail3">Email</label>
-                <input type="email" class="form-control" id="inputEmail3" placeholder="Email"/>
-              </div>
-              <div class="form-group">
-                <label class="control-label" for="">Why you would be good for the job:</label>
-                <input type="text" class="form-control" id="" placeholder=""/>
-              </div>
-              <div class="form-group">
-                <button id="submitInterest" type="submit" class="btn btn-default">Message Bidder</button>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-          </div>
-        </div>
+<div class="modal fade" id="interestedJobberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="myModalLabel">Let's get to work!</h3>
+      </div>
+      <div class="modal-body">
+        <h4>Interested in this bid? Message me to arrange a meetup!</h4>
+        <br>
+        <img class="lady-image"src="img/woman-hiking.jpg" alt="photograph of woman hiking">
+        <form id="message-bidder">
+          <textarea class="form-control" id="message-to-bidder" rows="3" placeholder="Let me know why you'd be good for this job..."></textarea>
+          <br>
+          <button type="submit" class="btn btn-default btn-small" data-dismiss="modal">Message Bidder</button>
+        </form>
       </div>
     </div>
+  </div>
+</div>
 
     <hr>
     <div class="container footer">
+      <p><strong>Bidder</strong> was created at <a target="_blank" href="http://www.epicodus.com">Epicodus</a> by Jackson Cafazzo, Brooke Hurford, Jessica Fix, and Taylor Pokoj.
+      <br>
       <p>Bidders | All Rights Reserved | Copyright 2016</p>
     </div>
   </body>

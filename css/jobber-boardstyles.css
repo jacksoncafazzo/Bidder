@@ -1,28 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
-/* Main Navigation
-======================*/
-.navbar-default .navbar-brand {
-  font-size: 24px;
-  color: #C62828;
-}
-
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-    color: white;
-    background-color: #C62828;
-}
-
-
-body {
-font-family: 'Open Sans', sans-serif;
-}
-
 /* Hero Layout
 ======================*/
 
 .hero {
-  background: url(../img/work-table.jpg) no-repeat center center;
+  background: url(../img/work-table-bg.png) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -30,7 +10,6 @@ font-family: 'Open Sans', sans-serif;
   display: table;
   width: 100%;
   padding-top: 25%;
-  margin-top: 4.5%;
 }
 
 .hero .intro {
@@ -47,6 +26,9 @@ h1 {
   letter-spacing: -0.025em;
   font-weight: 300;
   text-align: center;
+  text-shadow: 2px 2px black;
+
+
 }
 
 h2 {
@@ -56,6 +38,10 @@ h2 {
   letter-spacing: -0.025em;
   font-weight: 300;
   text-align: center;
+}
+
+.intro h2 {
+  text-shadow: 2px 2px black;
 }
 
 
@@ -74,15 +60,9 @@ h2 {
   padding-bottom: 0.4em;
 }
 
-.btn:hover {
-background-image:none;
-background-color:#B4C60B;
-color: white;
-}
-
 /* Modal
 ======================*/
-#interestedJobberModal {
+#interestedJobberModal1, #interestedJobberModal2, #interestedJobberModal2, #interestedJobberModal3, #interestedJobberModal4, #interestedJobberModal5, #interestedJobberModal6, #interestedJobberModal7, #interestedJobberModal8 {
   text-align: center;
 }
 
@@ -98,16 +78,4 @@ form {
   max-width: 450px;
   max-height: 500px;
   margin: 0 auto;
-}
-
-
-/* Global Footer
-======================*/
-.footer {
-  position:fixed;
-   left:0px;
-   bottom:0px;
-   height:30px;
-   width:100%;
-   text-align: center;
 }

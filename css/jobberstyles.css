@@ -1,28 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
-/* Main Navigation
-======================*/
-.navbar-default .navbar-brand {
-  font-size: 24px;
-  color: #C62828;
-}
-
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-    color: white;
-    background-color: #C62828;
-}
-
-
-body {
-font-family: 'Open Sans', sans-serif;
-}
-
 /* Hero Layout
 ======================*/
 
 .hero {
-  background: url(../img/brushes.jpg) no-repeat center center;
+  background: url(../img/brushes-bg.png) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -30,7 +10,6 @@ font-family: 'Open Sans', sans-serif;
   display: table;
   width: 100%;
   padding-top: 25%;
-  margin-top: 4.5%;
 }
 
 .hero .intro {
@@ -47,6 +26,7 @@ h1 {
   letter-spacing: -0.025em;
   font-weight: 300;
   text-align: center;
+  text-shadow: 2px 2px black;
 }
 
 /* Form
@@ -63,14 +43,6 @@ h1 {
   margin-bottom: 4em;
 }
 
-::-webkit-input-placeholder {
-  font-style: italic;
-}
-
-.centerButton {
-  text-align: center;
-}
-
 /* Modal
 ======================*/
 #submissionModal {
@@ -79,6 +51,7 @@ h1 {
 
 .glyphicon-leaf {
   font-size: 40px;
+  margin-top: -25px;
 }
 
 h4 {
@@ -87,16 +60,4 @@ h4 {
 
 h5 {
   padding-bottom: 1em;
-}
-
-
-/* Global Footer
-======================*/
-.footer {
-  position:fixed;
-   left:0px;
-   bottom:0px;
-   height:30px;
-   width:100%;
-   text-align: center;
 }

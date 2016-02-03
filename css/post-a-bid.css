@@ -1,0 +1,28 @@
+/* Styles specific to the Post a Bid page */
+#map {
+  height: 100%;
+  min-height: 500px;
+  min-width: 500px;
+}
+
+h4 {
+  color: black;
+}
+
+/* Info box styles
+===================*/
+
+#content {
+  width: 400px;
+  text-align: left;
+}
+
+#content p {
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 35px;
+}
+
+#findMore {
+  text-align: left;
+}

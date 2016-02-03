@@ -5,7 +5,7 @@ Navbar
 
 Styles
   - organize global styles.css so it is clear what page the styles belong to
-  - try to have elements styled the same way on different pages (ex: same result for clicking "I'm interested" button on Jobber Board and on Post A Bid page)
+  - try to have elements styled the same way on different pages
   - make carousel/header images the same height, maybe make sure the text on it is shadowed if necessary
 
 Map
@@ -14,18 +14,16 @@ Map
 
 
 Bids
-  - option to remove bids?
+  - option to remove bids after posting it??? -- pop up a modal with a password to do it? (hardcode password 'delete' ?)
 
 
-Post A Bid page
-  - Get I'm Interested buttons to pop up the same modal that pops up on jobber board page
 
 Jobber Pages
   - margin under navbar/above photo that doesn't exist on other pages
   - buttons should lead to the correct pages (link to jobber board)
+  - on jobber board, add "Not a jobber yet? Sign up here" link
+  - fix footers
+  - fix photo shadow
 
 About Page
   - Filler text replace with actual about section, content clean up
-
-Footers
-  - add global footer to each page -- fix styling on about page footer

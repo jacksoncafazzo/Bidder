@@ -1,27 +1,33 @@
-.header {
-  background-image: url("../img/hands.jpg");
-  background-size: cover;
-  height: 450px;
-  position: relative;
+body {
+  font-family: 'Open Sans', sans-serif;
 }
 
-#headertext {
-position: absolute;
-bottom: 0;
-padding-left: 50px;
-font-size: 4em;
+.hero {
+  background: url(../img/hands-bg.png) no-repeat center center;
+}
+
+.aboutSection p {
+  text-align: left;
+  font-size: 16px;
+}
+
+
+.aboutSection h2 {
+  text-align: left;
 }
 
 .col {
   text-align: center;
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .glyphicon {
   font-size: 2.5em;
   display: block;
   text-align: center;
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   color: grey;
 }
 
@@ -38,16 +44,4 @@ font-size: 4em;
 .navbar-default .navbar-nav > li > a:focus {
     color: white;
     background-color: #C62828;
-}
-
-
-.footer {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  position:fixed;
-   left:0px;
-   bottom:0px;
-   height:30px;
-   width:100%;
-   text-align: center;
 }
