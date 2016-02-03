@@ -102,6 +102,7 @@ $(document).ready(function() {
   // });
 
   $("#modalSubmit").click(function(event) {
+    event.preventDefault();
     count += 1;
     var inputtedjobTitle = $("input#jobTitle").val();
     var inputtedPayment = $("input#payment").val();
@@ -140,11 +141,6 @@ $(document).ready(function() {
 
     $("#modal").modal('hide');
 
-
-
-
-
-
     $("input#jobTitle").val("");
     $("input#payment").val("");
     $("input#jobDescription").val("");
@@ -156,6 +152,4 @@ $(document).ready(function() {
     bidsAndMarkers = createBidMarker(newBid, count);
 
   });
-
-  // event.preventDefault();
 });
