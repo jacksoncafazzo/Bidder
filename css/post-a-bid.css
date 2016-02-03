@@ -1,0 +1,10 @@
+/* Styles specific to the Post a Bid page */
+#map {
+  height: 100%;
+  min-height: 500px;
+  min-width: 500px;
+}
+
+h4 {
+  color: black;
+}

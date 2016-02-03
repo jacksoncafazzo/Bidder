@@ -147,15 +147,11 @@ form {
   text-align: center;
 }
 
-/* Post a Bid page
+/* Map Styles
 ======*/
 
 #map {
   height: 100%;
   min-height: 500px;
   min-width: 500px;
-}
-
-h4 {
-  color: black;
 }

@@ -17,7 +17,7 @@ function initialize () {
   // myLatLng = $(s"#map").data();
 
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 16,
+    zoom: 14,
     center: myLatLng,
     mapTypeId: google.maps.MapTypeId.TERRAIN
   });
