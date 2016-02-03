@@ -132,7 +132,7 @@ $(document).ready(function() {
              '<li>Neighborhood:' + " " + inputtedNeighborhood + '</li>' +
              '<li>Bidder Name:' + " " + inputtedBidderName + '</li>' +
            '</ul>' +
-           '<button id="interested" class="btn btn-default">I\'m Interested!</button>' +
+           '<button class="btn btn-default" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I\'m interested!</button>' +
          '</div>' +
        '</div>' +
      '</div>' +

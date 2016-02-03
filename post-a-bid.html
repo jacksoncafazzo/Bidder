@@ -161,7 +161,7 @@
                  <li>Neighborhood: Southeast</li>
                  <li>Bidder Name: Taylor</li>
                </ul>
-               <button id="interested" class="btn btn-default">I'm interested!</button>
+               <button class="btn btn-default" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I'm interested!</button>
              </div>
            </div>
          </div>
@@ -185,7 +185,7 @@
                  <li>Neighborhood: Northwest</li>
                  <li>Bidder Name: Gloria</li>
                </ul>
-               <button id="interested" class="btn btn-default">I'm interested!</button>
+               <button class="btn btn-default" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I'm interested!</button>
              </div>
            </div>
          </div>
@@ -209,7 +209,7 @@
                  <li>Neighborhood: Northeast</li>
                  <li>Bidder Name: Blake</li>
                </ul>
-               <button id="interested" class="btn btn-default">I'm interested!</button>
+               <button class="btn btn-default" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I'm interested!</button>
              </div>
            </div>
          </div>
@@ -246,22 +246,3 @@
     </div>
   </body>
 </html>
-
-
-
-
-
-<div id="content">
-  <div id="siteNotice"></div>
-  <h2 id="firstHeading" class="firstHeading"></h2>
-    <div class="bid-info-window">
-      <p>Proposed Payment: newBid.payment</p><br>
-      <p>Job Description: newBid.jobDescription</p><br>
-      <p>Job Duration: newBid.jobDuration</p><br>
-      <p>Complete By: newBid.dateCompleted</p><br>
-      <p>City and State: ' + newBid.cityState</p><br>
-      <p>Neighborhood: ' + newBid.neighborhood</p><br>
-      <p id="bidderName">Bidder Name: newBid.bidderName</p><br>
-      <div id="accept">Accept Bid</div>
-    </div>
-</div>
