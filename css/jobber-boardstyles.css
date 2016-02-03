@@ -75,6 +75,7 @@ p {
 }
 
 form {
+  padding-top: 12px;
   max-width: 450px;
   max-height: 500px;
   margin: 0 auto;
