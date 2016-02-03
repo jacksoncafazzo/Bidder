@@ -156,3 +156,33 @@ form {
   min-height: 500px;
   min-width: 500px;
 }
+
+/* Hero Styles
+===========*/
+
+.hero {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: table;
+  width: 100%;
+  padding-top: 25%;
+}
+
+.hero .intro {
+  padding: 3rem;
+  position: relative;
+  top: 50%;
+  transform: translateY(-55%);
+  }
+
+.hero h1 {
+  color: #fff;
+  font-size: 3em;
+  line-height: 1.5em;
+  letter-spacing: -0.025em;
+  font-weight: 300;
+  text-align: center;
+  text-shadow: 2px 2px black;
+}

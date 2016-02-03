@@ -2,26 +2,15 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-.header {
-  background-image: url("../img/hands.jpg");
-  background-size: cover;
-  height: 450px;
-  position: relative;
-}
-
-
-
-#headertext {
-position: absolute;
-bottom: 0;
-padding-left: 50px;
-font-size: 4em;
+.hero {
+  background: url(../img/hands-bg.png) no-repeat center center;
 }
 
 .aboutSection p {
   text-align: left;
   font-size: 16px;
 }
+
 
 .aboutSection h2 {
   text-align: left;
