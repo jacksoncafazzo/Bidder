@@ -28,13 +28,14 @@ function initialize () {
     $("#modal").modal('show');
     $("#modal").data(myLatLng);
   });
+  return map;
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
 function createBidMarker(newBid) {
-  // myLatLng = $("#map").data()
-
+  myLatLng = $("#map").data();
+debugger;
   var contentString = '<div id="content">'+
   '<div id="siteNotice">'+
   '</div>'+
@@ -67,9 +68,15 @@ function createBidMarker(newBid) {
   });
 
   // map = new google.maps.Map(document.getElementById("map"), mapOptions);
+if (newBid.marker === undefined) {
+  newBid.marker = [];
+}
 
-newBid.marker.push(marker);
-newBid.marker.setMap(map);
+for (var i = 0; i < newBid.marker.length; i++) {
+  marker = newBid.marker[i]
+  marker.setMap(map);
+}
+
 return newBid;
 }
 
@@ -110,9 +117,21 @@ $(document).ready(function() {
     var inputtedNeighborhood = $("input#neighborhood").val();
     var inputtedjobDescription = $("input#jobDescription").val();
     var inputtedBidderName = $("input#bidderName").val();
-    debugger;
     var newBid = new BidPost(inputtedjobTitle, inputtedPayment, inputtedjobDuration, inputtedDateCompleted, inputtedCityState, inputtedNeighborhood, inputtedBidderName, inputtedjobDescription, myLatLng);
     // debugger;
+    map = initialize(newBid);
+    if (newBid.bids === undefined) {
+      newBid.bids = [];
+      newBid.bids.push(newBid);
+    }
+
+    for (var i = 0; i < Object.keys(newBid.bids).length; i++) {
+      newBid = newBid.bids[i];
+      newBid = (createBidMarker(newBid));
+    }
+    newBid.bids.push(newBid);
+
+
     $("#bidList").prepend('<div class="panel-group userPanel" id="accordion" role="tablist" aria-multiselectable="true">' +
      '<div class="panel panel-default">' +
        '<div class="panel-heading" role="tab" id="userBid">' +
@@ -136,16 +155,8 @@ $(document).ready(function() {
      '</div>' +
      '</div>');
     $("#modal").modal('hide');
-    map = initialize(newBid);
 
-    if (newBid.bids === undefined) {
-      newBid.bids = [];
-    }
-    newBid.bids.push(newBid);
-    for (var i = 0; i < Object.keys(newBid.bids).length; i++) {
-      newBid = (newBid.bids[i]);
-      newBid = (createBidMarker(newBid));
-    }
+
 
 
 
