@@ -9,3 +9,21 @@ html, body {
   min-height: 500px;
   min-width: 500px;
 }
+
+.modal-click {
+  background-color: cyan;
+  height: 50px;
+  width: 100px;
+}
+
+.bid-info-window p {
+  font-size: 1em;
+}
+
+.payment-info-window {
+
+}
+
+#bidderName {
+  font-weight: bold;
+}
