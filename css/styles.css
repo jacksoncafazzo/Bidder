@@ -41,6 +41,22 @@ iframe {
   color: white;
   }
 
+.homepageButtons {
+  margin-top: 70px;
+  max-width: 850px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imageButton1:hover {
+  border: 3px solid #C62828;
+}
+
+.imageButton2:hover {
+  border: 3px solid #C62828;
+}
+
 /* Main Navigation
 ======================*/
 .navbar-default .navbar-brand {
@@ -61,25 +77,8 @@ iframe {
   padding-bottom: 20px;
 }
 
-.centerButton {
-  margin: auto;
-  text-align: center;
-}
-.homepageButtons {
-  margin-top: 70px;
-  max-width: 850px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.imageButton1:hover {
-  border: 3px solid #C62828;
-}
-
-.imageButton2:hover {
-  border: 3px solid #C62828;
-}
+/* Carousel
+======================*/
 
 .carousel-caption h1 {
   font-size: 40px;
@@ -97,6 +96,9 @@ iframe {
 #carousel-example-generic {
   margin-top: 50px;
 }
+
+/* Homepage
+======================*/
 
 .blueBackground {
   background-color: #ECEFF1;
@@ -128,16 +130,8 @@ form {
   width: auto;
 }
 
-/* Bid Suggester
+/* Modals
 ======================*/
-
-#results {
-  display: none;
-  border: 1px solid #C62828;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  padding:20px 25px 25px 25px;
-}
 
 .modal-header {
   background-color: #C62828;
