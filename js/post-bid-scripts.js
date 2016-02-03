@@ -33,7 +33,6 @@ function initialize () {
 google.maps.event.addDomListener(window, 'load', initialize);
 
 function createBidMarker(newBid) {
-  debugger;
   // myLatLng = $("#map").data()
 
   var contentString = '<div id="content">'+
@@ -67,7 +66,6 @@ function createBidMarker(newBid) {
   marker.addListener('click', function() {
     infowindow.open(map, marker);
   });
-debugger;
 
   // map = new google.maps.Map(document.getElementById("map"), mapOptions);
 markers.push(marker);
@@ -90,16 +88,16 @@ function BidPost(jobTitle, payment, jobDuration, dateCompleted, cityState, neigh
 }
 
 BidPost.prototype.bidSummary = function() {
-  return this.jobTitle + " for " + this.payment;
+  return this.jobTitle + " for $" + this.payment;
 }
 
 
 $(document).ready(function() {
   initialize();
-
-  $("#firstHeading").click(function () {
-    $("#modal").modal('show');
-  });
+  //
+  // $("#firstHeading").click(function () {
+  //   $("#modal").modal('show');
+  // });
 
   $("#modalSubmit").click(function(event) {
     count += 1;
@@ -112,7 +110,7 @@ $(document).ready(function() {
     var inputtedjobDescription = $("input#jobDescription").val();
     var inputtedBidderName = $("input#bidderName").val();
 
-    var newBid = new BidPost(inputtedjobTitle, inputtedPayment, inputtedjobDuration, inputtedDateCompleted, inputtedCityState, inputtedNeighborhood, inputtedBidderName);
+    var newBid = new BidPost(inputtedjobTitle, inputtedPayment, inputtedjobDuration, inputtedDateCompleted, inputtedCityState, inputtedNeighborhood, inputtedBidderName, inputtedjobDescription);
 
     bidFormInfos.push(newBid);
     $("#bidList").prepend('<div class="panel-group userPanel" id="accordion" role="tablist" aria-multiselectable="true">' +
@@ -153,7 +151,6 @@ $(document).ready(function() {
     $("input#neighborhood").val("");
     $("input#bidderName").val("");
     bidsAndMarkers = createBidMarker(newBid, count);
-    debugger;
 
   });
   // event.preventDefault();
