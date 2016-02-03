@@ -31,11 +31,6 @@ iframe {
   text-align: center;
 }
 
-.nav-btn {
-  padding: 0px;
-}
-
-
 .interestedButton:hover {
   background-image:none;
   background-color:#B4C60B;
@@ -69,6 +64,20 @@ iframe {
 .navbar-default .navbar-nav > li > a:focus {
     color: white;
     background-color: #C62828;
+}
+
+.navbar-default .navbar-nav > .active > a {
+  color: #C62828;
+}
+
+.navbar-default .navbar-nav > .active > a:hover {
+  color: white;
+  background-color: #C62828;
+}
+
+.navbar-default .navbar-nav > li > a .nav-btn:hover {
+  color: white;
+  background-color: #C62828;
 }
 
 /* Global Footer
@@ -180,6 +189,16 @@ form {
 .hero h1 {
   color: #fff;
   font-size: 3em;
+  line-height: 1.5em;
+  letter-spacing: -0.025em;
+  font-weight: 300;
+  text-align: center;
+  text-shadow: 2px 2px black;
+}
+
+.hero h2 {
+  color: #fff;
+  font-size: 1.8em;
   line-height: 1.5em;
   letter-spacing: -0.025em;
   font-weight: 300;
