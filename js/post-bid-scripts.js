@@ -6,33 +6,41 @@ var markers = [];
 var infowindows = [];
 var bidFormInfos = [];
 var coordinates = [];
-var myLatLng;
+var myLatLng = { lat: 45.521079, lng: -122.677585 };
+// $("#map").data(myLatLng);
 var imageData;
 var bid_icon = 'img/bid_icon.png';
+var bidsAndMarkers = [];
+
 
 function initialize () {
-  var epicodus = {lat: 45.520705, lng: -122.677397}
+  // myLatLng = $(s"#map").data();
+
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 16,
-    center: epicodus,
+    center: myLatLng,
     mapTypeId: google.maps.MapTypeId.TERRAIN
   });
 
   map.addListener("click", function (event) {
-    markerLatLng = { lat: event.latLng.lat(), lng: event.latLng.lng() };
+    myLatLng = { lat: event.latLng.lat(), lng: event.latLng.lng() };
     $("#modal").modal('show');
-    $("#map").data(markerLatLng);
+    // $("#map").data(myLatLng);
   });
+  return map;
 }
+
+google.maps.event.addDomListener(window, 'load', initialize);
 
 function createBidMarker(newBid) {
   debugger;
-  markerLatLng = $("#map").data()
+  // myLatLng = $("#map").data()
+
   var contentString = '<div id="content">'+
   '<div id="siteNotice">'+
   '</div>'+
   '<h2 id="firstHeading" class="firstHeading">' + newBid.jobTitle + '</h2>'+
-  '<div id="payment-info-window">Proposed Payment: $' + newBid.payment + '</div>'+
+  '<div id="payment-info-window"><p>Proposed Payment: $' + newBid.payment + '</p></div>'+
   '<div class="bid-info-window">'+
   '<p>Job Duration: ' + newBid.jobDuration + '<br>'+
   '<p>Complete By: ' + newBid.dateCompleted + '<br>'+
@@ -48,9 +56,10 @@ function createBidMarker(newBid) {
   content: contentString,
   });
   infowindows.push(infowindow);
+  map = initialize(myLatLng)
 
   var marker = new google.maps.Marker({
-    position: markerLatLng,
+    position: myLatLng,
     icon: bid_icon,
     map: map,
   });
@@ -58,13 +67,18 @@ function createBidMarker(newBid) {
   marker.addListener('click', function() {
     infowindow.open(map, marker);
   });
+debugger;
+
+  // map = new google.maps.Map(document.getElementById("map"), mapOptions);
 markers.push(marker);
-return (newBid)
+marker.setMap(map);
+
+return (newBid, marker)
 }
 
 /* business logic for form and bidSummary */
 
-function BidPost(jobTitle, payment, jobDuration, dateCompleted, cityState, neighborhood, bidderName) {
+function BidPost(jobTitle, payment, jobDuration, dateCompleted, cityState, neighborhood, bidderName, jobDescription) {
   this.jobTitle = jobTitle;
   this.payment = payment;
   this.jobDuration = jobDuration;
@@ -138,7 +152,9 @@ $(document).ready(function() {
     $("input#cityState").val("");
     $("input#neighborhood").val("");
     $("input#bidderName").val("");
-    createBidMarker(newBid, count);
+    bidsAndMarkers = createBidMarker(newBid, count);
+    debugger;
+
   });
-  event.preventDefault();
+  // event.preventDefault();
 });
