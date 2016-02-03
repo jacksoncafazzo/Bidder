@@ -35,6 +35,7 @@ iframe {
   padding: 0px;
 }
 
+
 .interestedButton:hover {
   background-image:none;
   background-color:#B4C60B;
@@ -90,7 +91,7 @@ iframe {
 
 .carousel-caption {
   text-shadow: 2px 2px black;
-  padding-bottom: 150px;
+  padding-bottom: 100px;
 }
 
 #carousel-example-generic {

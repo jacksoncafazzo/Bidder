@@ -47,6 +47,7 @@ h1 {
   letter-spacing: -0.025em;
   font-weight: 300;
   text-align: center;
+  text-shadow: 2px 2px black;
 }
 
 /* Form
@@ -87,16 +88,4 @@ h4 {
 
 h5 {
   padding-bottom: 1em;
-}
-
-
-/* Global Footer
-======================*/
-.footer {
-  position:fixed;
-   left:0px;
-   bottom:0px;
-   height:30px;
-   width:100%;
-   text-align: center;
 }

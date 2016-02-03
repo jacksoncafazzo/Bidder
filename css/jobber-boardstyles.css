@@ -47,6 +47,7 @@ h1 {
   letter-spacing: -0.025em;
   font-weight: 300;
   text-align: center;
+  text-shadow: 2px 2px black;
 }
 
 h2 {
@@ -56,6 +57,10 @@ h2 {
   letter-spacing: -0.025em;
   font-weight: 300;
   text-align: center;
+}
+
+.intro h2 {
+  text-shadow: 2px 2px black;
 }
 
 

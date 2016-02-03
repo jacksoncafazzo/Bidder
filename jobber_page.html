@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/jobberstyles.css" type="text/css" media="all">
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -82,34 +83,37 @@
               Become a Jobber
             </button>
           </div>
+        </form>
+      </div>
 
           <!-- Modal -->
-          <div class="modal fade" id="submissionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel">Welcome to the Community!</h4>
-                </div>
-                <div class="modal-body">
-                  <h3>Thanks for signing up <span id="jobber-name"></span>!</h3>
-                  <br>
-                  <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
-                  <h4>You can now build your profile, view and respond to jobs, and begin to connect with members of your community.</h4>
-                  <br>
-                  <h5>Check out the job board to find work in your area.</h5>
-                  <a href="jobber-board.html" class="btn btn-primary" role="button" id="job-board">Go to Job Board</a>
-                </div>
-              </div>
+      <div class="modal fade" id="submissionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Welcome to the Community!</h4>
+            </div>
+            <div class="modal-body">
+              <h3>Thanks for signing up <span id="jobber-name"></span>!</h3>
+              <br>
+              <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
+              <h4>You can now build your profile, view and respond to jobs, and begin to connect with members of your community.</h4>
+              <br>
+              <h5>Check out the job board to find work in your area.</h5>
+              <a href="jobber-board.html" class="btn btn-primary" role="button" id="job-board">Go to Job Board</a>
             </div>
           </div>
-        </form>
+        </div>
       </div>
 
 
 
 <!-- Footer -->
+      <hr>
       <div class="container footer">
+        <p><strong>Bidder</strong> was created at <a target="_blank" href="http://www.epicodus.com">Epicodus</a> by Jackson Cafazzo, Brooke Hurford, Jessica Fix, and Taylor Pokoj.
+        <br>
         <p>Bidders | All Rights Reserved | Copyright 2016</p>
       </div>
     </div> <!--Close container-->
