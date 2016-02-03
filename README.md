@@ -1,11 +1,12 @@
 # Bidder
-##### A map with bids
+##### Looking for a service? Offer a bid and see who accepts nearby.
 
 #### By Jessica Fix, Jackson Cafazzo, Brooke Hurford, Taylor Pokoj
 
 ## Description
 
-Bidder is a way for people to meet others who will perform an odd job.
+Bidder is a website that connects people looking for someone to perform an odd job with those offering their skills nearby. Bidders can post a job, offer payment, and jobbers can choose to accept and arrange a meeting.
+
 
 ## Setup
 
