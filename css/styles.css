@@ -35,6 +35,12 @@ iframe {
   padding: 0px;
 }
 
+.interestedButton:hover {
+  background-image:none;
+  background-color:#B4C60B;
+  color: white;
+  }
+
 /* Main Navigation
 ======================*/
 .navbar-default .navbar-brand {

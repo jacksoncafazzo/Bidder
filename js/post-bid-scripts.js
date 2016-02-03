@@ -48,8 +48,9 @@ function createBidMarker(newBid) {
   '<p><strong>City and State:</strong> ' + newBid.cityState + '</p>'+
   '<p><strong>Neighborhood:</strong> ' + newBid.neighborhood + '</p>'+
   '<p id="bidderName"><strong>Bidder Name:</strong> ' + newBid.bidderName +
-  '</p>' +
-  '<button class="btn btn-default" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I\'m interested!</button>' +
+  '</p>' + '<div class="centerButton">' +
+  '<button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I\'m interested!</button>' +
+  '</div>' +
   '</div>' +
   '</div>';
 
@@ -133,7 +134,7 @@ $(document).ready(function() {
              '<li>Neighborhood:' + " " + inputtedNeighborhood + '</li>' +
              '<li>Bidder Name:' + " " + inputtedBidderName + '</li>' +
            '</ul>' +
-           '<button class="btn btn-default" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I\'m interested!</button>' +
+           '<button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I\'m interested!</button>' +
          '</div>' +
        '</div>' +
      '</div>' +
