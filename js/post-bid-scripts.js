@@ -40,18 +40,19 @@ function createBidMarker(newBid) {
   '</div>'+
   '<h2 id="firstHeading" class="firstHeading">' + newBid.jobTitle + '</h2>'+
   '<div id="bid-info-window">' +
-  '<p>Proposed Payment: $' + newBid.payment + '</p>'+
-  '<p>Job Description: '+ newBid.jobDescription +
+  '<p><strong>Proposed Payment:</strong> $' + newBid.payment + '</p>'+
+  '<p><strong>Job Description:</strong> '+ newBid.jobDescription +
   '</p>' +
-  '<p>Job Duration: ' + newBid.jobDuration + '</p>'+
-  '<p>Complete By: ' + newBid.dateCompleted + '</p>'+
-  '<p>City and State: ' + newBid.cityState + '</p>'+
-  '<p>Neighborhood: ' + newBid.neighborhood + '</p>'+
-  '<p id="bidderName">Bidder Name: ' + newBid.bidderName +
+  '<p><strong>Job Duration:</strong> ' + newBid.jobDuration + '</p>'+
+  '<p><strong>Complete By:</strong> ' + newBid.dateCompleted + '</p>'+
+  '<p><strong>City and State:</strong> ' + newBid.cityState + '</p>'+
+  '<p><strong>Neighborhood:</strong> ' + newBid.neighborhood + '</p>'+
+  '<p id="bidderName"><strong>Bidder Name:</strong> ' + newBid.bidderName +
   '</p>' +
-  '<div id="accept">Accept Bid</div>' +
+  '<button class="btn btn-default" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I\'m interested!</button>' +
   '</div>' +
   '</div>';
+
 
   var infowindow = new google.maps.InfoWindow( {
   content: contentString,
@@ -93,7 +94,6 @@ BidPost.prototype.bidSummary = function() {
   return this.jobTitle + " for $" + this.payment;
 }
 
-
 $(document).ready(function() {
   initialize();
   //
@@ -132,13 +132,14 @@ $(document).ready(function() {
              '<li>Neighborhood:' + " " + inputtedNeighborhood + '</li>' +
              '<li>Bidder Name:' + " " + inputtedBidderName + '</li>' +
            '</ul>' +
-           '<button id="interested" class="btn btn-default">Interested!</button>' +
+           '<button id="interested" class="btn btn-default">I\'m Interested!</button>' +
          '</div>' +
        '</div>' +
      '</div>' +
      '</div>');
 
     $("#modal").modal('hide');
+
 
 
 
@@ -155,5 +156,6 @@ $(document).ready(function() {
     bidsAndMarkers = createBidMarker(newBid, count);
 
   });
+
   // event.preventDefault();
 });
