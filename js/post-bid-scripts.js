@@ -92,9 +92,14 @@ $(".siteNotice").on('click', '#showModal', function() {
 
 $(document).ready(function() {
   initialize();
+<<<<<<< HEAD
   $("#firstHeading").click(function () {
     $("#modal").modal('show');
   });
+=======
+
+  $("form#postBid").submit(function(event) {
+>>>>>>> bf5ac0fca7fb23756c4b598e6d0eb867e633bd9f
 
   $("form#postBid").submit(function(event) {
     count += 1;

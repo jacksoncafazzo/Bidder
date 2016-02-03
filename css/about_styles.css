@@ -25,10 +25,6 @@ font-size: 4em;
   color: grey;
 }
 
-.footer {
-  color: gray;
-  position: bottom;
-}
 
 .navbar-default .navbar-brand {
   font-size: 24px;
@@ -42,4 +38,16 @@ font-size: 4em;
 .navbar-default .navbar-nav > li > a:focus {
     color: white;
     background-color: #C62828;
+}
+
+
+.footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position:fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+   text-align: center;
 }
