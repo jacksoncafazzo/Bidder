@@ -13,4 +13,8 @@ $(document).ready(function () {
     $("this:contains(100)").css("color", "red");
     sortFunction(this.val());
   });
+
+  $('.favorite').click(function() {
+    $(this).addClass('focus');
+  });
 });

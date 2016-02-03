@@ -65,7 +65,7 @@ a:hover {
   background-image:none;
   background-color:#B4C60B;
   color: white;
-  }
+}
 
 .homepageButtons {
   margin-top: 70px;
@@ -234,4 +234,5 @@ form {
   font-weight: 300;
   text-align: center;
   text-shadow: 2px 2px black;
+  margin-bottom: -45px;
 }
