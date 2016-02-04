@@ -242,3 +242,10 @@ form {
   text-shadow: 2px 2px black;
   margin-bottom: -45px;
 }
+
+/* FAQs
+===========*/
+
+.panel {
+  margin: 30px 50px 20px 50px;
+}
