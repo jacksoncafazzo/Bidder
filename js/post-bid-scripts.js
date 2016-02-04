@@ -8,17 +8,28 @@ var bidFormInfos = [];
 var coordinates = [];
 var myLatLng = { lat: 45.521079, lng: -122.677585 };
 var imageData;
-var bid_icon = 'img/bid_icon.png';
+var bid_icon = 'img/bid-icon-new.png';
 var jobber_icon = 'img/jobber_hat.png';
 
 // var panel;
 
 
 function initialize () {
+  var myStyles =[
+    {
+        featureType: "poi",
+        elementType: "labels",
+        stylers: [
+              { visibility: "off" }
+        ]
+    }
+];
+
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14,
     center: myLatLng,
-    mapTypeId: google.maps.MapTypeId.TERRAIN
+    mapTypeId: google.maps.MapTypeId.TERRAIN,
+    styles: myStyles
   });
 
   map.addListener("click", function (event) {
@@ -137,17 +148,25 @@ function makeJobberMarkers (coordinates) {
   });
 
   infowindows.push(infowindow);
-  var jobberLocation = { "lat": coordinates[0], "lng": coordinates[1] }
+  var jobberLocation = [coordinates[0], coordinates[1]]
   var marker = new google.maps.Marker({
     position: coordinates,
     icon: jobber_icon,
     map: map,
   });
+  coordinates = [];
   marker.addListener('click', function() {
     infowindow.open(map, marker);
   });
   marker.setMap(map);
 }
+
+// Click listener to change color of favorite button on click
+var attachFavoriteButton = function() {
+  $('.favoriteButton').click(function(){
+    $(this).toggleClass('buttonClassB');
+  });
+};
 
 $(document).ready(function() {
   $("#firstHeading").click(function () {
@@ -155,6 +174,7 @@ $(document).ready(function() {
   });
   initialize();
   attachClickListenerToDeleteButton();
+  attachFavoriteButton();
 
   $("#modalSubmit").click(function(event) {
     event.preventDefault();
@@ -206,7 +226,7 @@ $(document).ready(function() {
              '<li>Neighborhood:' + " " + newBid.neighborhood + '</li>' +
              '<li>Bidder Name:' + " " + newBid.bidderName + '</li>' +
            '</ul>' +
-           '<button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I\'m interested!</button> <button class="btn btn-default deleteButton" type="submit">Delete this Bid</button>' +
+           '<button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I\'m interested!</button> <button class="btn favoriteButton">Favorite</button> <button class="btn btn-default deleteButton" type="submit">Delete this Bid</button>' +
          '</div>' +
        '</div>' +
      '</div>' +
@@ -223,6 +243,11 @@ $(document).ready(function() {
     $("input#bidderName").val("");
 
     attachClickListenerToDeleteButton();
+
+    // Adds click listener to appended favorite button
+    $('.favoriteButton').first().click(function(){
+      $(this).toggleClass('buttonClassB');
+    });
 
     // bidsAndMarkers = createBidMarker(newBid, count);
   });
