@@ -1,20 +1,11 @@
-function sortFunction() {
-  debugger;
-  var jobValue;
+// Initialize Map
+function initialize() {
+  var mapDiv = document.getElementById('map');
+  var map = new google.maps.Map(mapDiv, {
+    center: {lat: 45.5200, lng: 122.6819},
+    zoom: 14
 
+  });
 
 }
-
-
-
-$(document).ready(function () {
-  $("span.job-title").click(function (event) {
-    debugger;
-    $("this:contains(100)").css("color", "red");
-    sortFunction(this.val());
-  });
-
-  $('.favorite').click(function() {
-    $(this).addClass('focus');
-  });
-});
+google.maps.event.addDomListener(window, 'load', initialize);
