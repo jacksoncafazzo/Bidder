@@ -130,7 +130,6 @@ function makeJobberMarkers (coordinates) {
   '</div>' +
   '</div>' +
   '</div>';
-  debugger;
   var infowindow = new google.maps.InfoWindow( {
   content: contentString,
   });
@@ -149,6 +148,7 @@ function makeJobberMarkers (coordinates) {
 }
 
 $(document).ready(function() {
+
   $("#firstHeading").click(function () {
     $("#modal").modal('show');
   });
