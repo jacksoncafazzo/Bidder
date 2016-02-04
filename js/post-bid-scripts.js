@@ -151,6 +151,10 @@ function makeJobberMarkers (coordinates) {
 
 $(document).ready(function() {
 
+  $('.favoriteButton').click(function(){
+    $(this).toggleClass('buttonClassB');
+  });
+
   $("#firstHeading").click(function () {
     $("#modal").modal('show');
   });
