@@ -17,4 +17,9 @@ $(document).ready(function() {
       $("input#password").val("");
     });
   });
+
+  $('.favoriteButton').click(function(){
+    $(this).toggleClass('buttonClassB');
+  });
+
 });
