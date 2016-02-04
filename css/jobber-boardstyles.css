@@ -69,11 +69,11 @@ h2 {
 
 .tab-content {
   padding-top: 15px;
+}
 
 .sign-up {
   text-align: center;
 }
-
 .sign-up h4 {
   font-size: 20px;
   margin-top: 2.4em;
@@ -89,7 +89,7 @@ h2 {
   text-align: center;
 }
 
-img {
+.lady-image {
   border-radius: 52px;
 }
 
