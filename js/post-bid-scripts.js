@@ -149,17 +149,20 @@ function makeJobberMarkers (coordinates) {
   marker.setMap(map);
 }
 
-$(document).ready(function() {
-
+// Click listener to change color of favorite button on click
+var attachFavoriteButton = function() {
   $('.favoriteButton').click(function(){
     $(this).toggleClass('buttonClassB');
   });
+};
 
+$(document).ready(function() {
   $("#firstHeading").click(function () {
     $("#modal").modal('show');
   });
   initialize();
   attachClickListenerToDeleteButton();
+  attachFavoriteButton();
 
   $("#modalSubmit").click(function(event) {
     event.preventDefault();
@@ -211,7 +214,7 @@ $(document).ready(function() {
              '<li>Neighborhood:' + " " + newBid.neighborhood + '</li>' +
              '<li>Bidder Name:' + " " + newBid.bidderName + '</li>' +
            '</ul>' +
-           '<button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I\'m interested!</button> <button class="btn btn-default deleteButton" type="submit">Delete this Bid</button>' +
+           '<button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I\'m interested!</button> <button class="btn favoriteButton">Favorite</button> <button class="btn btn-default deleteButton" type="submit">Delete this Bid</button>' +
          '</div>' +
        '</div>' +
      '</div>' +
@@ -228,6 +231,11 @@ $(document).ready(function() {
     $("input#bidderName").val("");
 
     attachClickListenerToDeleteButton();
+
+    // Adds click listener to appended favorite button
+    $('.favoriteButton').first().click(function(){
+      $(this).toggleClass('buttonClassB');
+    });
 
     // bidsAndMarkers = createBidMarker(newBid, count);
   });
