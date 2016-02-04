@@ -8,7 +8,7 @@ Bids
   - option to remove bids after posting it??? -- pop up a modal with a password to do it? (hardcode password 'delete' ?)
 
 Jobber Pages
-  - on jobber board, add "Not a jobber yet? Sign up here" link
+  -Decrease spacing between "Not a Jobber Yet?" and "Join us and start..."
 
 
 Possible features:

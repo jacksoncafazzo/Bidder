@@ -1,5 +1,5 @@
 .hero {
-  background: url(../img/hands-bg.png) no-repeat center center;
+  background: url(../img/about-bg.png) no-repeat center center;
 }
 
 .aboutSection p {
@@ -25,4 +25,55 @@
   padding-left: 20px;
   padding-right: 20px;
   color: grey;
+}
+
+/* FAQs
+===========*/
+
+.panel {
+  margin: 30px 50px 20px 50px;
+}
+
+.panel-heading {
+  background-color: #C62828!important;
+}
+
+.panel-title {
+  font-size: 18px;
+  color: white;
+}
+
+.panel-body {
+  font-size: 16px;
+}
+
+/* Our Team
+===========*/
+
+.team {
+  margin-left: 275px;
+}
+
+.person {
+  width: 200px;
+  height: 200px;
+  float: left;
+}
+
+.person p {
+  padding-top: 1em;
+  font-weight: bold;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  padding: 20px 20px 0px 20px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.footer {
+  float: bottom;
 }
