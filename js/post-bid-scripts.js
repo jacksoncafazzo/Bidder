@@ -130,7 +130,7 @@ function makeJobberMarkers (coordinates) {
   '</div>' +
   '</div>' +
   '</div>';
-  debugger;
+
   var infowindow = new google.maps.InfoWindow( {
   content: contentString,
   });
@@ -224,5 +224,19 @@ $(document).ready(function() {
 
     // bidsAndMarkers = createBidMarker(newBid, count);
   });
+
+  $(document).on('click', '#deleteBidButton', function() {
+    // event.preventDefault();
+
+    var password = $("input#password").val();
+
+    if (password === "delete") {
+      $("#accordion").last().hide();
+    }
+    else {
+      alert("Sorry, that's not the right password.")
+    }
+
+    $("input#password").val("");
+  });
 });
-  // event.preventDefault();
