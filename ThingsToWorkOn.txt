@@ -15,3 +15,6 @@ http://stackoverflow.com/questions/15463854/pressed-button-css
 
 GH-Pages
   -update GH Pages branch when all finished!
+  - add GH pages link in README?
+
+  *Remove this txt file when project is complete
