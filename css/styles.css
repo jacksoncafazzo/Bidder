@@ -196,6 +196,12 @@ form {
   min-width: 500px;
 }
 
+.bidMap {
+  max-width: 900px;
+  display: block;
+  margin: 0 auto;
+}
+
 /* Hero Styles
 ===========*/
 
