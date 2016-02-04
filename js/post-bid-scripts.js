@@ -234,6 +234,7 @@ var attachClickListenerToDeleteButton = function() {
 
     var panel = $(this).parents(".panel-group");
 
+
     $("#deleteBidButton").off();
     $("#deleteBidButton").click({panel: panel}, function(event) {
       var password = $("input#password").val();
