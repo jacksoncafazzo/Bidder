@@ -242,23 +242,3 @@ form {
   text-shadow: 2px 2px black;
   margin-bottom: -45px;
 }
-
-/* FAQs
-===========*/
-
-.panel {
-  margin: 30px 50px 20px 50px;
-}
-
-.panel-heading {
-  background-color: #C62828!important;
-}
-
-.panel-title {
-  font-size: 18px;
-  color: white;
-}
-
-.panel-body {
-  font-size: 16px;
-}

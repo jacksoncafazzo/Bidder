@@ -60,6 +60,10 @@ h2 {
   padding-bottom: 0.4em;
 }
 
+.tab-content {
+  padding-top: 15px;
+}
+
 /* Modal
 ======================*/
 #interestedJobberModal1, #interestedJobberModal2, #interestedJobberModal2, #interestedJobberModal3, #interestedJobberModal4, #interestedJobberModal5, #interestedJobberModal6, #interestedJobberModal7, #interestedJobberModal8 {
