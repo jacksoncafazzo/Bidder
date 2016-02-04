@@ -9,6 +9,7 @@ var coordinates = [];
 var myLatLng = { lat: 45.521079, lng: -122.677585 };
 var imageData;
 var bid_icon = 'img/bid_icon.png';
+var jobber_icon = 'img/jobber_hat.png';
 
 
 
@@ -29,7 +30,6 @@ function initialize () {
 google.maps.event.addDomListener(window, 'load', initialize);
 
 function createBidMarker(newBid) {
-
   var contentString = '<div id="content">'+
   '<div id="siteNotice">'+
   '</div>'+
@@ -95,6 +95,59 @@ BidPost.prototype.bidSummary = function() {
   return this.jobTitle + " for $" + this.payment;
 }
 
+function randomJobbers () {
+  var bounds = {
+    north: 45.5340144,
+    south: 45.5193211,
+    east: -122.6619460,
+    west: -122.6827630
+  };
+  var lngSpan = bounds.east - bounds.west;
+  var latSpan = bounds.north - bounds.south;
+  var lat = bounds.south + latSpan * Math.random();
+  var lng = bounds.west + lngSpan * Math.random();
+  coordinates.push(lat);
+  coordinates.push(lng);
+  makeJobberMarkers(coordinates);
+}
+
+function makeJobberMarkers (coordinates) {
+  var contentString = '<div id="content">'+
+  '<div id="siteNotice">'+
+  '</div>'+
+  '<h2 id="firstHeading" class="firstHeading">Jobber the Jobber</h2>'+
+  '<div id="bid-info-window">' +
+  '<p><strong>Suggested Pay Range:</strong> $10-20/hr</p>'+
+  '<p><strong>Jobber Description:</strong>This is one hard-working dude'
+  '</p>' +
+  '<p><strong>Jobber Availability:</strong> </p>'+
+  '<p><strong>Complete By:</strong> TBA </p>'+
+  '<p><strong>City and State:</strong> Portland, OR</p>'+
+  '<p><strong>Neighborhood:</strong> Neighborhood Near You</p>'+
+  '<p id="jobberName"><strong>Jobber Name:</strong> '
+  '</p>' + '<div class="centerButton">' +
+  '<button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I\'m interested!</button>' +
+  '</div>' +
+  '</div>' +
+  '</div>';
+  debugger;
+  var infowindow = new google.maps.InfoWindow( {
+  content: contentString,
+  });
+
+  infowindows.push(infowindow);
+  var jobberLocation = { "lat": coordinates[0], "lng": coordinates[1] }
+  var marker = new google.maps.Marker({
+    position: coordinates,
+    icon: jobber_icon,
+    map: map,
+  });
+  marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
+  marker.setMap(map);
+}
+
 $(document).ready(function() {
   $("#firstHeading").click(function () {
     $("#modal").modal('show');
@@ -121,6 +174,13 @@ $(document).ready(function() {
       newBid.bids = [];
       newBid.bids.push(newBid);
     }
+
+
+    var jobber;
+    for (var i = 0; i < 8; i++) {
+      jobber = randomJobbers();
+    }
+
 
     for (var i = 0; i < Object.keys(newBid.bids).length; i++) {
       newBid = newBid.bids[i];
