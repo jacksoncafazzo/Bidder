@@ -11,7 +11,7 @@ var imageData;
 var bid_icon = 'img/bid_icon.png';
 var jobber_icon = 'img/jobber_hat.png';
 
-var panelToDelete;
+// var panel;
 
 
 function initialize () {
@@ -154,7 +154,7 @@ $(document).ready(function() {
     $("#modal").modal('show');
   });
   initialize();
-
+  attachClickListenerToDeleteButton();
 
   $("#modalSubmit").click(function(event) {
     event.preventDefault();
@@ -206,7 +206,7 @@ $(document).ready(function() {
              '<li>Neighborhood:' + " " + newBid.neighborhood + '</li>' +
              '<li>Bidder Name:' + " " + newBid.bidderName + '</li>' +
            '</ul>' +
-           '<button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I\'m interested!</button>  <button class="btn btn-default deleteUserBidButton" type="submit" data-toggle="modal" data-target="#deleteBidModal">Delete this Bid</button>' +
+           '<button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I\'m interested!</button> <button class="btn btn-default deleteButton" type="submit">Delete this Bid</button>' +
          '</div>' +
        '</div>' +
      '</div>' +
@@ -222,19 +222,23 @@ $(document).ready(function() {
     $("input#neighborhood").val("");
     $("input#bidderName").val("");
 
+    attachClickListenerToDeleteButton();
 
     // bidsAndMarkers = createBidMarker(newBid, count);
   });
+});
+
+var attachClickListenerToDeleteButton = function() {
   $(".deleteButton").click(function() {
     $("#deleteBidModal").modal('show');
 
-    panel = $(this).parents(".panel-group");
+    var panel = $(this).parents(".panel-group");
 
     $("#deleteBidButton").off();
-    $("#deleteBidButton").on("click", function() {
+    $("#deleteBidButton").click({panel: panel}, function(event) {
       var password = $("input#password").val();
       if (password === "delete") {
-        $(panel).hide();
+        event.data.panel.hide();
       }
       else {
         alert("Sorry, that's not the right password.")
@@ -243,6 +247,4 @@ $(document).ready(function() {
       $("input#password").val("");
     });
   });
-
-
-});
+};
