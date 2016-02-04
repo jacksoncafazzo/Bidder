@@ -8,16 +8,27 @@ var bidFormInfos = [];
 var coordinates = [];
 var myLatLng = { lat: 45.521079, lng: -122.677585 };
 var imageData;
-var bid_icon = 'img/bid_icon.png';
+var bid_icon = 'img/bid-icon-new.png';
 var jobber_icon = 'img/jobber_hat.png';
 
 
 
 function initialize () {
+  var myStyles =[
+    {
+        featureType: "poi",
+        elementType: "labels",
+        stylers: [
+              { visibility: "off" }
+        ]
+    }
+];
+
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14,
     center: myLatLng,
-    mapTypeId: google.maps.MapTypeId.TERRAIN
+    mapTypeId: google.maps.MapTypeId.TERRAIN,
+    styles: myStyles
   });
 
   map.addListener("click", function (event) {
@@ -136,12 +147,13 @@ function makeJobberMarkers (coordinates) {
   });
 
   infowindows.push(infowindow);
-  var jobberLocation = { "lat": coordinates[0], "lng": coordinates[1] }
+  var jobberLocation = [coordinates[0], coordinates[1]]
   var marker = new google.maps.Marker({
     position: coordinates,
     icon: jobber_icon,
     map: map,
   });
+  coordinates = [];
   marker.addListener('click', function() {
     infowindow.open(map, marker);
   });
