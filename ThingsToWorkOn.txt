@@ -4,8 +4,6 @@ Styles
 Map
   - hardcode some location tags/info windows on the Post a Bid page and also the Home Page (Possible???)
 
-Bids
-  - option to remove bids after posting it??? -- pop up a modal with a password to do it? (hardcode password 'delete' ?)
 
 Jobber Pages
   -Decrease spacing between "Not a Jobber Yet?" and "Join us and start..."
@@ -14,3 +12,6 @@ Jobber Pages
 Possible features:
 - Save bid button on open bids (Post a bid and jobber board) like favoriting
 http://stackoverflow.com/questions/15463854/pressed-button-css
+
+GH-Pages
+  -update GH Pages branch when all finished!
