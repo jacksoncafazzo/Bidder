@@ -1,29 +1,16 @@
-Navbar
-  - Each HTML page should have the same NavBar. Make sure links all have the correct href.
-
-  - can't get padding off navbar button
-
 Styles
   - organize global styles.css so it is clear what page the styles belong to
-  - try to have elements styled the same way on different pages
-  - make carousel/header images the same height, maybe make sure the text on it is shadowed if necessary
 
 Map
   - hardcode some location tags/info windows on the Post a Bid page and also the Home Page (Possible???)
-  - get info windows appending user input (Jackson)
-
 
 Bids
   - option to remove bids after posting it??? -- pop up a modal with a password to do it? (hardcode password 'delete' ?)
 
-
-
 Jobber Pages
-  - margin under navbar/above photo that doesn't exist on other pages
-  - buttons should lead to the correct pages (link to jobber board)
   - on jobber board, add "Not a jobber yet? Sign up here" link
-  - fix footers
-  - fix photo shadow
 
-About Page
-  - Filler text replace with actual about section, content clean up
+
+Possible features:
+- Save bid button on open bids (Post a bid and jobber board) like favoriting
+http://stackoverflow.com/questions/15463854/pressed-button-css
