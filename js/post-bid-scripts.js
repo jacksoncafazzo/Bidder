@@ -200,10 +200,10 @@ $(document).ready(function() {
            '<ul>' +
              '<li>' + newBid.jobDescription + '</li>' +
              '<li>Job Duration:' + " " + newBid.jobDuration + '</li>' +
-             '<li>Date to be completed by:' + " " + newBid.DateCompleted + '</li>' +
-             '<li>Location:' + " " + newBid.CityState + '</li>' +
-             '<li>Neighborhood:' + " " + newBid.Neighborhood + '</li>' +
-             '<li>Bidder Name:' + " " + newBid.BidderName + '</li>' +
+             '<li>Date to be completed by:' + " " + newBid.dateCompleted + '</li>' +
+             '<li>Location:' + " " + newBid.cityState + '</li>' +
+             '<li>Neighborhood:' + " " + newBid.neighborhood + '</li>' +
+             '<li>Bidder Name:' + " " + newBid.bidderName + '</li>' +
            '</ul>' +
            '<button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I\'m interested!</button>' +
          '</div>' +
