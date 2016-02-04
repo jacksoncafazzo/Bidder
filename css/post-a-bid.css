@@ -27,6 +27,17 @@ h4 {
   padding-right: 35px;
 }
 
-#findMore {
-  text-align: left;
+
+.send-to-job-board {
+  text-align: center;
+  margin-bottom: 1em;;
+}
+
+.send-to-job-board, h4 {
+  font-size: 20px;
+  margin-top: 2.4em;
+}
+
+#more-bids {
+  font-size: 12px;
 }
