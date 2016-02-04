@@ -48,6 +48,12 @@ h2 {
 /* Job Postings
 ======================*/
 
+#map {
+  height: 100%;
+  min-height: 500px;
+  min-width: 500px;
+}
+
 .postings {
   padding-top: 0.7em;
   margin-left: 10%;
@@ -60,13 +66,30 @@ h2 {
   padding-bottom: 0.4em;
 }
 
+
+.tab-content {
+  padding-top: 15px;
+}
+
+.sign-up {
+  text-align: center;
+}
+.sign-up h4 {
+  font-size: 20px;
+  margin-top: 2.4em;
+}
+
+.sign-up p {
+  font-size: 12px;
+}
+
 /* Modal
 ======================*/
 #interestedJobberModal1, #interestedJobberModal2, #interestedJobberModal2, #interestedJobberModal3, #interestedJobberModal4, #interestedJobberModal5, #interestedJobberModal6, #interestedJobberModal7, #interestedJobberModal8 {
   text-align: center;
 }
 
-img {
+.lady-image {
   border-radius: 52px;
 }
 

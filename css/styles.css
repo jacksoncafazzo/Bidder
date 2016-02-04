@@ -83,6 +83,10 @@ a:hover {
   border: 3px solid #C62828;
 }
 
+.deleteButton {
+  color: #C62828;
+}
+
 /* Main Navigation
 ======================*/
 .navbar-default .navbar-brand {
@@ -194,6 +198,12 @@ form {
   height: 100%;
   min-height: 500px;
   min-width: 500px;
+}
+
+.bidMap {
+  max-width: 900px;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Hero Styles

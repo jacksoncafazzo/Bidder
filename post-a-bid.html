@@ -134,12 +134,11 @@
     <!-- Bid List, including fake bids and appended user input bidSummary" -->
     <div class="container">
       <h3>Current Open Bids</h3>
-      <p id="findMore"><em>Find more open bids on the </em><a href="jobber-board.html">Jobber Board</a>.</p>
       <div id="bidList">
         <!-- user bid will append here -->
 
         <!-- hardcoded fake bidSummaries-->
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel-group" id="accordionFake1" role="tablist" aria-multiselectable="true">
          <div class="panel panel-default">
            <div class="panel-heading" role="tab" id="headingTwo">
              <h4 class="panel-title">
@@ -158,12 +157,12 @@
                  <li>Neighborhood: Southeast</li>
                  <li>Bidder Name: Taylor</li>
                </ul>
-               <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I'm interested!</button>
+               <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I'm interested!</button> <button class="btn btn-default deleteButton" type="submit">Delete this Bid</button>
              </div>
            </div>
          </div>
         </div>
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel-group" id="accordionFake2" role="tablist" aria-multiselectable="true">
          <div class="panel panel-default">
            <div class="panel-heading" role="tab" id="headingThree">
              <h4 class="panel-title">
@@ -182,12 +181,12 @@
                  <li>Neighborhood: Northwest</li>
                  <li>Bidder Name: Gloria</li>
                </ul>
-               <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I'm interested!</button>
+               <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I'm interested!</button> <button class="btn btn-default deleteButton" type="submit">Delete this Bid</button>
              </div>
            </div>
          </div>
         </div>
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel-group" id="accordionFake3" role="tablist" aria-multiselectable="true">
          <div class="panel panel-default">
            <div class="panel-heading" role="tab" id="headingFour">
              <h4 class="panel-title">
@@ -206,36 +205,71 @@
                  <li>Neighborhood: Northeast</li>
                  <li>Bidder Name: Blake</li>
                </ul>
-               <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I'm interested!</button>
+               <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I'm interested!</button> <button class="btn btn-default deleteButton" type="submit">Delete this Bid</button>
              </div>
            </div>
          </div>
         </div>
       </div>
+
+      <div class="send-to-job-board">
+        <h4>Want to see more Bids?</h4>
+        <p id="more-bids">Find more open bids on the Jobber Board</p>
+          <a href="jobber-board.html" class="btn btn-primary" role="button" id="become-a-jobber">See Bids</a>
+      </div>
     </div>
 
 <!-- I'm interested modal -->
 
-<div class="modal fade" id="interestedJobberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title" id="myModalLabel">Let's get to work!</h3>
-      </div>
-      <div class="modal-body">
-        <h4>Interested in this bid? Message me to arrange a meetup!</h4>
-        <br>
-        <img class="lady-image"src="img/woman-hiking.jpg" alt="photograph of woman hiking">
-        <form id="message-bidder">
-          <textarea class="form-control" id="message-to-bidder" rows="3" placeholder="Let me know why you'd be good for this job..."></textarea>
-          <br>
-          <button type="submit" class="btn btn-default btn-small" data-dismiss="modal">Message Bidder</button>
-        </form>
+    <div class="modal fade" id="interestedJobberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h3 class="modal-title" id="myModalLabel">Let's get to work!</h3>
+          </div>
+          <div class="modal-body">
+            <h4>Interested in this bid? Message me to arrange a meetup!</h4>
+            <br>
+            <img class="lady-image"src="img/woman-hiking.jpg" alt="photograph of woman hiking">
+            <form id="message-bidder">
+              <textarea class="form-control" id="message-to-bidder" rows="3" placeholder="Let me know why you'd be good for this job..."></textarea>
+              <br>
+              <button type="submit" class="btn btn-default btn-small" data-dismiss="modal">Message Bidder</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+
+<!-- Delete this Bid Modal -->
+
+    <div class="modal fade" id="deleteBidModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h3 class="modal-title" id="myModalLabel">Delete Bid</h3>
+          </div>
+          <div class="modal-body">
+            <h4>You must be the Bid owner to delete a bid!</h4>
+            <p>Please enter your username and password:</p>
+            <br>
+            <div class="form-group">
+              <label for="userName">User name:</label><br>
+                <input type="text" name="username"><br>
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label><br>
+              <input id="password" type="password" name="psw"><br>
+            </div>
+            <button id="deleteBidButton" type="submit" class="btn btn-primary btn-small" data-dismiss="modal">Delete Bid</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
 
     <hr>
     <div class="container footer">

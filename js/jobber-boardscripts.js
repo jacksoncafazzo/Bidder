@@ -1,20 +1,20 @@
-function sortFunction() {
-  debugger;
-  var jobValue;
+$(document).ready(function() {
+  $(".deleteButton").click(function() {
+    $("#deleteBidModal").modal('show');
 
+    var panel = $(this).parents(".panel-group");
 
-}
+    $("#deleteBidButton").off();
+    $("#deleteBidButton").click({panel: panel}, function(event) {
+      var password = $("input#password").val();
+      if (password === "delete") {
+        event.data.panel.hide();
+      }
+      else {
+        alert("Sorry, that's not the right password.")
+      }
 
-
-
-$(document).ready(function () {
-  $("span.job-title").click(function (event) {
-    debugger;
-    $("this:contains(100)").css("color", "red");
-    sortFunction(this.val());
-  });
-
-  $('.favorite').click(function() {
-    $(this).addClass('focus');
+      $("input#password").val("");
+    });
   });
 });

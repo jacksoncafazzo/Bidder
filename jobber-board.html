@@ -10,6 +10,7 @@
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script src="js/jobber-boardscripts.js"></script>
     <link rel="icon" type="image/png" href="img/b-icon.png">
     <title>Jobber Board</title>
@@ -66,8 +67,17 @@
         </ul>
 
         <div class="tab-content">
-          <div role="tabpanel" class="tab-pane" id="map"><img src="http://portlandoctopus.com/wp-content/uploads/2008/04/pearlmap3.jpg" alt="image of a map of Portland, Oregon">
+      <!-- Map -->
+          <div role="tabpanel" class="tab-pane" id="map">
+            <div class="row">
+              <div class="col-md-12 map-for-jobbers">
+                <div id="map">
+                  <img class="map-image"src="img/map-with-bids.png" alt="map with markers on it">
+                </div>
+              </div>
+            </div>
           </div>
+    <!-- List -->
           <div role="tabpanel" class="tab-pane active" id="list">
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
               <div class="panel panel-default">
@@ -88,7 +98,7 @@
                       <li>Neighborhood: Southeast</li>
                       <li>Bidder Name: Taylor</li>
                     </ul>
-                    <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal1">I'm interested!</button>
+                    <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal1">I'm interested!</button> <button class="btn btn-default deleteButton" type="submit">Delete this Bid</button>
                   </div>
                 </div>
               </div>
@@ -112,7 +122,7 @@
                       <li>Neighborhood: Northeast</li>
                       <li>Bidder Name: Gabe</li>
                     </ul>
-                    <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal2">I'm interested!</button>
+                    <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal2">I'm interested!</button> <button class="btn btn-default deleteButton" type="submit">Delete this Bid</button>
                   </div>
                 </div>
               </div>
@@ -136,7 +146,7 @@
                       <li>Neighborhood: Northeast</li>
                       <li>Bidder Name: Steven</li>
                     </ul>
-                    <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal3">I'm interested!</button>
+                    <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal3">I'm interested!</button> <button class="btn btn-default deleteButton" type="submit">Delete this Bid</button>
                   </div>
                 </div>
               </div>
@@ -160,7 +170,7 @@
                       <li>Neighborhood: Southeast</li>
                       <li>Bidder Name: Cricket</li>
                     </ul>
-                    <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal4">I'm interested!</button>
+                    <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal4">I'm interested!</button> <button class="btn btn-default deleteButton" type="submit">Delete this Bid</button>
                   </div>
                 </div>
               </div>
@@ -184,7 +194,7 @@
                       <li>Neighborhood: Southwest</li>
                       <li>Bidder Name: Mark</li>
                     </ul>
-                    <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal5">I'm interested!</button>
+                    <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal5">I'm interested!</button> <button class="btn btn-default deleteButton" type="submit">Delete this Bid</button>
                   </div>
                 </div>
               </div>
@@ -208,7 +218,7 @@
                       <li>Neighborhood: Northwest</li>
                       <li>Bidder Name: Elle</li>
                     </ul>
-                    <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal6">I'm interested!</button>
+                    <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal6">I'm interested!</button> <button class="btn btn-default deleteButton" type="submit">Delete this Bid</button>
                   </div>
                 </div>
               </div>
@@ -232,7 +242,7 @@
                       <li>Neighborhood: Northeast</li>
                       <li>Bidder Name: Joanne</li>
                     </ul>
-                    <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal7">I'm interested!</button>
+                    <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal7">I'm interested!</button> <button class="btn btn-default deleteButton" type="submit">Delete this Bid</button>
                   </div>
                 </div>
               </div>
@@ -256,14 +266,18 @@
                       <li>Neighborhood: Northeast</li>
                       <li>Bidder Name: Gwen</li>
                     </ul>
-                    <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal8">I'm interested!</button>
+                    <button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal8">I'm interested!</button> <button class="btn btn-default deleteButton" type="submit">Delete this Bid</button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div> <!-- End of tab content -->
-          <p id="signUp"><em>Not a jobber yet? <a href="jobber_page.html">Sign up</a> and start getting paid to help people in your community!</em></p>
+        <div class="sign-up">
+          <h4 id="sign-up">Not a Jobber yet?</h4>
+          <p>Join us and start getting paid to help people in your community.</p>
+            <a href="jobber_page.html" class="btn btn-primary" role="button" id="become-a-jobber">Sign Up</a>
+        </div>
       </div> <!-- End of job postings -->
 
       <!-- Modals -->
@@ -439,6 +453,30 @@
                 <br>
                 <button type="submit" class="btn btn-primary btn-small" data-dismiss="modal">Submit</button>
               </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="deleteBidModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 class="modal-title" id="myModalLabel">Delete Bid</h3>
+            </div>
+            <div class="modal-body">
+              <h4>You must be the Bid owner to delete a bid!</h4>
+              <p>Please enter your username and password:</p>
+              <br>
+              <div class="form-group">
+                <label for="userName">User name:</label><br>
+                  <input type="text" name="username"><br>
+              </div>
+              <div class="form-group">
+                <label for="password">Password:</label><br>
+                <input id="password" type="password" name="psw"><br>
+              </div>
+              <button id="deleteBidButton" type="submit" class="btn btn-primary btn-small" data-dismiss="modal">Delete Bid</button>
             </div>
           </div>
         </div>
