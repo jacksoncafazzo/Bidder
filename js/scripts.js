@@ -72,27 +72,10 @@ $(document).ready(function(){
 
 
 
-// $(document)ready(function() {
-//   $("form#postBid").submit(function(event) {
-//     var inputtedjobTitle = $("input#jobTitle").val();
-//     var inputtedPayment = $("input#payment").val();
-//     var inputtedjobDuration = $("input#jobDuration").val();
-//     var inputtedDateCompleted = $("input#dateCompleted").val();
-//     var inputtedCityState = $("input#cityState").val();
-//     var inputtedNeighborhood = $("input#neighborhood").val();
-//     var inputtedBidderName = $("input#bidderName").val();
-//
-//     var newBid = new BidPost(inputtedjobTitle, inputtedPayment, inputtedjobDuration, inputtedDateCompleted, inputtedCityState, inputtedNeighborhood, inputtedBidderName);
-//
-//     $("#bidList").show();
-//     $("ul#bids").append("<li>" + BidPost.bidSummary + "</li>");
-//
-//     $("input#jobTitle").val("");
-//     $("input#payment").val("");
-//     $("input#jobDuration").val("");
-//     $("input#dateCompleted").val("");
-//     $("input#cityState").val("");
-//     $("input#neighborhood").val("");
-//     $("input#bidderName").val("");
-//   });
-// });
+
+
+
+
+
+
+/* Bottom of scripts*/

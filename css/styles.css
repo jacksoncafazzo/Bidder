@@ -34,6 +34,12 @@ a:hover {
 
 /* Buttons
 ======================*/
+
+.centerButton {
+  margin: auto;
+  text-align: center;
+}
+
 .btn-primary {
   background-color: #C62828;
   border: solid #C62828;
@@ -56,14 +62,48 @@ a:hover {
   color: #C62828;
 }
 
-.centerButton {
-  margin: auto;
-  text-align: center;
+.imageButton1:hover {
+  border: 3px solid #C62828;
+}
+
+.imageButton2:hover {
+  border: 3px solid #C62828;
+}
+
+.interestedButton{
+  color:#558B2F;
+}
+
+.interestedButton:focus {
+  color:#558B2F;
+  background-color: white;
 }
 
 .interestedButton:hover {
   background-image:none;
-  background-color:#B4C60B;
+  background-color:#558B2F;
+  color: white;
+}
+
+.favoriteButton {
+  border: 1px solid #bdbdbd;
+  color: #F9A825;
+  background: white;
+}
+
+.favoriteButton:hover {
+  border: 1px solid #bdbdbd;
+  color: white;
+  background-color: #F9A825;
+}
+
+.buttonClassB {
+  background: #F9A825;
+  color: white;
+}
+
+.buttonClassB:focus {
+  background: #F9A825;
   color: white;
 }
 
@@ -75,16 +115,13 @@ a:hover {
   margin-right: auto;
 }
 
-.imageButton1:hover {
-  border: 3px solid #C62828;
-}
-
-.imageButton2:hover {
-  border: 3px solid #C62828;
-}
-
 .deleteButton {
   color: #C62828;
+}
+
+.deleteButton:hover {
+  background-color: #C62828;
+  color: white;
 }
 
 /* Main Navigation
