@@ -11,6 +11,7 @@ var imageData;
 var bid_icon = 'img/bid_icon.png';
 var jobber_icon = 'img/jobber_hat.png';
 
+var panelToDelete;
 
 
 function initialize () {
@@ -188,7 +189,7 @@ $(document).ready(function() {
     }
     newBid.bids.push(newBid);
 
-    $("#bidList").prepend('<div class="panel-group userPanel" id="accordion" role="tablist" aria-multiselectable="true">' +
+    $("#bidList").prepend('<div class="panel-group userPanel" id="accordion'+ count +'" role="tablist" aria-multiselectable="true">' +
      '<div class="panel panel-default">' +
        '<div class="panel-heading" role="tab" id="userBid">' +
          '<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#userCollapse'+ count +'"' + ' aria-expanded="true" aria-controls="userCollapse'+ count +'">' +
@@ -205,7 +206,7 @@ $(document).ready(function() {
              '<li>Neighborhood:' + " " + newBid.neighborhood + '</li>' +
              '<li>Bidder Name:' + " " + newBid.bidderName + '</li>' +
            '</ul>' +
-           '<button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I\'m interested!</button>' +
+           '<button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I\'m interested!</button>  <button class="btn btn-default deleteUserBidButton" type="submit" data-toggle="modal" data-target="#deleteBidModal">Delete this Bid</button>' +
          '</div>' +
        '</div>' +
      '</div>' +
@@ -224,19 +225,24 @@ $(document).ready(function() {
 
     // bidsAndMarkers = createBidMarker(newBid, count);
   });
+  $(".deleteButton").click(function() {
+    $("#deleteBidModal").modal('show');
 
-  $(document).on('click', '#deleteBidButton', function() {
-    // event.preventDefault();
+    panel = $(this).parents(".panel-group");
 
-    var password = $("input#password").val();
+    $("#deleteBidButton").off();
+    $("#deleteBidButton").on("click", function() {
+      var password = $("input#password").val();
+      if (password === "delete") {
+        $(panel).hide();
+      }
+      else {
+        alert("Sorry, that's not the right password.")
+      }
 
-    if (password === "delete") {
-      $("#accordion").last().hide();
-    }
-    else {
-      alert("Sorry, that's not the right password.")
-    }
-
-    $("input#password").val("");
+      $("input#password").val("");
+    });
   });
+
+
 });
