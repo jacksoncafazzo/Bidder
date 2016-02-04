@@ -33,7 +33,7 @@ h4 {
   margin-bottom: 1em;;
 }
 
-.send-to-job-board, h4 {
+.send-to-job-board h4 {
   font-size: 20px;
   margin-top: 2.4em;
 }
