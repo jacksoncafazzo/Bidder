@@ -11,6 +11,7 @@ var imageData;
 var bid_icon = 'img/bid_icon.png';
 var jobber_icon = 'img/jobber_hat.png';
 
+// var panel;
 
 
 function initialize () {
@@ -130,6 +131,7 @@ function makeJobberMarkers (coordinates) {
   '</div>' +
   '</div>' +
   '</div>';
+
   var infowindow = new google.maps.InfoWindow( {
   content: contentString,
   });
@@ -153,7 +155,7 @@ $(document).ready(function() {
     $("#modal").modal('show');
   });
   initialize();
-
+  attachClickListenerToDeleteButton();
 
   $("#modalSubmit").click(function(event) {
     event.preventDefault();
@@ -188,7 +190,7 @@ $(document).ready(function() {
     }
     newBid.bids.push(newBid);
 
-    $("#bidList").prepend('<div class="panel-group userPanel" id="accordion" role="tablist" aria-multiselectable="true">' +
+    $("#bidList").prepend('<div class="panel-group userPanel" id="accordion'+ count +'" role="tablist" aria-multiselectable="true">' +
      '<div class="panel panel-default">' +
        '<div class="panel-heading" role="tab" id="userBid">' +
          '<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#userCollapse'+ count +'"' + ' aria-expanded="true" aria-controls="userCollapse'+ count +'">' +
@@ -205,7 +207,7 @@ $(document).ready(function() {
              '<li>Neighborhood:' + " " + newBid.neighborhood + '</li>' +
              '<li>Bidder Name:' + " " + newBid.bidderName + '</li>' +
            '</ul>' +
-           '<button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I\'m interested!</button>' +
+           '<button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I\'m interested!</button> <button class="btn btn-default deleteButton" type="submit">Delete this Bid</button>' +
          '</div>' +
        '</div>' +
      '</div>' +
@@ -221,8 +223,29 @@ $(document).ready(function() {
     $("input#neighborhood").val("");
     $("input#bidderName").val("");
 
+    attachClickListenerToDeleteButton();
 
     // bidsAndMarkers = createBidMarker(newBid, count);
   });
 });
-  // event.preventDefault();
+
+var attachClickListenerToDeleteButton = function() {
+  $(".deleteButton").click(function() {
+    $("#deleteBidModal").modal('show');
+
+    var panel = $(this).parents(".panel-group");
+
+    $("#deleteBidButton").off();
+    $("#deleteBidButton").click({panel: panel}, function(event) {
+      var password = $("input#password").val();
+      if (password === "delete") {
+        event.data.panel.hide();
+      }
+      else {
+        alert("Sorry, that's not the right password.")
+      }
+
+      $("input#password").val("");
+    });
+  });
+};

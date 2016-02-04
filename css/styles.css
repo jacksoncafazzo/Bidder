@@ -83,6 +83,10 @@ a:hover {
   border: 3px solid #C62828;
 }
 
+.deleteButton {
+  color: #C62828;
+}
+
 /* Main Navigation
 ======================*/
 .navbar-default .navbar-brand {
