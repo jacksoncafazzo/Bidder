@@ -4,9 +4,9 @@
 
 describe('BidPost', function() {
   it('will create a new bid post based on the following properties', function() {
-    var testBidPost = new BidPost("Plant a salsa garden", "$100", "3 hours", "March 1, 2016", "Portland, OR", "Southeast Portland", "Taylor", "here is a description");
+    var testBidPost = new BidPost("Plant a salsa garden", "100", "3 hours", "March 1, 2016", "Portland, OR", "Southeast Portland", "Taylor", "here is a description");
     expect(testBidPost.jobTitle).to.equal("Plant a salsa garden");
-    expect(testBidPost.payment).to.equal("$100");
+    expect(testBidPost.payment).to.equal("100");
     expect(testBidPost.jobDuration).to.equal("3 hours");
     expect(testBidPost.dateCompleted).to.equal("March 1, 2016");
     expect(testBidPost.cityState).to.equal("Portland, OR");
@@ -16,8 +16,8 @@ describe('BidPost', function() {
   });
 
   it('will add the bidSummary method to a BidPost', function() {
-    var testBidPost = new BidPost("Plant a salsa garden", "$100", "3 hours", "March 1, 2016", "Portland, OR", "Southeast Portland", "Taylor", "here is a description");
-    expect(testBidPost.bidSummary()).to.equal("Plant a salsa garden for $100")
+    var testBidPost = new BidPost("Plant a salsa garden", "100", "3 hours", "March 1, 2016", "Portland, OR", "Southeast Portland", "Taylor", "here is a description");
+    expect(testBidPost.bidSummary()).to.equal("Plant a salsa garden for $100");
   });
 });
 
