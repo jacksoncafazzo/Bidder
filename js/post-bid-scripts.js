@@ -9,9 +9,9 @@ var coordinates = [];
 var myLatLng = { lat: 45.521079, lng: -122.677585 };
 var imageData;
 var bid_icon = 'img/bid-icon-new.png';
-var jobber_icon = 'img/jobber_hat.png';
 
-// var panel;
+// ***** Future Jobbers Feature: *****
+// var jobber_icon = 'img/jobber_hat.png';
 
 
 function initialize () {
@@ -88,7 +88,7 @@ for (var i = 0; i < newBid.marker.length; i++) {
 return newBid;
 }
 
-/* business logic for form and bidSummary */
+/* Business Logic for Post A Bid form and bidSummary prototype */
 
 function BidPost(jobTitle, payment, jobDuration, dateCompleted, cityState, neighborhood, bidderName, jobDescription, marker, bids) {
   this.jobTitle = jobTitle;
@@ -107,66 +107,61 @@ BidPost.prototype.bidSummary = function() {
   return this.jobTitle + " for $" + this.payment;
 }
 
-function randomJobbers () {
-  var bounds = {
-    north: 45.5340144,
-    south: 45.5193211,
-    east: -122.6619460,
-    west: -122.6827630
-  };
-  var lngSpan = bounds.east - bounds.west;
-  var latSpan = bounds.north - bounds.south;
-  var lat = bounds.south + latSpan * Math.random();
-  var lng = bounds.west + lngSpan * Math.random();
-  coordinates.push(lat);
-  coordinates.push(lng);
-  makeJobberMarkers(coordinates);
-}
+// *** The following code can be used in a Future Feature that places jobbers on the map when databases are available ***
 
-function makeJobberMarkers (coordinates) {
-  var contentString = '<div id="content">'+
-  '<div id="siteNotice">'+
-  '</div>'+
-  '<h2 id="firstHeading" class="firstHeading">Jobber the Jobber</h2>'+
-  '<div id="bid-info-window">' +
-  '<p><strong>Suggested Pay Range:</strong> $10-20/hr</p>'+
-  '<p><strong>Jobber Description:</strong>This is one hard-working dude'
-  '</p>' +
-  '<p><strong>Jobber Availability:</strong> </p>'+
-  '<p><strong>Complete By:</strong> TBA </p>'+
-  '<p><strong>City and State:</strong> Portland, OR</p>'+
-  '<p><strong>Neighborhood:</strong> Neighborhood Near You</p>'+
-  '<p id="jobberName"><strong>Jobber Name:</strong> '
-  '</p>' + '<div class="centerButton">' +
-  '<button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I\'m interested!</button>' +
-  '</div>' +
-  '</div>' +
-  '</div>';
+// function randomJobbers () {
+//   var bounds = {
+//     north: 45.5340144,
+//     south: 45.5193211,
+//     east: -122.6619460,
+//     west: -122.6827630
+//   };
+//   var lngSpan = bounds.east - bounds.west;
+//   var latSpan = bounds.north - bounds.south;
+//   var lat = bounds.south + latSpan * Math.random();
+//   var lng = bounds.west + lngSpan * Math.random();
+//   coordinates.push(lat);
+//   coordinates.push(lng);
+//   makeJobberMarkers(coordinates);
+// }
 
-  var infowindow = new google.maps.InfoWindow( {
-  content: contentString,
-  });
-
-  infowindows.push(infowindow);
-  var jobberLocation = [coordinates[0], coordinates[1]]
-  var marker = new google.maps.Marker({
-    position: coordinates,
-    icon: jobber_icon,
-    map: map,
-  });
-  coordinates = [];
-  marker.addListener('click', function() {
-    infowindow.open(map, marker);
-  });
-  marker.setMap(map);
-}
-
-// Click listener to change color of favorite button on click
-var attachFavoriteButton = function() {
-  $('.favoriteButton').click(function(){
-    $(this).toggleClass('buttonClassB');
-  });
-};
+// function makeJobberMarkers (coordinates) {
+//   var contentString = '<div id="content">'+
+//   '<div id="siteNotice">'+
+//   '</div>'+
+//   '<h2 id="firstHeading" class="firstHeading">Jobber the Jobber</h2>'+
+//   '<div id="bid-info-window">' +
+//   '<p><strong>Suggested Pay Range:</strong> $10-20/hr</p>'+
+//   '<p><strong>Jobber Description:</strong>This is one hard-working dude'
+//   '</p>' +
+//   '<p><strong>Jobber Availability:</strong> </p>'+
+//   '<p><strong>Complete By:</strong> TBA </p>'+
+//   '<p><strong>City and State:</strong> Portland, OR</p>'+
+//   '<p><strong>Neighborhood:</strong> Neighborhood Near You</p>'+
+//   '<p id="jobberName"><strong>Jobber Name:</strong> '
+//   '</p>' + '<div class="centerButton">' +
+//   '<button class="btn btn-default interestedButton" type="submit" data-toggle="modal" data-target="#interestedJobberModal">I\'m interested!</button>' +
+//   '</div>' +
+//   '</div>' +
+//   '</div>';
+//
+//   var infowindow = new google.maps.InfoWindow( {
+//   content: contentString,
+//   });
+//
+//   infowindows.push(infowindow);
+//   var jobberLocation = [coordinates[0], coordinates[1]]
+//   var marker = new google.maps.Marker({
+//     position: coordinates,
+//     icon: jobber_icon,
+//     map: map,
+//   });
+//   coordinates = [];
+//   marker.addListener('click', function() {
+//     infowindow.open(map, marker);
+//   });
+//   marker.setMap(map);
+// }
 
 $(document).ready(function() {
   $("#firstHeading").click(function () {
@@ -189,18 +184,17 @@ $(document).ready(function() {
     var inputtedjobDescription = $("input#jobDescription").val();
     var inputtedBidderName = $("input#bidderName").val();
     var newBid = new BidPost(inputtedjobTitle, inputtedPayment, inputtedjobDuration, inputtedDateCompleted, inputtedCityState, inputtedNeighborhood, inputtedBidderName, inputtedjobDescription, myLatLng);
-    // debugger;
     map = initialize(newBid);
     if (newBid.bids === undefined) {
       newBid.bids = [];
       newBid.bids.push(newBid);
     }
 
-
-    var jobber;
-    for (var i = 0; i < 8; i++) {
-      jobber = randomJobbers();
-    }
+// *** Future Jobbers Feature ***
+    // var jobber;
+    // for (var i = 0; i < 8; i++) {
+    //   jobber = randomJobbers();
+    // }
 
 
     for (var i = 0; i < Object.keys(newBid.bids).length; i++) {
@@ -249,9 +243,15 @@ $(document).ready(function() {
       $(this).toggleClass('buttonClassB');
     });
 
-    // bidsAndMarkers = createBidMarker(newBid, count);
   });
 });
+
+// Click listener to change color of favorite button on click
+var attachFavoriteButton = function() {
+  $('.favoriteButton').click(function(){
+    $(this).toggleClass('buttonClassB');
+  });
+};
 
 var attachClickListenerToDeleteButton = function() {
   $(".deleteButton").click(function() {
