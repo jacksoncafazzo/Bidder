@@ -1,0 +1,11 @@
+@Html.Partial("header.cshtml")
+
+<h1>@Model.getCar()</h1>
+
+<ul>
+  <li>$@Model.getPrice()</li>
+  <li>@Model.getMiles()</li>
+</ul>
+<a href="/car/@Model.getId()/buy">Buy this car!</a><br>
+
+<a href="/">Return Home</a>

@@ -1,0 +1,10 @@
+@Html.Partial("header.cshtml")
+<ul>
+@foreach( var car in Model )
+{
+  <li><a href="/car/@car.getId()">@(car.getCar())</a></li>
+}
+</ul>
+<a href="/totalAssets">Total Assets</a>
+@Html.Partial("search.cshtml")
+@Html.Partial("addcarform.cshtml")

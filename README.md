@@ -2,6 +2,7 @@
 ##### Looking for a service? Offer a bid and see who accepts nearby.
 
 #### By Jessica Fix, Jackson Cafazzo, Brooke Hurford, Taylor Pokoj
+#### including csharp code by Nick Jensen-Hay
 
 ## Description
 
